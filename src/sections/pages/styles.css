@@ -1,0 +1,41 @@
+.react-rainbow-admin-pages_container {
+    height: 100%;
+    background-color: #f4f6f9;
+    padding: 16px 40px;
+}
+
+.react-rainbow-admin-pages_title {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #061c3f;
+}
+
+.react-rainbow-admin-pages_description {
+    font-size: 12px;
+    color: #a4a7b5;
+}
+
+.react-rainbow-admin-pages_body {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-pages_card {
+    width: 200px;
+    margin-top: 24px;
+    margin-right: 24px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #061c3f;
+}
+
+.react-rainbow-admin-pages_card-image {
+    padding: 1rem;
+    height: 6rem;
+    margin: auto;
+    display: flex;
+}
+
+.react-rainbow-admin-pages_card:last-child {
+    margin-right: 0;
+}
