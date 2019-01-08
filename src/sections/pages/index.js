@@ -1,32 +1,38 @@
 import React from 'react';
 import { Card } from 'react-rainbow-components';
+import {
+    CalendarIcon,
+    FollowerIcon,
+    OrderIcon,
+    UserIcon,
+    TimelineIcon,
+    GalleryIcon,
+    PricingIcon,
+} from '../../components/icons';
 import './styles.css';
 
 const pages = [
-    { name: 'Orders' },
-    { name: 'Users' },
-    { name: 'Followers' },
-    { name: 'Timeline' },
-    { name: 'Gallery' },
-    { name: 'Calendar' },
-    { name: 'Pricing' },
+    { name: 'Order', icon: <OrderIcon /> },
+    { name: 'User', icon: <UserIcon /> },
+    { name: 'Followers', icon: <FollowerIcon /> },
+    { name: 'timeline', icon: <TimelineIcon /> },
+    { name: 'Gallery', icon: <GalleryIcon /> },
+    { name: 'Calendar', icon: <CalendarIcon /> },
+    { name: 'Pricing', icon: <PricingIcon /> },
 ];
+
+function Cards() {
+    return pages.map(page => (
+        <a className="react-rainbow-admin-pages_anchor" href="/#">
+            <Card className="react-rainbow-admin-pages_card" footer={page.name}>
+                <span className="react-rainbow-admin-pages_card-image">
+                    {page.icon}
+                </span>
+            </Card>
+        </a>
+    ));
+}
 export default function Pages() {
-    function Cards() {
-        return pages.map((page) => {
-            const src = `assets/images/pages/${page.name.toLowerCase()}.svg`;
-
-            return (
-                <Card className="react-rainbow-admin-pages_card" footer={page.name}>
-                    <img
-                        className="react-rainbow-admin-pages_card-image"
-                        src={src}
-                        alt={`Page ${page.name}`} />
-                </Card>
-            );
-        });
-    }
-
     return (
         <div className="react-rainbow-admin-pages_container">
             <h1 className="react-rainbow-admin-pages_title">Pages</h1>

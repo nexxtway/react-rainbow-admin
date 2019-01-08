@@ -1,5 +1,6 @@
 .react-rainbow-admin-pages_container {
     height: 100%;
+    min-height: 100vh;
     background-color: #f4f6f9;
     padding: 16px 40px;
 }
@@ -22,8 +23,6 @@
 
 .react-rainbow-admin-pages_card {
     width: 200px;
-    margin-top: 24px;
-    margin-right: 24px;
     font-size: 16px;
     font-weight: 500;
     color: #061c3f;
@@ -32,10 +31,15 @@
 .react-rainbow-admin-pages_card-image {
     padding: 1rem;
     height: 6rem;
-    margin: auto;
     display: flex;
+    justify-content: center;
 }
 
-.react-rainbow-admin-pages_card:last-child {
+.react-rainbow-admin-pages_anchor {
+    margin-top: 24px;
+    margin-right: 24px;
+}
+
+.react-rainbow-admin-pages_anchor:last-child {
     margin-right: 0;
 }
