@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import Application from 'react-rainbow-components/components/Application';
 import store from './redux/store';
 import Routes from './routes';
-import SectionHeading from './sections/SectionHeading';
+import SectionHeading from './components/SectionHeading';
 import Sidebar from './sections/Sidebar';
 import SidebarItem from './sections/Sidebar/sidebarItem';
 import {

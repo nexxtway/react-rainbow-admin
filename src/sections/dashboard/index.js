@@ -18,11 +18,6 @@ import NewUser from './newUser';
 import Tile from './tile';
 import './styles.css';
 
-const usersIconStyles = {
-    height: 37,
-    width: 37,
-};
-
 export default function Dashboard() {
     return (
         <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
@@ -40,7 +35,7 @@ export default function Dashboard() {
                 <Tile
                     label="Users"
                     total="10011"
-                    icon={<UsersIcon style={usersIconStyles} />} />
+                    icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
 
                 <Tile
                     label="Fallowers"

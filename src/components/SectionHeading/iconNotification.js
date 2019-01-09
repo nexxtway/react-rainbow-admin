@@ -2,11 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export default function IconNotification(props) {
-    const {
-        icon,
-    } = props;
-
+export default function IconNotification({ icon }) {
     return (
         <div className="react-rainbow-admin_header--notification-icon-container">{icon}</div>
     );

@@ -13,15 +13,10 @@ import {
     faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { ShoppingCartIcon, MessageIcon } from '../../components/icons';
+import { ShoppingCartIcon, MessageIcon } from '../icons';
 import Notification from './notification';
 import IconNotification from './iconNotification';
 import './styles.css';
-
-const iconStyles = {
-    height: 12,
-    width: 14,
-};
 
 export default function SectionHeading() {
     return (
@@ -50,7 +45,7 @@ export default function SectionHeading() {
                     <MenuItem label="Notifications (2)" variant="header" />
                     <MenuItem
                         icon={
-                            <IconNotification icon={<ShoppingCartIcon style={iconStyles} />} />
+                            <IconNotification icon={<ShoppingCartIcon className="react-rainbow-admin_header--notification-icon" />} />
                         }
                         label={(
                             <Notification
@@ -59,7 +54,7 @@ export default function SectionHeading() {
                         )} />
                     <MenuItem
                         icon={
-                            <IconNotification icon={<MessageIcon style={iconStyles} />} />
+                            <IconNotification icon={<MessageIcon className="react-rainbow-admin_header--notification-icon" />} />
                         }
                         label={(
                             <Notification

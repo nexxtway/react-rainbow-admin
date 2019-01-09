@@ -83,3 +83,8 @@
     justify-content: space-between;
     width: 100%;
 }
+
+.react-rainbow-admin-dashboard_tile-icon {
+    height: 37px;
+    weight: 37px;
+}
