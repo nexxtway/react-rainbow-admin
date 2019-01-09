@@ -11,6 +11,12 @@ import PersonIcon from './Person';
 import PuzzleIcon from './Puzzle';
 import ShoppingCartIcon from './ShoppingCart';
 import UsersIcon from './Users';
+import CalendarIcon from './Calendar';
+import FollowerIcon from './Follower';
+import GalleryIcon from './Gallery';
+import OrderIcon from './Order';
+import PricingIcon from './Pricing';
+import TimelineIcon from './Timeline';
 
 export {
     ApplicationIcon,
@@ -25,4 +31,10 @@ export {
     PuzzleIcon,
     ShoppingCartIcon,
     UsersIcon,
+    CalendarIcon,
+    FollowerIcon,
+    GalleryIcon,
+    OrderIcon,
+    PricingIcon,
+    TimelineIcon,
 };
