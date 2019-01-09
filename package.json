@@ -1,7 +1,13 @@
 {
   "name": "react-rainbow-admin",
   "version": "0.1.0",
-  "private": true,
+  "description": "React Rainbow Admin",
+  "keywords": [
+    "react",
+    "admin",
+    "rainbow",
+    "examples"
+  ],
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.4",
     "@fortawesome/free-brands-svg-icons": "^5.1.0-11",
@@ -24,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "./node_modules/.bin/eslint src",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -42,6 +49,11 @@
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^22.1.2",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.12.1"
-  }
+    "eslint-plugin-react": "^7.12.1",
+    "firebase-tools": "^6.2.2",
+    "pre-push": "^0.1.1"
+  },
+  "pre-push": [
+    "lint"
+  ]
 }
