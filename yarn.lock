@@ -7039,9 +7039,9 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-rainbow-components@^0.7.2:
-  version "0.7.2"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-0.7.2.tgz#1405c5d9613cd192b681c31167a1ccbff33a7f87"
+react-rainbow-components@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-0.8.0.tgz#7f1ebbb1f7c6f16247788301aebcba3b63c34575"
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"

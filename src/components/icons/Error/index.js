@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const ErrorIcon = (props) => {
-    const { className } = props;
+export default function ErrorIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
     return (
-        <svg className={className} xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 36 36">
             <g fill="none" fillRule="nonzero">
                 <circle cx="17.965" cy="17.965" r="17.965" fill="#FE4849" />
                 <path fill="#EA4243" d="M35.93 17.965c0 9.88-8.084 17.965-17.965 17.965-5.726 0-10.78-2.583-14.035-6.737 3.031 2.47 6.961 3.93 11.228 3.93 9.88 0 17.965-8.084 17.965-17.965 0-4.267-1.46-8.196-3.93-11.228 4.154 3.256 6.737 8.309 6.737 14.035z" />
@@ -12,13 +15,13 @@ const ErrorIcon = (props) => {
             </g>
         </svg>
     );
-};
+}
 
 ErrorIcon.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
 ErrorIcon.defaultProps = {
     className: undefined,
+    style: undefined,
 };
-
-export default ErrorIcon;

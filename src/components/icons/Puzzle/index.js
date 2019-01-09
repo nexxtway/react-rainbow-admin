@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PuzzleIcon = (props) => {
-    const { className } = props;
+export default function Puzzle(props) {
+    const {
+        className,
+        style,
+    } = props;
     return (
-        <svg className={className} xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
             <g fill="none" fillRule="evenodd">
                 <path fill="#FFDA45" d="M19.602 10.176a1.877 1.877 0 0 0-.234-1.299.375.375 0 0 1 .328-.583h2.197V2.27A2.263 2.263 0 0 0 19.625.012H13.61v2.191a.377.377 0 0 0 .56.328 1.866 1.866 0 0 1 1.33-.234 1.883 1.883 0 0 1 1.524 2.187 1.89 1.89 0 0 1-2.806 1.295.379.379 0 0 0-.567.343l-.041 2.172h2.147a.377.377 0 0 1 .348.564c-.167.286-.255.61-.253.941 0 1.04.846 1.882 1.89 1.882.914 0 1.697-.651 1.86-1.547v.042z" />
                 <path fill="#FFA83D" d="M2.302 21.874h6.015-6.28a.773.773 0 0 0 .265 0zM8.346 15.822a.176.176 0 0 0 0-.14v.046c.01.03.01.063 0 .094z" />
@@ -15,13 +18,13 @@ const PuzzleIcon = (props) => {
             </g>
         </svg>
     );
-};
+}
 
-PuzzleIcon.propTypes = {
+Puzzle.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
-PuzzleIcon.defaultProps = {
+Puzzle.defaultProps = {
     className: undefined,
+    style: undefined,
 };
-
-export default PuzzleIcon;

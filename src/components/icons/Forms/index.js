@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const FormsIcon = (props) => {
-    const { className } = props;
+export default function Forms(props) {
+    const {
+        className,
+        style,
+    } = props;
     return (
-        <svg className={className} xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15">
             <g fill="none" fillRule="evenodd">
                 <path fill="#FE4849" fillRule="nonzero" d="M1.765 10.824a1.647 1.647 0 1 0 0 3.294H17.5a1.647 1.647 0 0 0 0-3.294H1.765zm0-.118H17.5a1.765 1.765 0 0 1 0 3.53H1.765a1.765 1.765 0 0 1 0-3.53z" />
                 <path fill="#01B6F5" fillRule="nonzero" d="M1.765 2.324H17.5a1.765 1.765 0 0 1 0 3.529H1.765a1.765 1.765 0 0 1 0-3.53z" />
@@ -15,13 +18,13 @@ const FormsIcon = (props) => {
             </g>
         </svg>
     );
-};
+}
 
-FormsIcon.propTypes = {
+Forms.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
-FormsIcon.defaultProps = {
+Forms.defaultProps = {
     className: undefined,
+    style: undefined,
 };
-
-export default FormsIcon;

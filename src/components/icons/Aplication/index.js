@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const AplicatoinIcon = (props) => {
-    const { className } = props;
+export default function Aplication(props) {
+    const {
+        className,
+        style,
+    } = props;
     return (
-        <svg className={className} xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="20" height="19" viewBox="0 0 20 19">
             <g fill="none" fillRule="evenodd">
                 <g fill="#E20460">
                     <path d="M4.918.709H1.92a.808.808 0 0 0-.807.807V2.6l2.306.752L5.725 2.6V1.516A.807.807 0 0 0 4.918.71zM14.739.709h2.996c.446 0 .808.361.808.807V2.6l-2.306.752L13.93 2.6V1.516c0-.446.362-.807.808-.807zM11.326.709H8.33a.808.808 0 0 0-.808.807V2.6l2.306.752 2.306-.752V1.516a.807.807 0 0 0-.808-.807z" />
@@ -18,13 +21,13 @@ const AplicatoinIcon = (props) => {
             </g>
         </svg>
     );
-};
+}
 
-AplicatoinIcon.propTypes = {
+Aplication.propTypes = {
     className: PropTypes.string,
+    style: PropTypes.object,
 };
-AplicatoinIcon.defaultProps = {
+Aplication.defaultProps = {
     className: undefined,
+    style: undefined,
 };
-
-export default AplicatoinIcon;

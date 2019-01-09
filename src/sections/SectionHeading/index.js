@@ -13,6 +13,8 @@ import {
     faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
+import { ShoppingCartWhiteIcon, MessagesBlueWhiteIcon } from '../../components/icons';
+import Notification from './notification';
 import './styles.css';
 
 export default function SectionHeading() {
@@ -33,7 +35,28 @@ export default function SectionHeading() {
                         <MenuItem label="Admin-3" />
                     </ButtonMenu>
                 </ButtonGroup>
-                <ButtonIcon className="rainbow-m-horizontal_medium" size="large" icon={<FontAwesomeIcon icon={faBell} />} />
+                <ButtonMenu
+                    className="rainbow-m-horizontal_medium"
+                    menuAlignment="right"
+                    buttonVariant="base"
+                    buttonSize="large"
+                    icon={<FontAwesomeIcon icon={faBell} />}>
+                    <MenuItem label="Notifications (2)" variant="header" />
+                    <MenuItem
+                        icon={<ShoppingCartWhiteIcon />}
+                        label={(
+                            <Notification
+                                notificationTitle="Your order is placed"
+                                notificationContent="Dummy text of the printing and typesetting industry" />
+                        )} />
+                    <MenuItem
+                        icon={<MessagesBlueWhiteIcon />}
+                        label={(
+                            <Notification
+                                notificationTitle="New messages"
+                                notificationContent="You have 5 unread messages" />
+                        )} />
+                </ButtonMenu>
                 <Avatar
                     src="assets/images/user3.jpg"
                     assistiveText="Carlos Miguel"
