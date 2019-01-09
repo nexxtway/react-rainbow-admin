@@ -1,7 +1,13 @@
 {
   "name": "react-rainbow-admin",
   "version": "0.1.0",
-  "private": true,
+  "description": "React Rainbow Admin",
+  "keywords": [
+    "react",
+    "admin",
+    "rainbow",
+    "examples"
+  ],
   "dependencies": {
     "history": "^4.7.2",
     "react": "^16.7.0",
@@ -19,7 +25,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "lint": "./node_modules/.bin/eslint src",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "yarn build && firebase deploy"
   },
   "eslintConfig": {
     "extends": "react-app"
