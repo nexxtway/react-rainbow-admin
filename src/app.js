@@ -4,8 +4,8 @@ import Application from 'react-rainbow-components/components/Application';
 import store from './redux/store';
 import Routes from './routes';
 import SectionHeading from './components/SectionHeading';
-import Sidebar from './sections/Sidebar';
-import SidebarItem from './sections/Sidebar/sidebarItem';
+import Sidebar from './components/Sidebar';
+import SidebarItem from './components/Sidebar/sidebarItem';
 import {
     ApplicationIcon,
     ChartsIcon,
