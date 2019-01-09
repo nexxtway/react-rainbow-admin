@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function PricingIcon() {
+export default function PricingIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="59" height="64" viewBox="0 0 59 64">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="59" height="64" viewBox="0 0 59 64">
             <g fill="none" fillRule="evenodd">
                 <path fill="#663398" fillRule="nonzero" d="M14.646 21.14l-.76-.68a3.16 3.16 0 0 0-4.208 0l-9.67 8.642v31.577a3.24 3.24 0 0 0 3.241 3.24h17.065a3.24 3.24 0 0 0 3.242-3.24V29.102l-8.91-7.963zM11.78 31.773a3.256 3.256 0 1 1 .001-6.512 3.256 3.256 0 0 1 0 6.512z" />
                 <path fill="#4A1A7A" d="M15.867 22.239l-.16.142V52.86a3.24 3.24 0 0 0 3.24 3.24h4.609V29.103l-7.69-6.863z" />
@@ -25,3 +31,13 @@ export default function PricingIcon() {
         </svg>
     );
 }
+
+PricingIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+PricingIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

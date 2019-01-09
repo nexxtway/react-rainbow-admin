@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function UserIcon() {
+export default function UserIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
             <g fill="none" fillRule="nonzero">
                 <path fill="#E3E5ED" d="M39.3 34.265c-5.117 0-9.278-4.161-9.278-9.277 0-5.117 4.16-9.278 9.277-9.278 5.117 0 9.278 4.161 9.278 9.278 0 5.116-4.161 9.277-9.278 9.277z" />
                 <path fill="#E3E5ED" d="M39.3 33.218c4.537 0 8.23-3.692 8.23-8.23 0-4.539-3.693-8.23-8.23-8.23-4.539 0-8.231 3.691-8.231 8.23 0 4.538 3.692 8.23 8.23 8.23zm0 2.094c-5.696 0-10.326-4.63-10.326-10.324 0-5.695 4.63-10.325 10.325-10.325 5.695 0 10.325 4.63 10.325 10.325 0 5.694-4.63 10.324-10.325 10.324z" />
@@ -17,3 +23,13 @@ export default function UserIcon() {
         </svg>
     );
 }
+
+UserIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+UserIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

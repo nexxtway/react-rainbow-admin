@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function TimelineIcon() {
+export default function TimelineIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
             <g fill="none" fillRule="evenodd">
                 <rect width="23.821" height="10.982" x=".066" y="17.483" fill="#E3E5ED" rx="3" />
                 <path fill="#576574" fillOpacity=".201" d="M9.682 22.4H3.399a1.093 1.093 0 1 1 0-2.185h6.283a1.093 1.093 0 1 1 0 2.185zM15.146 25.679H3.399a1.093 1.093 0 1 1 0-2.186h11.747a1.093 1.093 0 1 1 0 2.186z" />
@@ -21,3 +27,13 @@ export default function TimelineIcon() {
         </svg>
     );
 }
+
+TimelineIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+TimelineIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

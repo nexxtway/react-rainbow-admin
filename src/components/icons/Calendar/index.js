@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function CalendarIcon() {
+export default function CalendarIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
             <g fill="none" fillRule="nonzero">
                 <path fill="#E3E5ED" d="M64 17.766v38.952A7.282 7.282 0 0 1 56.717 64H7.282A7.281 7.281 0 0 1 0 56.718V17.766" />
                 <path fill="#EA4243" d="M59.961 26.721H4.038A4.038 4.038 0 0 1 0 22.683v-8.38a4.038 4.038 0 0 1 4.038-4.038h55.923A4.038 4.038 0 0 1 64 14.303v8.38a4.038 4.038 0 0 1-4.039 4.038z" />
@@ -18,3 +24,13 @@ export default function CalendarIcon() {
         </svg>
     );
 }
+
+CalendarIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+CalendarIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

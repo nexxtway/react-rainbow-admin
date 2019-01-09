@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function OrderIcon() {
+export default function OrderIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg width="63px" height="63px" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className={className} style={style} width="63px" height="63px" viewBox="0 0 63 63" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="new-pages" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="admin-pages" transform="translate(-194.000000, -158.000000)" fillRule="nonzero">
                     <g id="Group-6" transform="translate(129.000000, 141.000000)">
@@ -24,3 +30,13 @@ export default function OrderIcon() {
         </svg>
     );
 }
+
+OrderIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+OrderIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

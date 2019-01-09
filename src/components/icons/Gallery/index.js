@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function GalleryIcon() {
+export default function GalleryIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" width="53" height="64" viewBox="0 0 53 64">
+        <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="53" height="64" viewBox="0 0 53 64">
             <defs>
                 <linearGradient id="a" x1="50%" x2="50%" y1=".196%" y2="99.953%">
                     <stop offset=".6%" stopColor="#5FCEE2" />
@@ -50,3 +56,13 @@ export default function GalleryIcon() {
         </svg>
     );
 }
+
+GalleryIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+GalleryIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};

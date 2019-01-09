@@ -1,8 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-export default function FollowerIcon() {
+export default function FollowerIcon(props) {
+    const {
+        className,
+        style,
+    } = props;
+
     return (
-        <svg width="64px" height="56px" viewBox="0 0 64 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+        <svg className={className} style={style} width="64px" height="56px" viewBox="0 0 64 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
             <g id="new-pages" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                 <g id="admin-pages" transform="translate(-646.000000, -163.000000)" fill="#F7076A" fillRule="nonzero">
                     <g id="Group-7" transform="translate(577.000000, 141.000000)">
@@ -15,3 +21,13 @@ export default function FollowerIcon() {
         </svg>
     );
 }
+
+FollowerIcon.propTypes = {
+    className: PropTypes.string,
+    style: PropTypes.object,
+};
+
+FollowerIcon.defaultProps = {
+    className: undefined,
+    style: undefined,
+};
