@@ -1,12 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function UserIcon(props) {
+export default function Users(props) {
     const {
         className,
         style,
     } = props;
-
     return (
         <svg className={className} style={style} xmlns="http://www.w3.org/2000/svg" width="63" height="63" viewBox="0 0 63 63">
             <g fill="none" fillRule="nonzero">
@@ -24,12 +23,11 @@ export default function UserIcon(props) {
     );
 }
 
-UserIcon.propTypes = {
+Users.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
-
-UserIcon.defaultProps = {
+Users.defaultProps = {
     className: undefined,
     style: undefined,
 };

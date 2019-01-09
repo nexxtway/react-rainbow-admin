@@ -1,0 +1,37 @@
+.react-rainbow-admin_header {
+    top: 0;
+    left: 0;
+    height: 68px;
+    width: 100vw;
+    z-index: 10000;
+    border-bottom: 1px solid #f4f6f9;
+}
+
+.react-rainbow-admin_header-logo {
+    width: 36px;
+    height: 36px;
+}
+
+.react-rainbow-admin_header-search {
+    width: 280px;
+}
+
+.react-rainbow-admin_header-actions {
+    justify-content: flex-end;
+    flex-grow: 1;
+}
+
+.react-rainbow-admin_header--notification-icon-container {
+    width: 24px;
+    height: 24px;
+    border-radius: 100%;
+    background-color: #e3e5ed;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-rainbow-admin_header--notification-icon {
+    height: 12px;
+    weight: 14px;
+}

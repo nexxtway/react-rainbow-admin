@@ -1,0 +1,90 @@
+.react-rainbow-admin-dashboard_view-port {
+    min-height: calc(100vh - 68px);
+    padding: 16px 40px 24px 40px;
+}
+
+.react-rainbow-admin-dashboard_header-title {
+    letter-spacing: 0.5px;
+}
+
+.react-rainbow-admin-dashboard_card {
+    width: 100%;
+}
+
+.react-rainbow-admin-dashboard_card:not(:last-child) {
+    margin-right: 24px;
+}
+
+.react-rainbow-admin-dashboard_card--title {
+    letter-spacing: 0.3px;
+}
+
+.react-rainbow-admin-dashboard_card--content {
+    font-size: 28px;
+    line-height: 1.07;
+    letter-spacing: 1.8px;
+}
+
+.react-rainbow-admin-dashboard_badge--success {
+    color: #FFF;
+    background-color: #1de9b6;
+    align-self: flex-start;
+}
+
+.react-rainbow-admin-dashboard_badge--error {
+    color: #FFF;
+    background-color: #fe4849;
+    align-self: flex-start;
+}
+
+.react-rainbow-admin-dashboard_chart-title {
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+.react-rainbow-admin-dashboard_avatar {
+    flex-shrink: 0;
+}
+
+.react-rainbow-admin-dashboard_card-message--message-divider {
+    border-bottom: solid 1px #e3e5ed;
+}
+
+.react-rainbow-admin-dashboard_card-message--divider {
+    border-top: solid 1px #e3e5ed;
+}
+
+.react-rainbow-admin-dashboard_card-message--footer-link {
+    font-size: 13px;
+}
+
+.react-rainbow-admin-dashboard_card-message--footer-link:hover,
+.react-rainbow-admin-dashboard_card-message--footer-link:focus,
+.react-rainbow-admin-dashboard_card-message--footer-link:active,
+.react-rainbow-admin-dashboard_card-message--footer-link:visited {
+    color: #009acf;
+}
+
+.react-rainbow-admin-dashboard_card-users--user-active {
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    background-color: #1de9b6;
+    margin-right: 4px;
+    margin-bottom: 4px;
+}
+
+.react-rainbow-admin-dashboard_card-users--user-inactive {
+    background-color: #fe4849;
+}
+
+.react-rainbow-admin-dashboard_card-message--message-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.react-rainbow-admin-dashboard_tile-icon {
+    height: 37px;
+    weight: 37px;
+}

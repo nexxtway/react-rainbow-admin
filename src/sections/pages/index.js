@@ -4,7 +4,7 @@ import {
     CalendarIcon,
     FollowerIcon,
     OrderIcon,
-    UserIcon,
+    UsersIcon,
     TimelineIcon,
     GalleryIcon,
     PricingIcon,
@@ -13,7 +13,7 @@ import './styles.css';
 
 const pages = [
     { name: 'Order', icon: <OrderIcon /> },
-    { name: 'User', icon: <UserIcon /> },
+    { name: 'User', icon: <UsersIcon /> },
     { name: 'Followers', icon: <FollowerIcon /> },
     { name: 'timeline', icon: <TimelineIcon /> },
     { name: 'Gallery', icon: <GalleryIcon /> },

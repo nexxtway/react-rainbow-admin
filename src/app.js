@@ -1,41 +1,76 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import Application from 'react-rainbow-components/components/Application';
-import VerticalNavigation from 'react-rainbow-components/components/VerticalNavigation';
-import VerticalSection from 'react-rainbow-components/components/VerticalSection';
-import VerticalItem from 'react-rainbow-components/components/VerticalItem';
 import store from './redux/store';
 import Routes from './routes';
-import { navigateTo } from './history';
+import SectionHeading from './components/SectionHeading';
+import Sidebar from './components/Sidebar';
+import SidebarItem from './components/Sidebar/sidebarItem';
+import {
+    ApplicationIcon,
+    ChartsIcon,
+    DashboardIcon,
+    FormsIcon,
+    MessageIcon,
+    PagesIcon,
+    PuzzleIcon,
+} from './components/icons';
+import history, { navigateTo } from './history';
 
 const navStyles = {
     position: 'fixed',
-    width: 300,
+    width: 88,
+    paddingTop: 68,
+    backgroundColor: '#fff',
+    minHeight: '100vh',
+    marginTop: 24,
 };
 
 const routerContainer = {
-    paddingLeft: 300,
+    paddingLeft: 88,
+    paddingTop: 68,
 };
 
-export default function App() {
-    return (
-        <Provider store={store}>
-            <Application>
-                <VerticalNavigation style={navStyles}>
-                    <VerticalSection>
-                        <VerticalItem label="Dashboard" onClick={() => navigateTo('/dashboard')} />
-                        <VerticalItem label="Pages" onClick={() => navigateTo('/pages')} />
-                        <VerticalItem label="Applications" onClick={() => navigateTo('/applications')} />
-                        <VerticalItem label="Components" onClick={() => navigateTo('/components')} />
-                        <VerticalItem label="Forms" onClick={() => navigateTo('/forms')} />
-                        <VerticalItem label="Messages" onClick={() => navigateTo('/messages')} />
-                        <VerticalItem label="Charts" onClick={() => navigateTo('/charts')} />
-                    </VerticalSection>
-                </VerticalNavigation>
-                <div style={routerContainer}>
-                    <Routes />
-                </div>
-            </Application>
-        </Provider>
-    );
+function resolveCurrentUrl() {
+    return history.location.pathname.split('/')[1] || 'dashboard';
+}
+
+export default class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedItem: resolveCurrentUrl(),
+        };
+        this.handleOnSelect = this.handleOnSelect.bind(this);
+    }
+
+    handleOnSelect(e, selectedItem) {
+        return this.setState({ selectedItem });
+    }
+
+    render() {
+        const { selectedItem } = this.state;
+        return (
+            <Provider store={store}>
+                <Application>
+                    <SectionHeading />
+                    <Sidebar
+                        selectedItem={selectedItem}
+                        onSelect={this.handleOnSelect}
+                        style={navStyles}>
+                        <SidebarItem icon={<DashboardIcon />} name="dashboard" label="Dashboard" onClick={() => navigateTo('/dashboard')} />
+                        <SidebarItem icon={<PagesIcon />} name="pages" label="Pages" onClick={() => navigateTo('/pages')} />
+                        <SidebarItem icon={<ApplicationIcon />} name="applications" label="Applications" onClick={() => navigateTo('/applications')} />
+                        <SidebarItem icon={<PuzzleIcon />} name="components" label="Components" onClick={() => navigateTo('/components')} />
+                        <SidebarItem icon={<MessageIcon />} name="messages" label="Messages" onClick={() => navigateTo('/messages')} />
+                        <SidebarItem icon={<FormsIcon />} name="forms" label="Forms" onClick={() => navigateTo('/forms')} />
+                        <SidebarItem icon={<ChartsIcon />} name="charts" label="Charts" onClick={() => navigateTo('/charts')} />
+                    </Sidebar>
+                    <div style={routerContainer}>
+                        <Routes />
+                    </div>
+                </Application>
+            </Provider>
+        );
+    }
 }
