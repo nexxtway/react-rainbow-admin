@@ -13,9 +13,15 @@ import {
     faSearch,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { ShoppingCartWhiteIcon, MessagesBlueWhiteIcon } from '../../components/icons';
+import { ShoppingCartIcon, MessageIcon } from '../../components/icons';
 import Notification from './notification';
+import IconNotification from './iconNotification';
 import './styles.css';
+
+const iconStyles = {
+    height: 12,
+    width: 14,
+};
 
 export default function SectionHeading() {
     return (
@@ -43,18 +49,22 @@ export default function SectionHeading() {
                     icon={<FontAwesomeIcon icon={faBell} />}>
                     <MenuItem label="Notifications (2)" variant="header" />
                     <MenuItem
-                        icon={<ShoppingCartWhiteIcon />}
+                        icon={
+                            <IconNotification icon={<ShoppingCartIcon style={iconStyles} />} />
+                        }
                         label={(
                             <Notification
-                                notificationTitle="Your order is placed"
-                                notificationContent="Dummy text of the printing and typesetting industry" />
+                                title="Your order is placed"
+                                content="Dummy text of the printing and typesetting industry" />
                         )} />
                     <MenuItem
-                        icon={<MessagesBlueWhiteIcon />}
+                        icon={
+                            <IconNotification icon={<MessageIcon style={iconStyles} />} />
+                        }
                         label={(
                             <Notification
-                                notificationTitle="New messages"
-                                notificationContent="You have 5 unread messages" />
+                                title="New messages"
+                                content="You have 5 unread messages" />
                         )} />
                 </ButtonMenu>
                 <Avatar

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function Aplication(props) {
+export default function Application(props) {
     const {
         className,
         style,
@@ -23,11 +23,11 @@ export default function Aplication(props) {
     );
 }
 
-Aplication.propTypes = {
+Application.propTypes = {
     className: PropTypes.string,
     style: PropTypes.object,
 };
-Aplication.defaultProps = {
+Application.defaultProps = {
     className: undefined,
     style: undefined,
 };

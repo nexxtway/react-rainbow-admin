@@ -7,8 +7,8 @@ import './styles.css';
 export default function Message(props) {
     const {
         userName,
-        messageDate,
-        message,
+        date,
+        content,
         avatarSrc,
         avatarIcon,
         avatarTitle,
@@ -31,9 +31,9 @@ export default function Message(props) {
             <div className={getMessasgeContentContainerClassName()}>
                 <div className="rainbow-flex rainbow-align_center">
                     <h3 className="rainbow-color_brand rainbow-font-size-text_small rainbow-m-right_xx-small">{userName}</h3>
-                    <p className="rainbow-color_gray-3 rainbow-font-size-text_x-small">{`- ${messageDate}`}</p>
+                    <p className="rainbow-color_gray-3 rainbow-font-size-text_x-small">{`- ${date}`}</p>
                 </div>
-                <p className="rainbow-color_gray-3 rainbow-font-size-text_x-small rainbow-m-bottom_xx-small">{message}</p>
+                <p className="rainbow-color_gray-3 rainbow-font-size-text_x-small rainbow-m-bottom_xx-small">{content}</p>
             </div>
         </article>
     );
@@ -43,8 +43,8 @@ Message.propTypes = {
     avatarSrc: PropTypes.string,
     avatarIcon: PropTypes.node,
     userName: PropTypes.string,
-    messageDate: PropTypes.string,
-    message: PropTypes.string,
+    date: PropTypes.string,
+    content: PropTypes.string,
     avatarTitle: PropTypes.string,
     hasDivider: PropTypes.bool,
 };
@@ -53,8 +53,8 @@ Message.defaultProps = {
     avatarSrc: undefined,
     avatarIcon: undefined,
     userName: undefined,
-    messageDate: undefined,
-    message: undefined,
+    date: undefined,
+    content: undefined,
     avatarTitle: undefined,
     hasDivider: true,
 };

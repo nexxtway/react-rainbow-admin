@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import {
     ShoppingCartIcon,
-    UsersBorderIcon,
+    UsersIcon,
     LikeIcon,
     ErrorIcon,
     PersonIcon,
@@ -17,6 +17,11 @@ import Message from './message';
 import NewUser from './newUser';
 import Tile from './tile';
 import './styles.css';
+
+const usersIconStyles = {
+    height: 37,
+    width: 37,
+};
 
 export default function Dashboard() {
     return (
@@ -35,7 +40,7 @@ export default function Dashboard() {
                 <Tile
                     label="Users"
                     total="10011"
-                    icon={<UsersBorderIcon />} />
+                    icon={<UsersIcon style={usersIconStyles} />} />
 
                 <Tile
                     label="Fallowers"
@@ -107,36 +112,36 @@ export default function Dashboard() {
                     <Message
                         avatarSrc="assets/images/user2.jpg"
                         userName="Saray Pacheco"
-                        messageDate="8:30 am"
-                        message="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
+                        date="8:30 am"
+                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
                         avatarTitle="Saray Pacheco" />
 
                     <Message
                         avatarSrc="assets/images/user3.jpg"
                         userName="Reinier Guerra"
-                        messageDate="7:25 am"
-                        message="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
+                        date="7:25 am"
+                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
                         avatarTitle="Reinier Guerra" />
 
                     <Message
                         avatarSrc="assets/images/user1.jpg"
                         userName="Jose Leandro Torres"
-                        messageDate="yesterday"
-                        message="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
+                        date="yesterday"
+                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
                         avatarTitle="Jose Leandro Torres" />
 
                     <Message
                         avatarSrc="assets/images/user4.jpg"
                         userName="Tahimi León"
-                        messageDate="yesterday"
-                        message="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
+                        date="yesterday"
+                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
                         avatarTitle="Tahimi León" />
 
                     <Message
                         avatarIcon={<PersonIcon />}
                         userName="Carlos Miguel"
-                        messageDate="Monday"
-                        message="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
+                        date="Monday"
+                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
                         avatarTitle="Carlos Miguel"
                         hasDivider={false} />
 
@@ -162,7 +167,7 @@ export default function Dashboard() {
                         userName="Saray Pacheco"
                         city="San Francisco"
                         avatarTitle="Saray Pacheco"
-                        userDate="Now"
+                        date="Now"
                         isActive />
 
                     <NewUser
@@ -170,7 +175,7 @@ export default function Dashboard() {
                         userName="Jose Leandro Torres"
                         city="Guadalajara"
                         avatarTitle="Jose Leandro Torres"
-                        userDate="Now"
+                        date="Now"
                         isActive />
 
                     <NewUser
@@ -178,7 +183,7 @@ export default function Dashboard() {
                         userName="Reinier Guerra"
                         city="San Francisco"
                         avatarTitle="Reinier Guerra"
-                        userDate="10min ago"
+                        date="10min ago"
                         isActive={false} />
 
                     <NewUser
@@ -186,7 +191,7 @@ export default function Dashboard() {
                         userName="Tahimi León"
                         city="Guadalajara"
                         avatarTitle="Tahimi León"
-                        userDate="1hour ago"
+                        date="1hour ago"
                         isActive={false} />
 
                     <NewUser
@@ -194,7 +199,7 @@ export default function Dashboard() {
                         userName="Carlos Miguel"
                         city="La Habana"
                         avatarTitle="Carlos Miguel"
-                        userDate="yesterday"
+                        date="yesterday"
                         isActive={false}
                         hasDivider={false} />
 

@@ -7,7 +7,7 @@ import SectionHeading from './sections/SectionHeading';
 import Sidebar from './sections/Sidebar';
 import SidebarItem from './sections/Sidebar/sidebarItem';
 import {
-    AplicationIcon,
+    ApplicationIcon,
     ChartsIcon,
     DashboardIcon,
     FormsIcon,
@@ -15,7 +15,7 @@ import {
     PagesIcon,
     PuzzleIcon,
 } from './components/icons';
-import { navigateTo } from './history';
+import history, { navigateTo } from './history';
 
 const navStyles = {
     position: 'fixed',
@@ -32,10 +32,10 @@ const routerContainer = {
 };
 
 function resolveCurrentUrl() {
-    return window.location.href.split('/')[3] || 'dashboard';
+    return history.location.pathname.split('/')[1] || 'dashboard';
 }
 
-export default class ComponentsList extends Component {
+export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -60,7 +60,7 @@ export default class ComponentsList extends Component {
                         style={navStyles}>
                         <SidebarItem icon={<DashboardIcon />} name="dashboard" label="Dashboard" onClick={() => navigateTo('/dashboard')} />
                         <SidebarItem icon={<PagesIcon />} name="pages" label="Pages" onClick={() => navigateTo('/pages')} />
-                        <SidebarItem icon={<AplicationIcon />} name="applications" label="Applications" onClick={() => navigateTo('/applications')} />
+                        <SidebarItem icon={<ApplicationIcon />} name="applications" label="Applications" onClick={() => navigateTo('/applications')} />
                         <SidebarItem icon={<PuzzleIcon />} name="components" label="Components" onClick={() => navigateTo('/components')} />
                         <SidebarItem icon={<MessageIcon />} name="messages" label="Messages" onClick={() => navigateTo('/messages')} />
                         <SidebarItem icon={<FormsIcon />} name="forms" label="Forms" onClick={() => navigateTo('/forms')} />

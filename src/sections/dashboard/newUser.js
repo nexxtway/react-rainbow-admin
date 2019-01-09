@@ -12,7 +12,7 @@ export default function NewUser(props) {
         avatarIcon,
         avatarTitle,
         hasDivider,
-        userDate,
+        date,
         isActive,
     } = props;
 
@@ -39,7 +39,7 @@ export default function NewUser(props) {
                 </div>
                 <div className="rainbow-flex rainbow-flex_column rainbow-justify_center rainbow-align_end">
                     <div className={getUserActiveClassName()} />
-                    <p className="rainbow-color_gray-3 rainbow-font-size-text_small">{userDate}</p>
+                    <p className="rainbow-color_gray-3 rainbow-font-size-text_small">{date}</p>
                 </div>
             </div>
         </article>
@@ -52,7 +52,7 @@ NewUser.propTypes = {
     userName: PropTypes.string,
     city: PropTypes.string,
     avatarTitle: PropTypes.string,
-    userDate: PropTypes.string,
+    date: PropTypes.string,
     hasDivider: PropTypes.bool,
     isActive: PropTypes.bool,
 };
@@ -63,7 +63,7 @@ NewUser.defaultProps = {
     userName: undefined,
     city: undefined,
     avatarTitle: undefined,
-    userDate: undefined,
+    date: undefined,
     hasDivider: true,
     isActive: true,
 };
