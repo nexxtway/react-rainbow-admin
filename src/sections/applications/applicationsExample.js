@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ApplicationsCards from '../../components/ApplicationsCards';
+import PrismicApplicationCards from '../../components/PrismicApplicationCards';
 
 export default function ApplicationsExample({ response }) {
     if (response && Array.isArray(response.results) && response.results.length) {
-        return <ApplicationsCards results={response.results} />;
+        return <PrismicApplicationCards results={response.results} />;
     }
     return null;
 }

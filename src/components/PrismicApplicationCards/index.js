@@ -4,7 +4,7 @@ import Card from 'react-rainbow-components/components/Card';
 import GithubIcon from '../icons/Github';
 import './styles.css';
 
-export default function ApplicationsCards({ results }) {
+export default function PrismicApplicationCards({ results }) {
     return results.map(({ data, id }) => (
         <section key={id} className="react-rainbow-admin-applications-cards_container">
             <a
@@ -41,10 +41,10 @@ export default function ApplicationsCards({ results }) {
     ));
 }
 
-ApplicationsCards.propTypes = {
+PrismicApplicationCards.propTypes = {
     results: PropTypes.array,
 };
 
-ApplicationsCards.defaultProps = {
+PrismicApplicationCards.defaultProps = {
     results: [],
 };

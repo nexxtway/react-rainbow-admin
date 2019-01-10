@@ -9,7 +9,7 @@ import {
     GalleryIcon,
     PricingIcon,
 } from '../../components/icons';
-import HeaderPages from '../../components/HeaderPages';
+import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
 const pages = [
@@ -36,7 +36,7 @@ function Cards() {
 export default function Pages() {
     return (
         <div className="react-rainbow-admin-pages_container">
-            <HeaderPages
+            <PageHeader
                 title="Pages"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
             <div className="react-rainbow-admin-pages_body">

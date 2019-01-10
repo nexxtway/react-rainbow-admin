@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
 
-export default function TitlePage(props) {
+export default function PageHeader(props) {
     const {
         title,
         description,
@@ -17,13 +17,13 @@ export default function TitlePage(props) {
     );
 }
 
-TitlePage.propTypes = {
+PageHeader.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     className: PropTypes.string,
 };
 
-TitlePage.defaultProps = {
+PageHeader.defaultProps = {
     title: undefined,
     description: undefined,
     className: undefined,
