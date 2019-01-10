@@ -38,7 +38,7 @@ export default function Dashboard() {
                     icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
 
                 <Tile
-                    label="Fallowers"
+                    label="Followers"
                     total="+50K"
                     icon={<LikeIcon />} />
 
