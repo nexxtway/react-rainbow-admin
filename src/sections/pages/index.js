@@ -23,15 +23,18 @@ const pages = [
 ];
 
 function Cards() {
-    return pages.map(page => (
-        <a className="react-rainbow-admin-pages_anchor" href="/#">
-            <Card className="react-rainbow-admin-pages_card" footer={page.name}>
-                <span className="react-rainbow-admin-pages_card-image">
-                    {page.icon}
-                </span>
-            </Card>
-        </a>
-    ));
+    return pages.map((page, index) => {
+        const key = `card-${index}`;
+        return (
+            <a key={key} className="react-rainbow-admin-pages_anchor" href="/#">
+                <Card className="react-rainbow-admin-pages_card" footer={page.name}>
+                    <span className="react-rainbow-admin-pages_card-image">
+                        {page.icon}
+                    </span>
+                </Card>
+            </a>
+        );
+    });
 }
 export default function Pages() {
     return (
