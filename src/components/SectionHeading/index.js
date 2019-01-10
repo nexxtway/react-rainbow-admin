@@ -25,6 +25,8 @@ export default function SectionHeading() {
             <Input
                 className="rainbow-m-left_xx-large react-rainbow-admin_header-search"
                 placeholder="search"
+                label="header search"
+                hideLabel
                 icon={<FontAwesomeIcon icon={faSearch} className="rainbow-color_gray-2" />} />
             <section className="rainbow-flex rainbow-align_center react-rainbow-admin_header-actions">
                 <ButtonGroup>

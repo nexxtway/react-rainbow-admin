@@ -9,6 +9,7 @@ import {
     GalleryIcon,
     PricingIcon,
 } from '../../components/icons';
+import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
 const pages = [
@@ -22,21 +23,25 @@ const pages = [
 ];
 
 function Cards() {
-    return pages.map(page => (
-        <a className="react-rainbow-admin-pages_anchor" href="/#">
-            <Card className="react-rainbow-admin-pages_card" footer={page.name}>
-                <span className="react-rainbow-admin-pages_card-image">
-                    {page.icon}
-                </span>
-            </Card>
-        </a>
-    ));
+    return pages.map((page, index) => {
+        const key = `card-${index}`;
+        return (
+            <a key={key} className="react-rainbow-admin-pages_anchor" href="/#">
+                <Card className="react-rainbow-admin-pages_card" footer={page.name}>
+                    <span className="react-rainbow-admin-pages_card-image">
+                        {page.icon}
+                    </span>
+                </Card>
+            </a>
+        );
+    });
 }
 export default function Pages() {
     return (
         <div className="react-rainbow-admin-pages_container">
-            <h1 className="react-rainbow-admin-pages_title">Pages</h1>
-            <p className="react-rainbow-admin-pages_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <PageHeader
+                title="Pages"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
             <div className="react-rainbow-admin-pages_body">
                 <Cards />
             </div>

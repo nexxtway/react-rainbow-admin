@@ -1,0 +1,14 @@
+.react-rainbow-admin-applications_view-port {
+    min-height: calc(100vh - 68px);
+    padding: 16px 24px 24px 24px;
+}
+
+.react-rainbow-admin-applications_header-page {
+    padding: 0px 16px 0px 16px;
+}
+
+.react-rainbow-admin-applications_container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}

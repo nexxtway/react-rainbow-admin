@@ -17,6 +17,7 @@ import GalleryIcon from './Gallery';
 import OrderIcon from './Order';
 import PricingIcon from './Pricing';
 import TimelineIcon from './Timeline';
+import GithubIcon from './Github';
 
 export {
     ApplicationIcon,
@@ -37,4 +38,5 @@ export {
     OrderIcon,
     PricingIcon,
     TimelineIcon,
+    GithubIcon,
 };

@@ -4,17 +4,6 @@
     padding: 16px 40px;
 }
 
-.react-rainbow-admin-pages_title {
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    color: #061c3f;
-}
-
-.react-rainbow-admin-pages_description {
-    font-size: 12px;
-    color: #a4a7b5;
-}
-
 .react-rainbow-admin-pages_body {
     display: flex;
     flex-wrap: wrap;

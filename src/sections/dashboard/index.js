@@ -16,17 +16,17 @@ import {
 import Message from './message';
 import NewUser from './newUser';
 import Tile from './tile';
+import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
 export default function Dashboard() {
     return (
         <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
-            <section>
-                <h1 className="react-rainbow-admin-dashboard_header-title rainbow-font-size-heading_small rainbow-color_dark-1">Dashboard</h1>
-                <p className="rainbow-font-size-text_small rainbow-p-top_xx-small rainbow-color_gray-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </section>
+            <PageHeader
+                title="Dashboard"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
 
-            <section className="rainbow-align-content_space-between rainbow-p-top_large">
+            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
                 <Tile
                     label="Orders"
                     total="1003"
@@ -38,7 +38,7 @@ export default function Dashboard() {
                     icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
 
                 <Tile
-                    label="Fallowers"
+                    label="Followers"
                     total="+50K"
                     icon={<LikeIcon />} />
 
@@ -48,7 +48,7 @@ export default function Dashboard() {
                     icon={<ErrorIcon />} />
             </section>
 
-            <section className="rainbow-align-content_space-between rainbow-p-top_large">
+            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
                 <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
                     <div className="rainbow-flex rainbow-justify_spread">
                         <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">$20058</h1>
@@ -99,7 +99,7 @@ export default function Dashboard() {
                 </Card>
             </section>
 
-            <section className="rainbow-align-content_space-between rainbow-p-top_large">
+            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
                 <Card className="react-rainbow-admin-dashboard_card rainbow-p-top_medium rainbow-p-bottom_small rainbow-p-horizontal_small">
                     <h1 className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-p-bottom_medium">
                         Last Messages
