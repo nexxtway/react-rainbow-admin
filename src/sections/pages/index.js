@@ -9,6 +9,7 @@ import {
     GalleryIcon,
     PricingIcon,
 } from '../../components/icons';
+import HeaderPages from '../../components/HeaderPages';
 import './styles.css';
 
 const pages = [
@@ -35,8 +36,9 @@ function Cards() {
 export default function Pages() {
     return (
         <div className="react-rainbow-admin-pages_container">
-            <h1 className="react-rainbow-admin-pages_title">Pages</h1>
-            <p className="react-rainbow-admin-pages_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <HeaderPages
+                title="Pages"
+                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
             <div className="react-rainbow-admin-pages_body">
                 <Cards />
             </div>

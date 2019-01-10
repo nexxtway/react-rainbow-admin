@@ -17,6 +17,7 @@
     "history": "^4.7.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-prismic-cms": "^0.3.0",
     "react-rainbow-components": "^0.8.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",

@@ -20,10 +20,9 @@ import history, { navigateTo } from './history';
 const navStyles = {
     position: 'fixed',
     width: 88,
-    paddingTop: 68,
+    paddingTop: 92,
     backgroundColor: '#fff',
     minHeight: '100vh',
-    marginTop: 24,
 };
 
 const routerContainer = {
