@@ -126,8 +126,8 @@ export default function Charts() {
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['Coding', 'Drinking', 'Sleeping', 'Reading', 'Runnig', 'Learning', 'Designing']} legendPosition="right" type="radar">
-                        <Dataset key="Yellow" title="Yellow" values={[300, 50, 200, 250, 100, 220, 100]}  backgroundColor="rgba(255, 214, 51, 0.44)" fill />
-                        <Dataset key="Red" title="Blue" values={[220, 150, 100, 200, 150, 300, 250]} borderColor="#01b6f5" backgroundColor="rgba(1,182,245,0.55)" fill/>
+                        <Dataset key="Yellow" title="Yellow" values={[300, 50, 200, 250, 100, 220, 100]} backgroundColor="rgba(255, 214, 51, 0.44)" fill />
+                        <Dataset key="Red" title="Blue" values={[220, 150, 100, 200, 150, 300, 250]} borderColor="#01b6f5" backgroundColor="rgba(1,182,245,0.55)" fill />
                     </Chart>
                 </Card>
                 <Card className="react-rainbow-admin-charts_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
