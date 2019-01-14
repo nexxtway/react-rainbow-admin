@@ -13,6 +13,7 @@ import Dashboard from './sections/dashboard';
 import Forms from './sections/forms';
 import Messages from './sections/messages';
 import Pages from './sections/pages';
+import Users from './sections/pages/users';
 
 export default function Routes() {
     return (
@@ -26,6 +27,7 @@ export default function Routes() {
                 <Route path="/forms" component={Forms} />
                 <Route path="/messages" component={Messages} />
                 <Route path="/pages" component={Pages} />
+                <Route path="/users" component={Users} />
             </Switch>
         </Router>
     );

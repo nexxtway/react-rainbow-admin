@@ -13,20 +13,20 @@ import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
 const pages = [
-    { name: 'Order', icon: <OrderIcon /> },
-    { name: 'User', icon: <UsersIcon /> },
-    { name: 'Followers', icon: <FollowerIcon /> },
-    { name: 'timeline', icon: <TimelineIcon /> },
-    { name: 'Gallery', icon: <GalleryIcon /> },
-    { name: 'Calendar', icon: <CalendarIcon /> },
-    { name: 'Pricing', icon: <PricingIcon /> },
+    { name: 'Order', icon: <OrderIcon />, href: 'orders' },
+    { name: 'Users', icon: <UsersIcon />, href: 'users' },
+    { name: 'Followers', icon: <FollowerIcon />, href: 'followers' },
+    { name: 'Timeline', icon: <TimelineIcon />, href: 'timeline' },
+    { name: 'Gallery', icon: <GalleryIcon />, href: 'gallery' },
+    { name: 'Calendar', icon: <CalendarIcon />, href: 'calendar' },
+    { name: 'Pricing', icon: <PricingIcon />, href: 'pricing' },
 ];
 
 function Cards() {
     return pages.map((page, index) => {
         const key = `card-${index}`;
         return (
-            <a key={key} className="react-rainbow-admin-pages_anchor" href="/#">
+            <a key={key} className="react-rainbow-admin-pages_anchor" href={page.href}>
                 <Card className="react-rainbow-admin-pages_card" footer={page.name}>
                     <span className="react-rainbow-admin-pages_card-image">
                         {page.icon}

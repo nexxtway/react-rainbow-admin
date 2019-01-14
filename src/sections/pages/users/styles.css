@@ -1,0 +1,75 @@
+.react-rainbow-admin-users_container {
+    background-color: #f4f6f9;
+    padding: 16px 40px;
+}
+
+.react-rainbow-admin-users_header {
+    margin-top: 14px;
+}
+
+.react-rainbow-admin-users_chart {
+    width: 390px;
+    margin: auto;
+}
+
+.react-rainbow-admin-users_cards {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.react-rainbow-admin-users_card {
+    width: 500px;
+    height: 260px;
+}
+
+.react-rainbow-admin-users_tab-set {
+    padding-left: 40px;
+    background-color: #f4f6f9;
+}
+
+.react-rainbow-admin-users_tab-content {
+    padding-top: 24px;
+    background-color: white;
+}
+
+.react-rainbow-admin-users_current-status {
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-users_current-status_value {
+    margin-left: 8px;
+}
+
+.react-rainbow-admin-users_user {
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-users_user-name {
+    margin-left: 8px;
+}
+
+.react-rainbow-admin-users_table-edit-icon {
+    border: 1px solid #e3e5ed;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.react-rainbow-admin-users_badge {
+    background-color: #1de9b6;
+}
+
+.rainbow-table_header:first-of-type .rainbow-table_header-content-wrapper {
+    padding-left: 40px;
+}
+
+.rainbow-table_cell:first-of-type{
+    padding-left: 40px;
+}
