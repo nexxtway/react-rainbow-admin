@@ -27,12 +27,23 @@
 .react-rainbow-admin-chart_button {
     line-height: 1.8rem;
 }
+.react-rainbow-admin-charts_chart-title {
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
 
 @media (max-width: 800px){
+.react-rainbow-admin-charts_container {
+    padding: 16px 16px;
+}
 .react-rainbow-admin-charts_section {
     flex-direction: column;
 }
+.react-rainbow-admin-charts_card:not(:last-child){
+    margin: 0 0 24px 0;
+}
 .react-rainbow-admin-charts_header {
     flex-direction: column;
+    align-items: center;
 }
 }

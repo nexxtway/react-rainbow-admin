@@ -30,7 +30,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['January', 'February', 'March', 'April', 'May', 'June']} type="line">
@@ -51,7 +51,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['January', 'February', 'March', 'April', 'May', 'June']} type="line" disableCurves>
@@ -74,7 +74,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['January', 'February', 'March', 'April', 'May', 'June']} type="bar">
@@ -98,7 +98,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['January', 'February', 'March', 'April', 'May']} type="horizontalBar">
@@ -122,7 +122,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['Coding', 'Drinking', 'Sleeping', 'Reading', 'Runnig', 'Learning', 'Designing']} legendPosition="right" type="radar">
@@ -144,7 +144,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['Yellow', 'Blue', 'Green', 'Red', 'Orange']} type="polarArea" legendPosition="right">
@@ -167,11 +167,11 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['Yellow', 'Green', 'Red', 'Orange']} type="pie" legendPosition="right">
-                        <Dataset key="Red" title="Red" values={[65, 110, 35, 80]} backgroundColor={['#ffcc00', '#1ad1a3', '#fe4849', '#ff6837']} />
+                        <Dataset key="Red" title="Red" values={[80, 145, 45, 90]} backgroundColor={['#ffcc00', '#1ad1a3', '#fe4849', '#ff6837']} />
                     </Chart>
                 </Card>
                 <Card className="react-rainbow-admin-charts_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
@@ -188,7 +188,7 @@ export default function Charts() {
                             </Button>
                         </ButtonGroup>
                     </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                    <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         COLORS USE
                     </p>
                     <Chart className="react-rainbow-admin-charts_card rainbow-p-top_x-small" labels={['Yellow', 'Green', 'Red', 'Orange']} type="doughnut" legendPosition="right">
