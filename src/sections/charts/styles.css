@@ -2,7 +2,9 @@
     min-height: 100vh;
     padding: 16px 40px;
 }
-
+.react-rainbow-admin-charts_section {
+    align-items: stretch;
+}
 .react-rainbow-admin-charts_card {
     width: 100%;
     flex-wrap: wrap;
