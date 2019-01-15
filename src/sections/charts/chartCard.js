@@ -49,7 +49,6 @@ export default function ChartCard(props) {
             </Chart>
         </Card>
     );
-
 }
 
 ChartCard.propTypes = {
