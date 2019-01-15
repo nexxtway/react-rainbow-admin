@@ -1,0 +1,51 @@
+.react-rainbow-admin-charts_container {
+    min-height: 100vh;
+    padding: 16px 40px;
+}
+.react-rainbow-admin-charts_section {
+    align-items: stretch;
+}
+.react-rainbow-admin-charts_card {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-charts_card:not(:last-child){
+    margin-right: 24px;
+}
+.react-rainbow-admin-charts_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 15px;
+    padding: 0 16px 0 16px;
+}
+
+.react-rainbow-admin-charts_header h2 {
+    color:#576574;
+    font-size: 1.25rem;
+}
+
+.react-rainbow-admin-chart_button {
+    line-height: 1.8rem;
+}
+.react-rainbow-admin-charts_chart-title {
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+}
+
+@media (max-width: 800px){
+    .react-rainbow-admin-charts_container {
+        padding: 16px 16px;
+    }
+    .react-rainbow-admin-charts_section {
+        flex-direction: column;
+    }
+    .react-rainbow-admin-charts_card:not(:last-child){
+        margin: 0 0 24px 0;
+    }
+    .react-rainbow-admin-charts_header {
+        flex-direction: column;
+        align-items: center;
+    }
+}
