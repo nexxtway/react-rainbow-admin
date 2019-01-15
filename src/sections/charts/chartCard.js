@@ -24,11 +24,11 @@ export default function ChartCard(props) {
             <div className="react-rainbow-admin-charts_header">
                 <h2 className="rainbow-p-bottom_medium">{title}</h2>
                 <ButtonGroup>
-                    <Button onClick={() => onAddDataSet()} variant="neutral" className="react-rainbow-admin-chart_button">
+                    <Button onClick={onAddDataSet} variant="neutral" className="react-rainbow-admin-chart_button">
                         <FontAwesomeIcon icon={faPlus} className="rainbow-m-right_small" />
                         Color
                     </Button>
-                    <Button onClick={() => onRemoveDataSet()} variant="neutral" className="react-rainbow-admin-chart_button">
+                    <Button onClick={onRemoveDataSet} variant="neutral" className="react-rainbow-admin-chart_button">
                         <FontAwesomeIcon icon={faMinus} className="rainbow-m-right_small" />
                         Color
                     </Button>
