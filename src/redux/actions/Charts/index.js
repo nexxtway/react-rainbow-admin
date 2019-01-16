@@ -1,4 +1,4 @@
-import { resolveChartsData } from '../../services/Charts';
+import { resolveChartsData } from '../../services/charts';
 
 export const LOADING_CHARTS_DATA = 'LOADING_CHARTS_DATA';
 export const LOAD_CHARTS_DATA = 'LOAD_CHARTS_DATA';

@@ -7,7 +7,7 @@ import Spinner from 'react-rainbow-components/components/Spinner';
 import PageHeader from '../../components/PageHeader';
 import ChartCard from './chartCard';
 import './styles.css';
-import { fetchChartsData } from '../../redux/actions/Charts';
+import { fetchChartsData } from '../../redux/actions/charts';
 
 class Charts extends Component {
     componentWillMount() {
@@ -17,6 +17,7 @@ class Charts extends Component {
 
     render() {
         const { isLoading, data } = this.props;
+        console.log(data.lineCharts.type);
         if (isLoading) {
             return (
                 <div className="react-rainbow-admin-charts_container rainbow-background-color_gray-1">
@@ -32,8 +33,8 @@ class Charts extends Component {
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. You can learn more about it here: https://www.chartjs.org" />
                 <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                     <ChartCard
-                        title="Line Charts"
-                        chartLabels={['January', 'February', 'March', 'April', 'May', 'June']}
+                        title={data.lineCharts.title}
+                        chartLabels={data.lineCharts.labels}
                         chartType="line">
                         <Dataset
                             title="Blue"

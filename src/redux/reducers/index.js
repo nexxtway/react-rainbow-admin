@@ -1,4 +1,4 @@
-import charts from './Charts';
+import charts from './charts';
 
 export default {
     charts,
