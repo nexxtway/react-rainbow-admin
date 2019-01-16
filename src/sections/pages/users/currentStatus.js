@@ -3,11 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function CurrentStatus(props) {
-    const {
-        value,
-    } = props;
-
+export default function CurrentStatus({ value }) {
     function getColor() {
         if (value === 'ONLINE') {
             return '#1de9b6';

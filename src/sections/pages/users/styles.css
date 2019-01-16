@@ -65,11 +65,3 @@
 .react-rainbow-admin-users_badge {
     background-color: #1de9b6;
 }
-
-.rainbow-table_header:first-of-type .rainbow-table_header-content-wrapper {
-    padding-left: 40px;
-}
-
-.rainbow-table_cell:first-of-type{
-    padding-left: 40px;
-}
