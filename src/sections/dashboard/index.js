@@ -1,5 +1,8 @@
 /* eslint-disable no-script-url, jsx-a11y/anchor-is-valid */
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import Card from 'react-rainbow-components/components/Card';
 import Badge from 'react-rainbow-components/components/Badge';
 import Chart from 'react-rainbow-components/components/Chart';
@@ -11,207 +14,170 @@ import {
     UsersIcon,
     LikeIcon,
     ErrorIcon,
-    PersonIcon,
 } from '../../components/icons';
-import Message from './message';
-import NewUser from './newUser';
 import Tile from './tile';
+import LastMessagesList from './lastMessagesList';
+import NewUsersList from './newUsersList';
 import PageHeader from '../../components/PageHeader';
+import { fetchDashboardData } from '../../redux/actions/Dashboard';
 import './styles.css';
 
-export default function Dashboard() {
-    return (
-        <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
-            <PageHeader
-                title="Dashboard"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
+export class Dashboard extends Component {
+    componentDidMount() {
+        const { fetchDashboardData } = this.props;
+        fetchDashboardData();
+    }
 
-            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
-                <Tile
-                    label="Orders"
-                    total="1003"
-                    icon={<ShoppingCartIcon />} />
+    render() {
+        const {
+            totals,
+            chartsData,
+            lastMessages,
+            newUsers,
+        } = this.props;
 
-                <Tile
-                    label="Users"
-                    total="10011"
-                    icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
+        return (
+            <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
+                <PageHeader
+                    title="Dashboard"
+                    description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
 
-                <Tile
-                    label="Followers"
-                    total="+50K"
-                    icon={<LikeIcon />} />
+                <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
+                    <Tile
+                        label="Orders"
+                        total={totals.orders}
+                        icon={<ShoppingCartIcon />} />
 
-                <Tile
-                    label="Errors"
-                    total="1"
-                    icon={<ErrorIcon />} />
-            </section>
+                    <Tile
+                        label="Users"
+                        total={totals.users}
+                        icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
 
-            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
-                <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">$20058</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--success">
-                            <FontAwesomeIcon icon={faArrowUp} pull="left" />
+                    <Tile
+                        label="Followers"
+                        total={totals.fallowers}
+                        icon={<LikeIcon />} />
+
+                    <Tile
+                        label="Errors"
+                        total={totals.errors}
+                        icon={<ErrorIcon />} />
+                </section>
+
+                <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
+                    <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
+                        <div className="rainbow-flex rainbow-justify_spread">
+                            <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{totals.successfulyOrdersAmount}</h1>
+                            <Badge className="react-rainbow-admin-dashboard_badge--success">
+                                <FontAwesomeIcon icon={faArrowUp} pull="left" />
                             20.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                            </Badge>
+                        </div>
+                        <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         Total successfuly orders
-                    </p>
-                    <Chart className="rainbow-p-top_x-small" showLegend={false} labels={['January', 'February', 'March', 'April', 'May']} type="line">
-                        <Dataset values={[23, 45, 123, 56, 100]} backgroundColor="#1de9b6" borderColor="#1de9b6" />
-                    </Chart>
-                </Card>
+                        </p>
+                        <Chart className="rainbow-p-top_x-small" showLegend={false} labels={chartsData.successfulyOrders.labels} type="line">
+                            <Dataset values={chartsData.successfulyOrders.value} backgroundColor="#1de9b6" borderColor="#1de9b6" />
+                        </Chart>
+                    </Card>
 
-                <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">+140K</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--error">
-                            <FontAwesomeIcon icon={faArrowDown} pull="left" />
+                    <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
+                        <div className="rainbow-flex rainbow-justify_spread">
+                            <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{totals.totalUsers}</h1>
+                            <Badge className="react-rainbow-admin-dashboard_badge--error">
+                                <FontAwesomeIcon icon={faArrowDown} pull="left" />
                             32.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                            </Badge>
+                        </div>
+                        <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         Total users
-                    </p>
-                    <Chart className="rainbow-p-top_x-small" showLegend={false} labels={['January', 'February', 'March', 'April', 'May']} type="line">
-                        <Dataset values={[250, 45, 900, 500, 630]} backgroundColor="#01b6f5" borderColor="#01b6f5" />
-                    </Chart>
-                </Card>
+                        </p>
+                        <Chart className="rainbow-p-top_x-small" showLegend={false} labels={chartsData.totalUsers.labels} type="line">
+                            <Dataset values={chartsData.totalUsers.value} backgroundColor="#01b6f5" borderColor="#01b6f5" />
+                        </Chart>
+                    </Card>
 
-                <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">+20K</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--success">
-                            <FontAwesomeIcon icon={faArrowUp} pull="left" />
+                    <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
+                        <div className="rainbow-flex rainbow-justify_spread">
+                            <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{totals.fallowersActive}</h1>
+                            <Badge className="react-rainbow-admin-dashboard_badge--success">
+                                <FontAwesomeIcon icon={faArrowUp} pull="left" />
                             20.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
+                            </Badge>
+                        </div>
+                        <p className="react-rainbow-admin-dashboard_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                         Total followers active
-                    </p>
-                    <Chart className="rainbow-p-top_x-small" labels={['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']} type="line">
-                        <Dataset title="Google" values={[350, 90, 410, 900, 600, 620, 700]} backgroundColor="#fe4849" borderColor="#fe4849" />
-                        <Dataset title="Facebook" values={[90, 350, 349, 190, 380, 350, 300]} backgroundColor="#3c5997" borderColor="#3c5997" />
-                    </Chart>
-                </Card>
-            </section>
+                        </p>
+                        <Chart className="rainbow-p-top_x-small" labels={chartsData.fallowersActive.labels} type="line">
+                            <Dataset title="Google" values={chartsData.fallowersActive.googleValue} backgroundColor="#fe4849" borderColor="#fe4849" />
+                            <Dataset title="Facebook" values={chartsData.fallowersActive.facebookValue} backgroundColor="#3c5997" borderColor="#3c5997" />
+                        </Chart>
+                    </Card>
+                </section>
 
-            <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
-                <Card className="react-rainbow-admin-dashboard_card rainbow-p-top_medium rainbow-p-bottom_small rainbow-p-horizontal_small">
-                    <h1 className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-p-bottom_medium">
+                <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
+                    <Card className="react-rainbow-admin-dashboard_card rainbow-p-top_medium rainbow-p-bottom_small rainbow-p-horizontal_small">
+                        <h1 className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-p-bottom_medium">
                         Last Messages
-                    </h1>
-                    <Message
-                        avatarSrc="assets/images/user2.jpg"
-                        userName="Saray Pacheco"
-                        date="8:30 am"
-                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
-                        avatarTitle="Saray Pacheco" />
+                        </h1>
 
-                    <Message
-                        avatarSrc="assets/images/user3.jpg"
-                        userName="Reinier Guerra"
-                        date="7:25 am"
-                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
-                        avatarTitle="Reinier Guerra" />
+                        <LastMessagesList lastMessages={lastMessages} />
 
-                    <Message
-                        avatarSrc="assets/images/user1.jpg"
-                        userName="Jose Leandro Torres"
-                        date="yesterday"
-                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
-                        avatarTitle="Jose Leandro Torres" />
+                        <div className="react-rainbow-admin-dashboard_card-message--divider" />
 
-                    <Message
-                        avatarSrc="assets/images/user4.jpg"
-                        userName="Tahimi León"
-                        date="yesterday"
-                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
-                        avatarTitle="Tahimi León" />
-
-                    <Message
-                        avatarIcon={<PersonIcon />}
-                        userName="Carlos Miguel"
-                        date="Monday"
-                        content="A rainbow is a meteorological phenomenon that is caused by reflection, refraction and dispersion of light in water droplets resulting in a spectrum …"
-                        avatarTitle="Carlos Miguel"
-                        hasDivider={false} />
-
-                    <div className="react-rainbow-admin-dashboard_card-message--divider" />
-
-                    <div className="rainbow-p-top_small rainbow-align-content_center">
-                        <a
-                            className="react-rainbow-admin-dashboard_card-message--footer-link rainbow-color_brand"
-                            href="javascript:void(0);"
-                            target="_blank"
-                            rel="noopener noreferrer">
+                        <div className="rainbow-p-top_small rainbow-align-content_center">
+                            <a
+                                className="react-rainbow-admin-dashboard_card-message--footer-link rainbow-color_brand"
+                                href="javascript:void(0);"
+                                target="_blank"
+                                rel="noopener noreferrer">
                             View all messages
-                        </a>
-                    </div>
-                </Card>
+                            </a>
+                        </div>
+                    </Card>
 
-                <Card className="react-rainbow-admin-dashboard_card rainbow-p-top_medium rainbow-p-bottom_small rainbow-p-horizontal_small">
-                    <h1 className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-p-bottom_medium">
+                    <Card className="react-rainbow-admin-dashboard_card rainbow-p-top_medium rainbow-p-bottom_small rainbow-p-horizontal_small">
+                        <h1 className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-p-bottom_medium">
                         New Users
-                    </h1>
-                    <NewUser
-                        avatarSrc="assets/images/user2.jpg"
-                        userName="Saray Pacheco"
-                        city="San Francisco"
-                        avatarTitle="Saray Pacheco"
-                        date="Now"
-                        isActive />
+                        </h1>
 
-                    <NewUser
-                        avatarSrc="assets/images/user1.jpg"
-                        userName="Jose Leandro Torres"
-                        city="Guadalajara"
-                        avatarTitle="Jose Leandro Torres"
-                        date="Now"
-                        isActive />
+                        <NewUsersList newUsers={newUsers} />
 
-                    <NewUser
-                        avatarSrc="assets/images/user3.jpg"
-                        userName="Reinier Guerra"
-                        city="San Francisco"
-                        avatarTitle="Reinier Guerra"
-                        date="10min ago"
-                        isActive={false} />
+                        <div className="react-rainbow-admin-dashboard_card-message--divider" />
 
-                    <NewUser
-                        avatarSrc="assets/images/user4.jpg"
-                        userName="Tahimi León"
-                        city="Guadalajara"
-                        avatarTitle="Tahimi León"
-                        date="1hour ago"
-                        isActive={false} />
-
-                    <NewUser
-                        avatarIcon={<PersonIcon />}
-                        userName="Carlos Miguel"
-                        city="La Habana"
-                        avatarTitle="Carlos Miguel"
-                        date="yesterday"
-                        isActive={false}
-                        hasDivider={false} />
-
-                    <div className="react-rainbow-admin-dashboard_card-message--divider" />
-
-                    <div className="rainbow-p-top_small rainbow-align-content_center">
-                        <a
-                            className="react-rainbow-admin-dashboard_card-message--footer-link rainbow-color_brand"
-                            href="javascript:void(0);"
-                            target="_blank"
-                            rel="noopener noreferrer">
+                        <div className="rainbow-p-top_small rainbow-align-content_center">
+                            <a
+                                className="react-rainbow-admin-dashboard_card-message--footer-link rainbow-color_brand"
+                                href="javascript:void(0);"
+                                target="_blank"
+                                rel="noopener noreferrer">
                             View all messages
-                        </a>
-                    </div>
-                </Card>
-            </section>
+                            </a>
+                        </div>
+                    </Card>
+                </section>
 
-        </div>
-    );
+            </div>
+        );
+    }
 }
+
+Dashboard.propTypes = {
+    fetchDashboardData: PropTypes.func.isRequired,
+    totals: PropTypes.object.isRequired,
+    chartsData: PropTypes.object.isRequired,
+    lastMessages: PropTypes.array.isRequired,
+    newUsers: PropTypes.array.isRequired,
+};
+
+function stateToProps(state) {
+    return state.dashboard;
+}
+
+function dispatchToProps(dispatch) {
+    return bindActionCreators({
+        fetchDashboardData,
+    }, dispatch);
+}
+
+export default connect(stateToProps, dispatchToProps)(Dashboard);

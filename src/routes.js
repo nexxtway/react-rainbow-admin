@@ -9,7 +9,7 @@ import history from './history';
 import Applications from './sections/applications';
 import Charts from './sections/charts';
 import Components from './sections/components';
-import Dashboard from './sections/dashboard';
+import DashboardPage from './sections/dashboard';
 import Forms from './sections/forms';
 import Messages from './sections/messages';
 import Pages from './sections/pages';
@@ -22,7 +22,7 @@ export default function Routes() {
                 <Route path="/applications" component={Applications} />
                 <Route path="/charts" component={Charts} />
                 <Route path="/components" component={Components} />
-                <Route path="/dashboard" component={Dashboard} />
+                <Route path="/dashboard" component={DashboardPage} />
                 <Route path="/forms" component={Forms} />
                 <Route path="/messages" component={Messages} />
                 <Route path="/pages" component={Pages} />

@@ -21,7 +21,7 @@ export default function NewUser(props) {
     });
 
     const getUserActiveClassName = () => classnames('react-rainbow-admin-dashboard_card-users--user-active', {
-        'react-rainbow-admin-dashboard_card-users--user-inactive': isActive,
+        'react-rainbow-admin-dashboard_card-users--user-inactive': !isActive,
     });
 
     return (
