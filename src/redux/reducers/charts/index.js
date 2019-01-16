@@ -1,124 +1,124 @@
-import { LOADING_CHARTS_DATA, LOAD_CHARTS_DATA } from '../../actions/Charts';
+import { LOADING_CHARTS_DATA, LOAD_CHARTS_DATA } from '../../actions/charts';
 
 const initialState = Object.assign({
-    data: { 
-lineCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        dataSet: [{
+    data: {
+        lineCharts: {
             title: '',
-            values: [],
-            borderColor: '',
-            backgroundColor: '',
             type: '',
-        }],
-    },
-    areaCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        disableCurves: true,
-        dataSet: [{
+            labels: [],
+            dataSet: [{
+                title: '',
+                values: [],
+                borderColor: '',
+                backgroundColor: '',
+                type: '',
+            }],
+        },
+        areaCharts: {
             title: '',
-            values: [],
-            borderColor: '',
-            backgroundColor: '',
             type: '',
-            fill: true,
-        }],
-    },
-    barCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        dataSet: [{
-            title: '',
-            values: [],
-            backgroundColor: '',
+            labels: [],
+            disableCurves: true,
+            dataSet: [{
+                title: '',
+                values: [],
+                borderColor: '',
+                backgroundColor: '',
+                type: '',
+                fill: true,
+            }],
         },
-        {
+        barCharts: {
             title: '',
-            values: [],
-            backgroundColor: '',
+            type: '',
+            labels: [],
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: '',
+            },
+            {
+                title: '',
+                values: [],
+                backgroundColor: '',
+            },
+            {
+                title: '',
+                values: [],
+                backgroundColor: '',
+            },
+            {
+                title: '',
+                values: [],
+                backgroundColor: '',
+            }],
         },
-        {
+        horizontalBarCharts: {
             title: '',
-            values: [],
-            backgroundColor: '',
+            type: '',
+            labels: [],
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: '',
+            },
+            {
+                title: '',
+                values: [],
+                backgroundColor: '',
+            }],
         },
-        {
+        radarCharts: {
             title: '',
-            values: [],
-            backgroundColor: '',
-        }],
-    },
-    horizontalBarCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        dataSet: [{
-            title: '',
-            values: [],
-            backgroundColor: '',
+            type: '',
+            labels: [],
+            legendPosition: '',
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: '',
+                fill: true,
+            },
+            {
+                title: '',
+                values: [],
+                borderColor: '',
+                backgroundColor: '',
+                fill: true,
+            }],
         },
-        {
+        polarAreaCharts: {
             title: '',
-            values: [],
-            backgroundColor: '',
-        }],
-    },
-    radarCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        legendPosition: '',
-        dataSet: [{
-            title: '',
-            values: [],
-            backgroundColor: '',
-            fill: true,
+            type: '',
+            labels: [''],
+            legendPosition: '',
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: [],
+            }],
         },
-        {
+        pieCharts: {
             title: '',
-            values: [],
-            borderColor: '',
-            backgroundColor: '',
-            fill: true,
-        }],
-    },
-    polarAreaCharts: {
-        title: '',
-        type: '',
-        labels: [''],
-        legendPosition: '',
-        dataSet: [{
+            type: '',
+            labels: [],
+            legendPosition: '',
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: [],
+            }],
+        },
+        doughnutCharts: {
             title: '',
-            values: [],
-            backgroundColor: [],
-        }],
-    },
-    pieCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        legendPosition: '',
-        dataSet: [{
-            title: '',
-            values: [],
-            backgroundColor: [],
-        }],
-    },
-    doughnutCharts: {
-        title: '',
-        type: '',
-        labels: [],
-        dataSet: [{
-            title: '',
-            values: [],
-            backgroundColor: [],
-        }],
-    },
+            type: '',
+            labels: [],
+            dataSet: [{
+                title: '',
+                values: [],
+                backgroundColor: [],
+            }],
+        },
     },
     isLoading: false,
     isFirstTime: true,
