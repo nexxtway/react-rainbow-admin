@@ -23,7 +23,7 @@ import PageHeader from '../../components/PageHeader';
 import fetchDashboardData from '../../redux/actions/dashboard';
 import './styles.css';
 
-function Cards({ props }) {
+function Cards(props) {
     const {
         totals: {
             orders,
@@ -133,21 +133,11 @@ function Cards({ props }) {
 }
 
 Cards.propTypes = {
-    totals: PropTypes.object,
-    chartsData: PropTypes.object,
-    lastMessages: PropTypes.array,
-    newUsers: PropTypes.array,
-    isLoading: PropTypes.bool,
-    props: PropTypes.object,
-};
-
-Cards.defaultProps = {
-    totals: {},
-    chartsData: {},
-    lastMessages: [],
-    newUsers: [],
-    isLoading: false,
-    props: {},
+    totals: PropTypes.object.isRequired,
+    chartsData: PropTypes.object.isRequired,
+    lastMessages: PropTypes.array.isRequired,
+    newUsers: PropTypes.array.isRequired,
+    isLoading: PropTypes.bool.isRequired,
 };
 
 class Dashboard extends Component {
@@ -157,13 +147,12 @@ class Dashboard extends Component {
     }
 
     render() {
-        const { ...props } = this.props;
         return (
             <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
                 <PageHeader
                     title="Dashboard"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                <Cards props={props} />
+                <Cards {...this.props} />
             </div>
         );
     }
