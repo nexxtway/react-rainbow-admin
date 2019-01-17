@@ -20,7 +20,7 @@ import ListCard from './listCard';
 import LastMessagesList from './lastMessagesList';
 import NewUsersList from './newUsersList';
 import PageHeader from '../../components/PageHeader';
-import fetchDashboardData from '../../redux/actions/dashboardPage';
+import fetchDashboardData from '../../redux/actions/dashboard';
 import './styles.css';
 
 function Cards({ props }) {

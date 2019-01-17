@@ -3,7 +3,7 @@ import {
     START_LOADING_DASHBOARD,
     STOP_LOADING_DASHBOARD,
     LOAD_DASHBOARD_DATA,
-} from '../../actions/dashboardPage';
+} from '../../actions/dashboard';
 
 const initialState = {
     totals: {
