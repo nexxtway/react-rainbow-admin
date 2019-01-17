@@ -7,7 +7,7 @@ import Spinner from 'react-rainbow-components/components/Spinner';
 import PageHeader from '../../components/PageHeader';
 import ChartCard from './chartCard';
 import './styles.css';
-import { fetchChartsData } from '../../redux/actions/charts';
+import fetchChartsData from '../../redux/actions/charts';
 
 class Charts extends Component {
     componentWillMount() {
@@ -16,8 +16,19 @@ class Charts extends Component {
     }
 
     render() {
-        const { isLoading, data } = this.props;
-        console.log(data.lineCharts.type);
+        const {
+            isLoading,
+            data: {
+                lineCharts,
+                areaCharts,
+                barCharts,
+                horizontalBarCharts,
+                radarCharts,
+                polarAreaCharts,
+                pieCharts,
+                doughnutCharts,
+            },
+        } = this.props;
         if (isLoading) {
             return (
                 <div className="react-rainbow-admin-charts_container rainbow-background-color_gray-1">
@@ -33,126 +44,125 @@ class Charts extends Component {
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. You can learn more about it here: https://www.chartjs.org" />
                 <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                     <ChartCard
-                        title={data.lineCharts.title}
-                        chartLabels={data.lineCharts.labels}
-                        chartType="line">
+                        title={lineCharts.title}
+                        chartLabels={lineCharts.labels}
+                        chartType={lineCharts.type}>
                         <Dataset
-                            title="Blue"
-                            values={[350, 410, 900, 620, 700, 1000]}
-                            borderColor="#01b6f5"
-                            backgroundColor="#0094c8"
-                            type="line" />
+                            title={lineCharts.dataSet[0].title}
+                            values={lineCharts.dataSet[0].values}
+                            borderColor={lineCharts.dataSet[0].borderColor}
+                            backgroundColor={lineCharts.dataSet[0].backgroundColor}
+                            type={lineCharts.dataSet[0].type} />
                     </ChartCard>
                     <ChartCard
-                        title="Area Charts"
-                        chartLabels={['January', 'February', 'March', 'April', 'May', 'June']}
-                        chartType="line"
-                        chartDisableCurves>
+                        title={areaCharts.title}
+                        chartLabels={areaCharts.labels}
+                        chartType={areaCharts.type}
+                        chartDisableCurves={areaCharts.disableCurves}>
                         <Dataset
-                            title="Green"
-                            values={[350, 90, 410, 900, 600, 620, 700]}
-                            borderColor="#8ef4da"
-                            backgroundColor="rgba(142,244,218,0.65)"
-                            type="line"
-                            fill />
-                    </ChartCard>
-                </section>
-                <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
-                    <ChartCard
-                        title="Bar Charts"
-                        chartLabels={['January', 'February', 'March', 'April', 'May', 'June']}
-                        chartType="bar">
-                        <Dataset
-                            key="Red"
-                            title="Red"
-                            values={[18, 42, 58, 50, 19, undefined]}
-                            backgroundColor="#fe4849" />
-                        <Dataset
-                            key="Orange"
-                            title="Orange"
-                            values={[undefined, 40, undefined, 45, 95, 33]}
-                            backgroundColor="#ff6837" />
-                        <Dataset
-                            key="Yellow"
-                            title="Yellow"
-                            values={[undefined, 30, 80, undefined, 65, 50]}
-                            backgroundColor="#ffcc00" />
-                        <Dataset
-                            key="Green"
-                            title="Green"
-                            values={[undefined, 15, undefined, 60, 45, 85]}
-                            backgroundColor="#1ad1a3" />
-                    </ChartCard>
-                    <ChartCard
-                        title="Horizontal Bar Charts"
-                        chartLabels={['January', 'February', 'March', 'April', 'May']}
-                        chartType="horizontalBar">
-                        <Dataset
-                            key="Red"
-                            title="Red"
-                            values={[-18, 42, -58, 50, 19, undefined]}
-                            backgroundColor="#fe4849" />
-                        <Dataset
-                            key="Green"
-                            title="Green"
-                            values={[undefined, 15, undefined, -60, 45, 85]}
-                            backgroundColor="#1ad1a3" />
+                            title={areaCharts.dataSet[0].title}
+                            values={areaCharts.dataSet[0].values}
+                            borderColor={areaCharts.dataSet[0].borderColor}
+                            backgroundColor={areaCharts.dataSet[0].backgroundColor}
+                            type={areaCharts.dataSet[0].type}
+                            fill={areaCharts.dataSet[0].fill} />
                     </ChartCard>
                 </section>
                 <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                     <ChartCard
-                        title="Radar Charts"
-                        chartLabels={['Coding', 'Drinking', 'Sleeping', 'Reading', 'Runnig', 'Learning', 'Designing']}
-                        chartType="radar"
-                        chartLegendPosition="right">
+                        title={barCharts.title}
+                        chartLabels={barCharts.labels}
+                        chartType={barCharts.type}>
                         <Dataset
-                            key="Yellow"
-                            title="Yellow"
-                            values={[300, 50, 200, 250, 100, 220, 100]}
-                            backgroundColor="rgba(255, 214, 51, 0.44)"
-                            fill />
+                            key={barCharts.dataSet[0].title}
+                            title={barCharts.dataSet[0].title}
+                            values={barCharts.dataSet[0].values}
+                            backgroundColor={barCharts.dataSet[0].backgroundColor} />
                         <Dataset
-                            key="Blue"
-                            title="Blue"
-                            values={[220, 150, 100, 200, 150, 300, 250]}
-                            borderColor="#01b6f5"
-                            backgroundColor="rgba(1,182,245,0.55)"
-                            fill />
+                            key={barCharts.dataSet[1].title}
+                            title={barCharts.dataSet[1].title}
+                            values={barCharts.dataSet[1].values}
+                            backgroundColor={barCharts.dataSet[1].backgroundColor} />
+                        <Dataset
+                            key={barCharts.dataSet[2].title}
+                            title={barCharts.dataSet[2].title}
+                            values={barCharts.dataSet[2].values}
+                            backgroundColor={barCharts.dataSet[2].backgroundColor} />
+                        <Dataset
+                            key={barCharts.dataSet[3].title}
+                            title={barCharts.dataSet[3].title}
+                            values={barCharts.dataSet[3].values}
+                            backgroundColor={barCharts.dataSet[3].backgroundColor} />
                     </ChartCard>
                     <ChartCard
-                        title="Polar Area Charts"
-                        chartLabels={['Yellow', 'Blue', 'Green', 'Red', 'Orange']}
-                        chartType="polarArea"
-                        chartLegendPosition="right">
+                        title={horizontalBarCharts.title}
+                        chartLabels={horizontalBarCharts.labels}
+                        chartType={horizontalBarCharts.type}>
                         <Dataset
-                            key="Red"
-                            title="Red"
-                            values={[250, 150, 300, 250, 150]}
-                            backgroundColor={['#ffcc00', '#00a6e0', '#1ad1a3', '#fe4849', '#ff6837']} />
+                            key={horizontalBarCharts.dataSet[0].title}
+                            title={horizontalBarCharts.dataSet[0].title}
+                            values={horizontalBarCharts.dataSet[0].values}
+                            backgroundColor={horizontalBarCharts.dataSet[0].backgroundColor} />
+                        <Dataset
+                            key={horizontalBarCharts.dataSet[1].title}
+                            title={horizontalBarCharts.dataSet[1].title}
+                            values={horizontalBarCharts.dataSet[1].values}
+                            backgroundColor={horizontalBarCharts.dataSet[1].backgroundColor} />
                     </ChartCard>
                 </section>
                 <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                     <ChartCard
-                        title="Pie Charts"
-                        chartLabels={['Yellow', 'Green', 'Red', 'Orange']}
-                        chartType="pie"
-                        chartLegendPosition="right">
+                        title={radarCharts.title}
+                        chartLabels={radarCharts.labels}
+                        chartType={radarCharts.type}
+                        chartLegendPosition={radarCharts.legendPosition}>
                         <Dataset
-                            key="Red"
-                            title="Red"
-                            values={[80, 145, 45, 90]}
-                            backgroundColor={['#ffcc00', '#1ad1a3', '#fe4849', '#ff6837']} />
+                            key={radarCharts.dataSet[0].title}
+                            title={radarCharts.dataSet[0].title}
+                            values={radarCharts.dataSet[0].values}
+                            backgroundColor={radarCharts.dataSet[0].backgroundColor}
+                            fill={radarCharts.dataSet[0].fill} />
+                        <Dataset
+                            key={radarCharts.dataSet[1].title}
+                            title={radarCharts.dataSet[1].title}
+                            values={radarCharts.dataSet[1].values}
+                            backgroundColor={radarCharts.dataSet[1].backgroundColor}
+                            fill={radarCharts.dataSet[1].fill} />
                     </ChartCard>
                     <ChartCard
-                        title="Boughnut Charts"
-                        chartLabels={['Yellow', 'Green', 'Red', 'Orange']}
-                        chartType="doughnut"
-                        chartLegendPosition="right">
+                        title={polarAreaCharts.title}
+                        chartLabels={polarAreaCharts.labels}
+                        chartType={polarAreaCharts.type}
+                        chartLegendPosition={polarAreaCharts.legendPosition}>
                         <Dataset
-                            key="Red"
-                            title="Red"
-                            values={[65, 110, 35, 80]}
-                            backgroundColor={['#ffcc00', '#1ad1a3', '#fe4849', '#ff6837']} />
+                            key={polarAreaCharts.dataSet[0].title}
+                            title={polarAreaCharts.dataSet[0].title}
+                            values={polarAreaCharts.dataSet[0].values}
+                            backgroundColor={polarAreaCharts.dataSet[0].backgroundColor} />
+                    </ChartCard>
+                </section>
+                <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
+                    <ChartCard
+                        title={pieCharts.title}
+                        chartLabels={pieCharts.labels}
+                        chartType={pieCharts.type}
+                        chartLegendPosition={pieCharts.legendPosition}>
+                        <Dataset
+                            key={pieCharts.dataSet[0].title}
+                            title={pieCharts.dataSet[0].title}
+                            values={pieCharts.dataSet[0].values}
+                            backgroundColor={pieCharts.dataSet[0].backgroundColor} />
+                    </ChartCard>
+                    <ChartCard
+                        title={doughnutCharts.title}
+                        chartLabels={doughnutCharts.labels}
+                        chartType={doughnutCharts.type}
+                        chartLegendPosition={doughnutCharts.legendPosition}>
+                        <Dataset
+                            key={doughnutCharts.dataSet[0].title}
+                            title={doughnutCharts.dataSet[0].title}
+                            values={doughnutCharts.dataSet[0].values}
+                            backgroundColor={doughnutCharts.dataSet[0].backgroundColor} />
                     </ChartCard>
                 </section>
             </div>
@@ -162,9 +172,8 @@ class Charts extends Component {
 
 Charts.propTypes = {
     fetchChartsData: PropTypes.func.isRequired,
-    data: PropTypes.object,
-    isFirstTime: PropTypes.bool,
-    isLoading: PropTypes.bool,
+    data: PropTypes.object.isRequired,
+    isLoading: PropTypes.bool.isRequired,
 
 };
 

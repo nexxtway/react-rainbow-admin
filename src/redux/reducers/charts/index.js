@@ -4,19 +4,19 @@ const initialState = Object.assign({
     data: {
         lineCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
             dataSet: [{
                 title: '',
                 values: [],
                 borderColor: '',
                 backgroundColor: '',
-                type: '',
+                type: 'line',
             }],
         },
         areaCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
             disableCurves: true,
             dataSet: [{
@@ -24,13 +24,13 @@ const initialState = Object.assign({
                 values: [],
                 borderColor: '',
                 backgroundColor: '',
-                type: '',
+                type: 'line',
                 fill: true,
             }],
         },
         barCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
             dataSet: [{
                 title: '',
@@ -55,7 +55,7 @@ const initialState = Object.assign({
         },
         horizontalBarCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
             dataSet: [{
                 title: '',
@@ -70,9 +70,9 @@ const initialState = Object.assign({
         },
         radarCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
-            legendPosition: '',
+            legendPosition: 'bottom',
             dataSet: [{
                 title: '',
                 values: [],
@@ -89,9 +89,9 @@ const initialState = Object.assign({
         },
         polarAreaCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [''],
-            legendPosition: '',
+            legendPosition: 'bottom',
             dataSet: [{
                 title: '',
                 values: [],
@@ -100,9 +100,9 @@ const initialState = Object.assign({
         },
         pieCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
-            legendPosition: '',
+            legendPosition: 'bottom',
             dataSet: [{
                 title: '',
                 values: [],
@@ -111,7 +111,7 @@ const initialState = Object.assign({
         },
         doughnutCharts: {
             title: '',
-            type: '',
+            type: 'line',
             labels: [],
             dataSet: [{
                 title: '',

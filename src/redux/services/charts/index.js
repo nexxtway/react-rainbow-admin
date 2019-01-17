@@ -1,4 +1,4 @@
-export function resolveChartsData() {
+export default function resolveChartsData() {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve({
@@ -122,6 +122,6 @@ export function resolveChartsData() {
                     },
                 },
             });
-        }, 2000);
+        }, 500);
     });
 }
