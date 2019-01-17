@@ -3,7 +3,7 @@ import {
     resolveChartsData,
     resolveLastMessages,
     resolveNewUsers,
-} from '../../services/dashboard';
+} from '../../services/dashboardPage';
 
 export const START_LOADING_DASHBOARD = 'START_LOADING_DASHBOARD';
 export const STOP_LOADING_DASHBOARD = 'STOP_LOADING_DASHBOARD';

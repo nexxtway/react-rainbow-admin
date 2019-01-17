@@ -1,4 +1,4 @@
-import dashboard from './dashboard';
+import dashboard from './dashboardPage';
 
 export default {
     dashboard,
