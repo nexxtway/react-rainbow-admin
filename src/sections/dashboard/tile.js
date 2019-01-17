@@ -24,7 +24,9 @@ export default function Tile(props) {
 Tile.propTypes = {
     icon: PropTypes.node,
     label: PropTypes.string,
-    total: PropTypes.string,
+    total: PropTypes.oneOfType([
+        PropTypes.string, PropTypes.node,
+    ]),
 };
 
 Tile.defaultProps = {
