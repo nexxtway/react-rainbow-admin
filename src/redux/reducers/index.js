@@ -1,1 +1,5 @@
-export default {};
+import dashboard from './dashboard';
+
+export default {
+    dashboard,
+};
