@@ -122,6 +122,6 @@ export default function resolveChartsData() {
                     },
                 },
             });
-        }, 500);
+        }, 2000);
     });
 }
