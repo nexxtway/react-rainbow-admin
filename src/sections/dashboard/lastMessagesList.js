@@ -6,28 +6,24 @@ import Message from './message';
 export default function LastMessagesList({ lastMessages }) {
     return lastMessages.map((message, index) => {
         const key = `message-${index}`;
-        if (index === (lastMessages.length - 1)) {
-            return (
-                <Message
-                    key={key}
-                    avatarIcon={<PersonIcon />}
-                    avatarSrc={message.avatar}
-                    userName={message.userName}
-                    date={message.date}
-                    content={message.content}
-                    avatarTitle={message.avatarTitle}
-                    hasDivider={false} />
-            );
-        }
+        const divider = (index !== (lastMessages.length - 1));
+        const {
+            avatar,
+            userName,
+            date,
+            content,
+            avatarTitle,
+        } = message;
         return (
             <Message
                 key={key}
                 avatarIcon={<PersonIcon />}
-                avatarSrc={message.avatar}
-                userName={message.userName}
-                date={message.date}
-                content={message.content}
-                avatarTitle={message.avatarTitle} />
+                avatarSrc={avatar}
+                userName={userName}
+                date={date}
+                content={content}
+                avatarTitle={avatarTitle}
+                hasDivider={divider} />
         );
     });
 }

@@ -43,36 +43,32 @@
     flex-shrink: 0;
 }
 
-.react-rainbow-admin-dashboard_card-message--message-divider {
+.react-rainbow-admin-dashboard_divider {
     border-bottom: solid 1px #e3e5ed;
 }
 
-.react-rainbow-admin-dashboard_card-message--divider {
-    border-top: solid 1px #e3e5ed;
-}
-
-.react-rainbow-admin-dashboard_card-message--footer-link {
+.react-rainbow-admin-dashboard_list-card--footer-link {
     font-size: 13px;
 }
 
-.react-rainbow-admin-dashboard_card-message--footer-link:hover,
-.react-rainbow-admin-dashboard_card-message--footer-link:focus,
-.react-rainbow-admin-dashboard_card-message--footer-link:active,
-.react-rainbow-admin-dashboard_card-message--footer-link:visited {
+.react-rainbow-admin-dashboard_list-card--footer-link:hover,
+.react-rainbow-admin-dashboard_list-card--footer-link:focus,
+.react-rainbow-admin-dashboard_list-card--footer-link:active,
+.react-rainbow-admin-dashboard_list-card--footer-link:visited {
     color: #009acf;
 }
 
-.react-rainbow-admin-dashboard_card-users--user-active {
+.react-rainbow-admin-dashboard_card-users--user {
     width: 8px;
     height: 8px;
     border-radius: 100%;
-    background-color: #1de9b6;
+    background-color: #fe4849;
     margin-right: 4px;
     margin-bottom: 4px;
 }
 
-.react-rainbow-admin-dashboard_card-users--user-inactive {
-    background-color: #fe4849;
+.react-rainbow-admin-dashboard_card-users--user-active {
+    background-color: #1de9b6;
 }
 
 .react-rainbow-admin-dashboard_card-message--message-container {

@@ -16,7 +16,7 @@ export default function Message(props) {
     } = props;
 
     const getMessasgeContentContainerClassName = () => classnames('rainbow-m-left_small', {
-        'react-rainbow-admin-dashboard_card-message--message-divider rainbow-m-bottom_x-small': hasDivider,
+        'react-rainbow-admin-dashboard_divider rainbow-m-bottom_x-small': hasDivider,
     });
 
     return (

@@ -6,30 +6,26 @@ import NewUser from './newUser';
 export default function NewUsersList({ newUsers }) {
     return newUsers.map((user, index) => {
         const key = `user-${index}`;
-        if (index === (newUsers.length - 1)) {
-            return (
-                <NewUser
-                    key={key}
-                    avatarIcon={<PersonIcon />}
-                    avatarSrc={user.avatar}
-                    userName={user.userName}
-                    city={user.city}
-                    avatarTitle={user.avatarTitle}
-                    date={user.date}
-                    isActive={user.isActive}
-                    hasDivider={false} />
-            );
-        }
+        const divider = (index !== (newUsers.length - 1));
+        const {
+            avatar,
+            userName,
+            city,
+            avatarTitle,
+            date,
+            isActive,
+        } = user;
         return (
             <NewUser
                 key={key}
                 avatarIcon={<PersonIcon />}
-                avatarSrc={user.avatar}
-                userName={user.userName}
-                city={user.city}
-                avatarTitle={user.avatarTitle}
-                date={user.date}
-                isActive={user.isActive} />
+                avatarSrc={avatar}
+                userName={userName}
+                city={city}
+                avatarTitle={avatarTitle}
+                date={date}
+                isActive={isActive}
+                hasDivider={divider} />
         );
     });
 }

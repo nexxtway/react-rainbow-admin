@@ -1,19 +1,19 @@
 /* eslint-disable no-param-reassign */
 import {
-    LOADING_DASHBOARD_DATA,
-    STOP_LOADING_DASHBOARD_DATA,
+    START_LOADING_DASHBOARD,
+    STOP_LOADING_DASHBOARD,
     LOAD_DASHBOARD_DATA,
-} from '../../actions/Dashboard/index';
+} from '../../actions/dashboard';
 
 const initialState = {
     totals: {
         orders: 0,
         users: 0,
-        fallowers: 0,
+        followers: 0,
         errors: 0,
         successfulyOrdersAmount: 0,
         totalUsers: 0,
-        fallowersActive: 0,
+        followersActive: 0,
     },
     chartsData: {
         successfulyOrders: {
@@ -24,7 +24,7 @@ const initialState = {
             labels: [],
             value: [0, 0, 0, 0, 0],
         },
-        fallowersActive: {
+        followersActive: {
             labels: [],
             googleValue: [0, 0, 0, 0, 0, 0, 0],
             facebookValue: [0, 0, 0, 0, 0, 0, 0],
@@ -33,39 +33,43 @@ const initialState = {
     lastMessages: [],
     newUsers: [],
     isLoading: false,
+    isFirstTime: true,
 };
 
 function loadData(state, action) {
     const newState = {
         ...state,
-        ...action.totals,
-        ...action.chartsData,
+        totals: action.totals,
+        chartsData: action.chartsData,
         lastMessages: action.lastMessages,
         newUsers: action.newUsers,
     };
     return newState;
 }
 
-function setIsLoading(state, action) {
-    const isLoading = {
-        isLoading: state.isLoading,
-    };
-    const newState = {
+function startLoading(state) {
+    return {
         ...state,
-        ...isLoading,
-        isLoading: action,
+        isLoading: true,
     };
-    return newState;
+}
+
+function stopLoading(state) {
+    return {
+        ...state,
+        isLoading: false,
+        isFirstTime: false,
+    };
 }
 
 export default function dashboardData(state = initialState, action) {
     switch (action.type) {
         case LOAD_DASHBOARD_DATA:
             return loadData(state, action);
-        case LOADING_DASHBOARD_DATA:
-            return setIsLoading(state, true);
-        case STOP_LOADING_DASHBOARD_DATA:
-            return setIsLoading(state, false);
+        case START_LOADING_DASHBOARD:
+            return startLoading(state);
+        case STOP_LOADING_DASHBOARD:
+            return stopLoading(state);
         default:
             return state;
     }
