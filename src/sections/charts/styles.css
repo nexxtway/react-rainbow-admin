@@ -13,15 +13,22 @@
 .react-rainbow-admin-charts_card:not(:last-child){
     margin-right: 24px;
 }
-.react-rainbow-admin-charts_header {
+
+.react-rainbow-admin-charts_header-title-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 15px;
-    padding: 0 16px 0 16px;
+    align-items: center;
 }
 
-.react-rainbow-admin-charts_header h2 {
+.react-rainbow-admin-charts_header-icon {
+    flex-shrink: 0;
+}
+
+.react-rainbow-admin-charts_header-icon > svg {
+    width: 22px;
+    height: 22px;
+}
+
+.react-rainbow-admin-charts_header-title {
     color:#576574;
     font-size: 1.25rem;
 }
