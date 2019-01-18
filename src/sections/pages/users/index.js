@@ -142,7 +142,7 @@ export default class Users extends Component {
         } = this.state;
         return (
             <div className="react-rainbow-admin-users_container">
-                <div className="react-rainbow-admin-users_cards-container">
+                <div className="react-rainbow-admin-users_header-container">
                     <Breadcrumbs>
                         <Breadcrumb label="Pages" href="pages" />
                         <Breadcrumb label="Users" />
@@ -151,7 +151,7 @@ export default class Users extends Component {
                         className="react-rainbow-admin-users_header"
                         title="Users"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                    <div className="react-rainbow-admin-users_cards">
+                    <div className="react-rainbow-admin-users_cards-container">
                         <Card
                             className="react-rainbow-admin-users_card"
                             title="114 245"
@@ -161,6 +161,7 @@ export default class Users extends Component {
                                     20.5%
                                 </Badge>
                             )}>
+                            <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
                                     labels={['January', 'February', 'March', 'April', 'May', 'Jun', '']}
@@ -179,13 +180,15 @@ export default class Users extends Component {
                                     20.5%
                                 </Badge>
                             )}>
-                            <Chart
-                                className="react-rainbow-admin-users_chart"
-                                labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
-                                type="line"
-                                showLegend={false}>
-                                <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
-                            </Chart>
+                            <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
+                            <div className="react-rainbow-admin-users_chart">
+                                <Chart
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
+                                    type="line"
+                                    showLegend={false}>
+                                    <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
+                                </Chart>
+                            </div>
                         </Card>
                     </div>
                 </div>

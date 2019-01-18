@@ -3,8 +3,8 @@
     background-color: #f4f6f9;
 }
 
-.react-rainbow-admin-users_cards-container {
-    padding: 16px 40px;
+.react-rainbow-admin-users_header-container {
+    padding: 16px 40px 24px 40px;
 }
 
 .react-rainbow-admin-users_header {
@@ -12,11 +12,10 @@
 }
 
 .react-rainbow-admin-users_chart {
-    width: 390px;
-    margin: auto;
+    margin: 0 20px;
 }
 
-.react-rainbow-admin-users_cards {
+.react-rainbow-admin-users_cards-container {
     margin-top: 16px;
     display: flex;
     flex-wrap: wrap;
@@ -24,8 +23,17 @@
 }
 
 .react-rainbow-admin-users_card {
-    width: 45%;
-    height: 260px;
+    width: 48%;
+    padding-bottom: 16px;
+}
+
+.react-rainbow-admin-users_card-title {
+    font-size: 12px;
+    letter-spacing: 0.2px;
+    color: #a4a7b5;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
 }
 
 .react-rainbow-admin-users_tab-set {
