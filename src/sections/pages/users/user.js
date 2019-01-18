@@ -4,21 +4,19 @@ import { Avatar } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 
-export default function User({ name, src }) {
+export default function User({ value }) {
     return (
         <div className="react-rainbow-admin-users_user">
-            <Avatar src={src} icon={<FontAwesomeIcon icon={faUserCircle} size="3x" />} size="small" />
-            <div className="react-rainbow-admin-users_user-name">{name}</div>
+            <Avatar src={value.photoUrl} icon={<FontAwesomeIcon icon={faUserCircle} size="3x" />} size="small" />
+            <div className="react-rainbow-admin-users_user-name">{value.name}</div>
         </div>
     );
 }
 
 User.propTypes = {
-    name: PropTypes.string,
-    src: PropTypes.string,
+    value: PropTypes.object,
 };
 
 User.defaultProps = {
-    name: undefined,
-    src: undefined,
+    value: undefined,
 };

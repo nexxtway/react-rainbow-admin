@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
-export default function CurrentStatus({ value }) {
+export default function Status({ value }) {
     const getColor = () => {
         if (value === 'ONLINE') {
             return '#1de9b6';
@@ -19,10 +19,10 @@ export default function CurrentStatus({ value }) {
     );
 }
 
-CurrentStatus.propTypes = {
+Status.propTypes = {
     value: PropTypes.string,
 };
 
-CurrentStatus.defaultProps = {
+Status.defaultProps = {
     value: undefined,
 };
