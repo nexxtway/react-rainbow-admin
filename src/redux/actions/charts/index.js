@@ -9,7 +9,7 @@ export default function fetchChartsData() {
         const { isFirstTime } = getState().charts;
         if (isFirstTime) {
             dispatch({ type: START_LOADING_CHARTS });
-            resolveChartsData()
+            return resolveChartsData()
                 .then((chartData) => {
                     dispatch({
                         type: LOAD_CHARTS_DATA,
@@ -22,5 +22,6 @@ export default function fetchChartsData() {
                     dispatch({ type: STOP_LOADING_CHARTS });
                 });
         }
+        return null;
     };
 }

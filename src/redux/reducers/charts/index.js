@@ -88,14 +88,9 @@ const initialState = {
             }],
         },
         polarAreaCharts: {
-            title: '',
-            type: 'line',
             labels: [''],
-            legendPosition: 'bottom',
             dataSet: [{
-                title: '',
                 values: [],
-                backgroundColor: [],
             }],
         },
         pieCharts: {
