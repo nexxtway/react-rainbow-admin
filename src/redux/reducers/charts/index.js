@@ -1,6 +1,6 @@
-import { LOADING_CHARTS_DATA, LOAD_CHARTS_DATA } from '../../actions/charts';
+import { START_LOADING_CHARTS, STOP_LOADING_CHARTS, LOAD_CHARTS_DATA } from '../../actions/charts';
 
-const initialState = Object.assign({
+const initialState = {
     data: {
         lineCharts: {
             title: '',
@@ -122,19 +122,39 @@ const initialState = Object.assign({
     },
     isLoading: false,
     isFirstTime: true,
-});
+};
+
+function loadData(state, action) {
+    const newState = {
+        ...state,
+        data: action.payload,
+    };
+    return newState;
+}
+
+function startLoading(state) {
+    return {
+        ...state,
+        isLoading: true,
+    };
+}
+
+function stopLoading(state) {
+    return {
+        ...state,
+        isLoading: false,
+        isFirstTime: false,
+    };
+}
 
 export default function charts(state = initialState, action) {
     switch (action.type) {
-        case LOADING_CHARTS_DATA:
-            return { ...state, isLoading: true };
+        case START_LOADING_CHARTS:
+            return startLoading(state);
         case LOAD_CHARTS_DATA:
-            return Object.assign({}, state, {
-                ...state,
-                isLoading: false,
-                isFirstTime: false,
-                data: action.payload.chartsData,
-            });
+            return loadData(state, action);
+        case STOP_LOADING_CHARTS:
+            return stopLoading(state);
         default:
             return state;
     }
