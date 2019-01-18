@@ -2,10 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import Chart from 'react-rainbow-components/components/Chart';
-import ButtonGroup from 'react-rainbow-components/components/ButtonGroup';
-import Button from 'react-rainbow-components/components/Button';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
 
 export default function ChartCard(props) {
     const {
@@ -13,8 +9,6 @@ export default function ChartCard(props) {
         children,
         chartLabels,
         chartType,
-        onAddDataSet,
-        onRemoveDataSet,
         chartLegendPosition,
         chartDisableCurves,
     } = props;
@@ -23,16 +17,6 @@ export default function ChartCard(props) {
         <Card className="react-rainbow-admin-charts_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
             <div className="react-rainbow-admin-charts_header">
                 <h2 className="rainbow-p-bottom_medium">{title}</h2>
-                <ButtonGroup>
-                    <Button onClick={onAddDataSet} variant="neutral" className="react-rainbow-admin-chart_button">
-                        <FontAwesomeIcon icon={faPlus} className="rainbow-m-right_small" />
-                        Color
-                    </Button>
-                    <Button onClick={onRemoveDataSet} variant="neutral" className="react-rainbow-admin-chart_button">
-                        <FontAwesomeIcon icon={faMinus} className="rainbow-m-right_small" />
-                        Color
-                    </Button>
-                </ButtonGroup>
             </div>
             <p className="react-rainbow-admin-charts_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
                 COLORS USE
@@ -72,16 +56,12 @@ ChartCard.propTypes = {
         'left',
     ]),
     chartLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
-    onAddDataSet: PropTypes.func,
-    onRemoveDataSet: PropTypes.func,
     chartDisableCurves: PropTypes.bool,
 };
 
 ChartCard.defaultProps = {
     title: undefined,
     children: null,
-    onAddDataSet: () => {},
-    onRemoveDataSet: () => {},
     chartLegendPosition: 'bottom',
     chartDisableCurves: false,
 };
