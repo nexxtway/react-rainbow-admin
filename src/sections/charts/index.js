@@ -118,11 +118,10 @@ function Cards(props) {
                 </ChartCard>
                 <ChartCard
                     title="Polar Area Charts"
-                    chartLabels={polarAreaCharts.labels}
                     chartType="polarArea"
-                    chartLegendPosition>
+                    chartLabels={polarAreaCharts.labels}
+                    chartLegendPosition="right">
                     <Dataset
-                        key="Red"
                         title="Red"
                         values={polarAreaCharts.dataSet[0].values}
                         backgroundColor={['#ffcc00', '#00a6e0', '#1ad1a3', '#fe4849', '#ff6837']} />
