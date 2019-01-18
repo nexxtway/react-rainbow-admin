@@ -1,5 +1,9 @@
 .react-rainbow-admin-users_container {
+    min-height: 100vh;
     background-color: #f4f6f9;
+}
+
+.react-rainbow-admin-users_cards-container {
     padding: 16px 40px;
 }
 
@@ -20,7 +24,7 @@
 }
 
 .react-rainbow-admin-users_card {
-    width: 500px;
+    width: 45%;
     height: 260px;
 }
 
@@ -30,6 +34,7 @@
 }
 
 .react-rainbow-admin-users_tab-content {
+    height: max-content;
     padding-top: 24px;
     background-color: white;
 }
@@ -64,4 +69,15 @@
 
 .react-rainbow-admin-users_badge {
     background-color: #1de9b6;
+}
+
+.react-rainbow-admin-users_pagination {
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-top: 1px solid #e3e5ed;
+    border-bottom: 1px solid #e3e5ed;
+    margin-bottom: 48px;
 }

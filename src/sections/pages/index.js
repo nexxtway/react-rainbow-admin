@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-rainbow-components';
 import {
     CalendarIcon,
@@ -27,13 +28,13 @@ function Cards() {
         const { name, icon, href } = page;
         const key = `card-${index}`;
         return (
-            <a key={key} className="react-rainbow-admin-pages_anchor" href={href}>
+            <Link key={key} className="react-rainbow-admin-pages_anchor" to={href}>
                 <Card className="react-rainbow-admin-pages_card" footer={name}>
                     <span className="react-rainbow-admin-pages_card-image">
                         {icon}
                     </span>
                 </Card>
-            </a>
+            </Link>
         );
     });
 }

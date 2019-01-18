@@ -4,12 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 
 export default function CurrentStatus({ value }) {
-    function getColor() {
+    const getColor = () => {
         if (value === 'ONLINE') {
             return '#1de9b6';
         }
         return '#fe4849';
-    }
+    };
 
     return (
         <div className="react-rainbow-admin-users_current-status">
