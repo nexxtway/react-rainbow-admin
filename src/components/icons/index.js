@@ -1,5 +1,4 @@
 /* eslint-disable import/prefer-default-export */
-import { faIntercom } from '@fortawesome/free-brands-svg-icons';
 import ApplicationIcon from './Application';
 import ChartsIcon from './Charts';
 import DashboardIcon from './Dashboard';
