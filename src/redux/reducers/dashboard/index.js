@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 import {
     START_LOADING_DASHBOARD,
     STOP_LOADING_DASHBOARD,
@@ -43,6 +42,7 @@ function loadData(state, action) {
         chartsData: action.chartsData,
         lastMessages: action.lastMessages,
         newUsers: action.newUsers,
+        isFirstTime: false,
     };
     return newState;
 }
@@ -58,7 +58,6 @@ function stopLoading(state) {
     return {
         ...state,
         isLoading: false,
-        isFirstTime: false,
     };
 }
 

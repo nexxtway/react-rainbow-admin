@@ -11,7 +11,8 @@ export const LOAD_DASHBOARD_DATA = 'LOAD_DASHBOARD_DATA';
 
 export default function fetchDashboardData() {
     return (dispatch, getState) => {
-        if (getState().dashboard.isFirstTime) {
+        const { isFirstTime } = getState().dashboard;
+        if (isFirstTime) {
             const promises = [
                 resolveTotals(),
                 resolveChartsData(),
@@ -19,7 +20,7 @@ export default function fetchDashboardData() {
                 resolveNewUsers(),
             ];
             dispatch({ type: START_LOADING_DASHBOARD });
-            Promise.all(promises)
+            return Promise.all(promises)
                 .then((results) => {
                     const [totals, chartsData, lastMessages, newUsers] = results;
                     dispatch({
@@ -36,5 +37,6 @@ export default function fetchDashboardData() {
                     dispatch({ type: STOP_LOADING_DASHBOARD });
                 });
         }
+        return null;
     };
 }
