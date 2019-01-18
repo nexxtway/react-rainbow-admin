@@ -28,6 +28,10 @@
     margin-right: 24px;
 }
 
+.react-rainbow-admin-pages_anchor:hover {
+    text-decoration: none;
+}
+
 .react-rainbow-admin-pages_anchor:last-child {
     margin-right: 0;
 }

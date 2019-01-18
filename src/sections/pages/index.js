@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from 'react-rainbow-components';
 import {
     CalendarIcon,
@@ -13,26 +14,27 @@ import PageHeader from '../../components/PageHeader';
 import './styles.css';
 
 const pages = [
-    { name: 'Order', icon: <OrderIcon /> },
-    { name: 'User', icon: <UsersIcon /> },
-    { name: 'Followers', icon: <FollowerIcon /> },
-    { name: 'timeline', icon: <TimelineIcon /> },
-    { name: 'Gallery', icon: <GalleryIcon /> },
-    { name: 'Calendar', icon: <CalendarIcon /> },
-    { name: 'Pricing', icon: <PricingIcon /> },
+    { name: 'Orders', icon: <OrderIcon />, href: '/pages/orders' },
+    { name: 'Users', icon: <UsersIcon />, href: '/pages/users' },
+    { name: 'Followers', icon: <FollowerIcon />, href: '/pages/followers' },
+    { name: 'Timeline', icon: <TimelineIcon />, href: '/pages/timeline' },
+    { name: 'Gallery', icon: <GalleryIcon />, href: '/pages/gallery' },
+    { name: 'Calendar', icon: <CalendarIcon />, href: '/pages/calendar' },
+    { name: 'Pricing', icon: <PricingIcon />, href: '/pages/pricing' },
 ];
 
 function Cards() {
     return pages.map((page, index) => {
+        const { name, icon, href } = page;
         const key = `card-${index}`;
         return (
-            <a key={key} className="react-rainbow-admin-pages_anchor" href="/#">
-                <Card className="react-rainbow-admin-pages_card" footer={page.name}>
+            <Link key={key} className="react-rainbow-admin-pages_anchor" to={href}>
+                <Card className="react-rainbow-admin-pages_card" footer={name}>
                     <span className="react-rainbow-admin-pages_card-image">
-                        {page.icon}
+                        {icon}
                     </span>
                 </Card>
-            </a>
+            </Link>
         );
     });
 }

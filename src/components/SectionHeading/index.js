@@ -21,7 +21,7 @@ import './styles.css';
 export default function SectionHeading() {
     return (
         <header className="react-rainbow-admin_header rainbow-position_fixed rainbow-flex rainbow-align_center rainbow-p-horizontal_large rainbow-background-color_white">
-            <img src="./assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin_header-logo" />
+            <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin_header-logo" />
             <Input
                 className="rainbow-m-left_xx-large react-rainbow-admin_header-search"
                 placeholder="search"
@@ -65,7 +65,7 @@ export default function SectionHeading() {
                         )} />
                 </ButtonMenu>
                 <Avatar
-                    src="assets/images/user3.jpg"
+                    src="/assets/images/user3.jpg"
                     assistiveText="Carlos Miguel"
                     title="Carlos Miguel" />
             </section>
