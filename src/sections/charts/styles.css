@@ -10,6 +10,10 @@
     flex-wrap: wrap;
 }
 
+.react-rainbow-admin-charts_chart{
+    height: 240px;
+}
+
 .react-rainbow-admin-charts_card:not(:last-child){
     margin-right: 24px;
 }
@@ -36,6 +40,7 @@
 .react-rainbow-admin-chart_button {
     line-height: 1.8rem;
 }
+
 .react-rainbow-admin-charts_chart-title {
     letter-spacing: 0.2px;
     text-transform: uppercase;

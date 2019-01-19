@@ -35,6 +35,29 @@ function Cards(props) {
         return <Spinner size="large" />;
     } return (
         <div>
+            <section className="react-rainbow-admin-charts_section rainbow-p-top_large">
+                <ChartCard
+                    title="Performance"
+                    subtitle="Total Shipments"
+                    chartTitle="Line chart"
+                    chartLabels={lineCharts.labels}
+                    chartType="line"
+                    maintainAspectRatio={false}
+                    type="line"
+                    className="react-rainbow-admin-charts_chart-card"
+                    chartClassName="react-rainbow-admin-charts_chart">
+                    <Dataset
+                        title="Red"
+                        values={lineCharts.dataSet[0].values}
+                        borderColor="#fe4849"
+                        backgroundColor="#fe4849" />
+                    <Dataset
+                        title="Blue"
+                        values={lineCharts.dataSet[1].values}
+                        borderColor="#01b6f5"
+                        backgroundColor="#01b6f5" />
+                </ChartCard>
+            </section>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
                     title=" 763,215"
