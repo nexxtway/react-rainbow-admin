@@ -2,7 +2,10 @@ const chartsData = {
     lineCharts: {
         labels: ['January', 'February', 'March', 'April', 'May', 'June'],
         dataSet: [{
-            values: [350, 410, 900, 620, 700, 1000],
+            values: [350, 400, 750, 600, 500, 800],
+        },
+        {
+            values: [250, 650, 150, 300, 400, 200],
         }],
     },
     areaCharts: {
@@ -53,13 +56,13 @@ const chartsData = {
     pieCharts: {
         labels: ['Yellow', 'Green', 'Red', 'Orange'],
         dataSet: [{
-            values: [80, 145, 45, 90],
+            values: [25, 45, 10, 20],
         }],
     },
     doughnutCharts: {
         labels: ['Yellow', 'Green', 'Red', 'Orange'],
         dataSet: [{
-            values: [350, 410, 900, 620, 700, 1000],
+            values: [15, 30, 45, 10],
         }],
     },
 };

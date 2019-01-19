@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import Card from 'react-rainbow-components/components/Card';
 import Chart from 'react-rainbow-components/components/Chart';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
@@ -15,10 +16,26 @@ export default function ChartCard(props) {
         chartType,
         chartLegendPosition,
         chartDisableCurves,
+        className,
+        maintainAspectRatio,
+        chartClassName,
     } = props;
 
+    const getContainerClassNames = () => classnames(
+        'react-rainbow-admin-charts_card',
+        'rainbow-p-vertical_medium',
+        'rainbow-p-horizontal_medium',
+        className,
+    );
+
+    const getChartClassNames = () => classnames(
+        'react-rainbow-admin-charts_card',
+        'rainbow-p-top_x-small',
+        chartClassName,
+    );
+
     return (
-        <Card className="react-rainbow-admin-charts_card rainbow-p-vertical_medium rainbow-p-horizontal_medium">
+        <Card className={getContainerClassNames()}>
             <div className="react-rainbow-admin-charts_header-title-container">
                 <RenderIf isTrue={icon}>
                     <span className="react-rainbow-admin-charts_header-icon rainbow-p-right_small">
@@ -32,11 +49,12 @@ export default function ChartCard(props) {
                 {chartTitle}
             </p>
             <Chart
-                className="react-rainbow-admin-charts_card rainbow-p-top_x-small"
+                className={getChartClassNames()}
                 labels={chartLabels}
                 type={chartType}
                 legendPosition={chartLegendPosition}
-                disableCurves={chartDisableCurves}>
+                disableCurves={chartDisableCurves}
+                maintainAspectRatio={maintainAspectRatio}>
                 {children}
             </Chart>
         </Card>
@@ -70,6 +88,9 @@ ChartCard.propTypes = {
     ]),
     chartLabels: PropTypes.arrayOf(PropTypes.string).isRequired,
     chartDisableCurves: PropTypes.bool,
+    maintainAspectRatio: PropTypes.bool,
+    className: PropTypes.string,
+    chartClassName: PropTypes.string,
 };
 
 ChartCard.defaultProps = {
@@ -80,4 +101,7 @@ ChartCard.defaultProps = {
     children: null,
     chartLegendPosition: 'bottom',
     chartDisableCurves: false,
+    maintainAspectRatio: true,
+    className: undefined,
+    chartClassName: undefined,
 };

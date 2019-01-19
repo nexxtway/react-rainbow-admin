@@ -6,6 +6,9 @@ const initialState = {
             labels: [],
             dataSet: [{
                 values: [],
+            },
+            {
+                values: [],
             }],
         },
         areaCharts: {
