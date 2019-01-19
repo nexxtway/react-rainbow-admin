@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import Application from 'react-rainbow-components/components/Application';
+import Sidebar from 'react-rainbow-components/components/Sidebar';
+import SidebarItem from 'react-rainbow-components/components/SidebarItem';
 import store from './redux/store';
 import Routes from './routes';
 import SectionHeading from './components/SectionHeading';
-import Sidebar from './components/Sidebar';
-import SidebarItem from './components/Sidebar/sidebarItem';
 import {
     ApplicationIcon,
     ChartsIcon,
@@ -19,15 +19,21 @@ import history, { navigateTo } from './history';
 
 const navStyles = {
     position: 'fixed',
+    borderRight: '1px solid #f4f6f9',
     width: 88,
-    paddingTop: 92,
+    paddingTop: 82,
     backgroundColor: '#fff',
-    minHeight: '100vh',
+    height: '100%',
+    overflowY: 'scroll',
 };
 
 const routerContainer = {
     paddingLeft: 88,
     paddingTop: 68,
+};
+
+const sidebarItem = {
+    marginBottom: 16,
 };
 
 function resolveCurrentUrl() {
@@ -57,13 +63,48 @@ export default class App extends Component {
                         selectedItem={selectedItem}
                         onSelect={this.handleOnSelect}
                         style={navStyles}>
-                        <SidebarItem icon={<DashboardIcon />} name="dashboard" label="Dashboard" onClick={() => navigateTo('/dashboard')} />
-                        <SidebarItem icon={<PagesIcon />} name="pages" label="Pages" onClick={() => navigateTo('/pages')} />
-                        <SidebarItem icon={<ApplicationIcon />} name="applications" label="Applications" onClick={() => navigateTo('/applications')} />
-                        <SidebarItem icon={<PuzzleIcon />} name="components" label="Components" onClick={() => navigateTo('/components')} />
-                        <SidebarItem icon={<MessageIcon />} name="messages" label="Messages" onClick={() => navigateTo('/messages')} />
-                        <SidebarItem icon={<FormsIcon />} name="forms" label="Forms" onClick={() => navigateTo('/forms')} />
-                        <SidebarItem icon={<ChartsIcon />} name="charts" label="Charts" onClick={() => navigateTo('/charts')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<DashboardIcon />}
+                            name="dashboard"
+                            label="Dashboard"
+                            onClick={() => navigateTo('/dashboard')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<PagesIcon />}
+                            name="pages"
+                            label="Pages"
+                            onClick={() => navigateTo('/pages')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<ApplicationIcon />}
+                            name="applications"
+                            label="Applications"
+                            onClick={() => navigateTo('/applications')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<PuzzleIcon />}
+                            name="components"
+                            label="Components"
+                            onClick={() => navigateTo('/components')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<MessageIcon />}
+                            name="messages"
+                            label="Messages"
+                            onClick={() => navigateTo('/messages')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<FormsIcon />}
+                            name="forms"
+                            label="Forms"
+                            onClick={() => navigateTo('/forms')} />
+                        <SidebarItem
+                            style={sidebarItem}
+                            icon={<ChartsIcon />}
+                            name="charts"
+                            label="Charts"
+                            onClick={() => navigateTo('/charts')} />
                     </Sidebar>
                     <div style={routerContainer}>
                         <Routes />
