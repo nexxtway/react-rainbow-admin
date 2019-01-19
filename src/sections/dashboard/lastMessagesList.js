@@ -6,7 +6,8 @@ import Message from './message';
 export default function LastMessagesList({ lastMessages }) {
     return lastMessages.map((message, index) => {
         const key = `message-${index}`;
-        const divider = (index !== (lastMessages.length - 1));
+        const lastItemIndex = (lastMessages.length - 1);
+        const hasDivider = (index !== lastItemIndex);
         const {
             avatar,
             userName,
@@ -23,7 +24,7 @@ export default function LastMessagesList({ lastMessages }) {
                 date={date}
                 content={content}
                 avatarTitle={avatarTitle}
-                hasDivider={divider} />
+                hasDivider={hasDivider} />
         );
     });
 }

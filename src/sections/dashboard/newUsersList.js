@@ -6,7 +6,8 @@ import NewUser from './newUser';
 export default function NewUsersList({ newUsers }) {
     return newUsers.map((user, index) => {
         const key = `user-${index}`;
-        const divider = (index !== (newUsers.length - 1));
+        const lastItemIndex = (newUsers.length - 1);
+        const hasDivider = (index !== lastItemIndex);
         const {
             avatar,
             userName,
@@ -25,7 +26,7 @@ export default function NewUsersList({ newUsers }) {
                 avatarTitle={avatarTitle}
                 date={date}
                 isActive={isActive}
-                hasDivider={divider} />
+                hasDivider={hasDivider} />
         );
     });
 }

@@ -18,6 +18,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '../../../components/PageHeader';
 import Status from './status';
 import User from './user';
+import { navigateTo } from '../../../history';
 
 const users = [
     {
@@ -144,7 +145,7 @@ export default class Users extends Component {
             <div className="react-rainbow-admin-users_container">
                 <div className="react-rainbow-admin-users_header-container">
                     <Breadcrumbs>
-                        <Breadcrumb label="Pages" href="pages" />
+                        <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
                         <Breadcrumb label="Users" />
                     </Breadcrumbs>
                     <PageHeader
