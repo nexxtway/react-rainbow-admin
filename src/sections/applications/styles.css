@@ -12,3 +12,9 @@
     flex-wrap: wrap;
     padding-top: 20px;
 }
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-applications_header-page {
+        padding: 0;
+    }
+}

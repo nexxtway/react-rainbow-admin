@@ -19,6 +19,7 @@ import history, { navigateTo } from './history';
 
 const navStyles = {
     position: 'fixed',
+    borderRight: '1px solid #f4f6f9',
     width: 88,
     paddingTop: 82,
     backgroundColor: '#fff',

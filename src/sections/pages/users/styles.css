@@ -89,3 +89,19 @@
     border-bottom: 1px solid #e3e5ed;
     margin-bottom: 48px;
 }
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-users_header-container {
+        padding: 16px;
+    }
+    .react-rainbow-admin-users_cards-container {
+        flex-direction: column;
+    }
+    .react-rainbow-admin-users_card {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+    .react-rainbow-admin-users_tab-set {
+        padding-left: 24px;
+    }
+}
