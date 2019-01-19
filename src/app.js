@@ -70,37 +70,37 @@ export default class App extends Component {
                             label="Dashboard"
                             onClick={() => navigateTo('/dashboard')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<PagesIcon />}
                             name="pages"
                             label="Pages"
                             onClick={() => navigateTo('/pages')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<ApplicationIcon />}
                             name="applications"
                             label="Applications"
                             onClick={() => navigateTo('/applications')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<PuzzleIcon />}
                             name="components"
                             label="Components"
                             onClick={() => navigateTo('/components')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<MessageIcon />}
                             name="messages"
                             label="Messages"
                             onClick={() => navigateTo('/messages')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<FormsIcon />}
                             name="forms"
                             label="Forms"
                             onClick={() => navigateTo('/forms')} />
                         <SidebarItem
-                            className="react-rainbow-admin_sidebar-item"
+                            style={sidebarItem}
                             icon={<ChartsIcon />}
                             name="charts"
                             label="Charts"
