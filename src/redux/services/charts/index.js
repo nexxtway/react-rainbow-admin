@@ -54,9 +54,9 @@ const chartsData = {
         }],
     },
     pieCharts: {
-        labels: ['Yellow', 'Green', 'Red', 'Orange'],
+        labels: ['IOS', 'Android', 'Windows Phone'],
         dataSet: [{
-            values: [25, 45, 10, 20],
+            values: [55, 35, 10],
         }],
     },
     doughnutCharts: {
