@@ -1,0 +1,29 @@
+.react-rainbow-admin-tile {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-tile:not(:last-child) {
+    margin-right: 24px;
+}
+
+.react-rainbow-admin-tile--title {
+    letter-spacing: 0.3px;
+}
+
+.react-rainbow-admin-tile--content {
+    font-size: 28px;
+    line-height: 1.07;
+    letter-spacing: 1.8px;
+    color: #FFF;
+}
+
+.react-rainbow-admin-tile--content-dark {
+    color: #061c3f;
+}
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-tile:not(:last-child) {
+        margin: 0 0 8px 0;
+    }
+}
