@@ -37,7 +37,7 @@ function Cards(props) {
         <div>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large">
                 <ChartCard
-                    title="Performan"
+                    title="Performance"
                     subtitle="Total Shipments"
                     chartTitle="Line chart"
                     chartLabels={lineCharts.labels}
