@@ -1,16 +1,16 @@
-import dashboardData from '..';
+import reducer from '..';
 
 const START_LOADING_DASHBOARD = 'START_LOADING_DASHBOARD';
 const STOP_LOADING_DASHBOARD = 'STOP_LOADING_DASHBOARD';
 const LOAD_DASHBOARD_DATA = 'LOAD_DASHBOARD_DATA';
 
-describe('dashboardData reducer', () => {
+describe('dashboard reducer', () => {
     describe(`when ${START_LOADING_DASHBOARD} action`, () => {
         it('should set isLoading to true', () => {
             const initialState = {
                 isLoading: false,
             };
-            const state = dashboardData(initialState, { type: START_LOADING_DASHBOARD });
+            const state = reducer(initialState, { type: START_LOADING_DASHBOARD });
             expect(state.isLoading).toBe(true);
         });
     });
@@ -20,7 +20,7 @@ describe('dashboardData reducer', () => {
             isLoading: true,
         };
         it('should set isLoading to false', () => {
-            const state = dashboardData(initialState, { type: STOP_LOADING_DASHBOARD });
+            const state = reducer(initialState, { type: STOP_LOADING_DASHBOARD });
             expect(state.isLoading).toBe(false);
         });
     });
@@ -41,7 +41,7 @@ describe('dashboardData reducer', () => {
                 lastMessages: [1, 2, 3],
                 newUsers: [1, 2, 3],
             };
-            const state = dashboardData(initialState, action);
+            const state = reducer(initialState, action);
             expect(state).toEqual({
                 totals: action.totals,
                 chartsData: action.chartsData,
