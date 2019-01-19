@@ -7,8 +7,14 @@ import Dataset from 'react-rainbow-components/components/Dataset';
 import Spinner from 'react-rainbow-components/components/Spinner';
 import PageHeader from '../../components/PageHeader';
 import ChartCard from './chartCard';
-import './styles.css';
+import {
+    BellIcon,
+    SalesIcon,
+    CompletedTasksIcon,
+    IncompletedTasksIcon,
+} from '../../components/icons';
 import fetchChartsData from '../../redux/actions/charts';
+import './styles.css';
 
 function Cards(props) {
     const {
@@ -31,18 +37,24 @@ function Cards(props) {
         <div>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
-                    title="Line Charts"
+                    title=" 763,215"
+                    subtitle="Total Shipments"
+                    chartTitle="Line chart"
+                    icon={<BellIcon />}
                     chartLabels={lineCharts.labels}
                     chartType="line">
                     <Dataset
-                        title="Blue"
+                        title="Yellow"
                         values={lineCharts.dataSet[0].values}
-                        borderColor="#01b6f5"
-                        backgroundColor="#0094c8"
+                        borderColor="#f2c302"
+                        backgroundColor="#ffcc00"
                         type="line" />
                 </ChartCard>
                 <ChartCard
-                    title="Area Charts"
+                    title="$3,500"
+                    subtitle="Daily Sales"
+                    chartTitle="Area charts"
+                    icon={<SalesIcon />}
                     chartLabels={areaCharts.labels}
                     chartType="line"
                     chartDisableCurves>
@@ -57,7 +69,10 @@ function Cards(props) {
             </section>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
-                    title="Bar Charts"
+                    title="11K"
+                    subtitle="Completed Tasks"
+                    chartTitle="Vertical Bar Charts"
+                    icon={<CompletedTasksIcon />}
                     chartLabels={barCharts.labels}
                     chartType="bar">
                     <Dataset
@@ -82,7 +97,10 @@ function Cards(props) {
                         backgroundColor="#1ad1a3" />
                 </ChartCard>
                 <ChartCard
-                    title="Horizontal Bar Charts"
+                    title="12K"
+                    subtitle="Completed Tasks"
+                    chartTitle="Horizontal Bar Charts"
+                    icon={<IncompletedTasksIcon />}
                     chartLabels={horizontalBarCharts.labels}
                     chartType="horizontalBar">
                     <Dataset
@@ -99,7 +117,9 @@ function Cards(props) {
             </section>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
-                    title="Radar Charts"
+                    title="Daily Tasks"
+                    subtitle="Total Shipments"
+                    chartTitle="Radar Charts"
                     chartLabels={radarCharts.labels}
                     chartType="radar"
                     chartLegendPosition="right">
@@ -117,7 +137,9 @@ function Cards(props) {
                         fill />
                 </ChartCard>
                 <ChartCard
-                    title="Polar Area Charts"
+                    title="Color use in Design"
+                    subtitle="Total Shipments"
+                    chartTitle="Polar Area Charts"
                     chartType="polarArea"
                     chartLabels={polarAreaCharts.labels}
                     chartLegendPosition="right">
@@ -129,7 +151,9 @@ function Cards(props) {
             </section>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
-                    title="Pie Charts"
+                    title="Mobile operative systems"
+                    subtitle="Total Shipments"
+                    chartTitle="Pie Charts"
                     chartLabels={pieCharts.labels}
                     chartType="pie"
                     chartLegendPosition="right">
@@ -140,7 +164,9 @@ function Cards(props) {
                         backgroundColor={['#ffcc00', '#1ad1a3', '#fe4849', '#ff6837']} />
                 </ChartCard>
                 <ChartCard
-                    title="Boughnut Charts"
+                    title="Color use in Design"
+                    subtitle="Total Shipments"
+                    chartTitle="Doughnut Charts"
                     chartLabels={doughnutCharts.labels}
                     chartType="doughnut"
                     chartLegendPosition="right">
