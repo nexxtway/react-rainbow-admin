@@ -174,7 +174,7 @@ function Cards(props) {
             </section>
             <section className="react-rainbow-admin-charts_section rainbow-p-top_large rainbow-align-content_space-between">
                 <ChartCard
-                    title="Mobile operative systems"
+                    title="Use in Mobile"
                     subtitle="Total Shipments"
                     chartTitle="Pie Charts"
                     chartLabels={pieCharts.labels}
