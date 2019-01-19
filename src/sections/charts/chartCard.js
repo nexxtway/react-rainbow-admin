@@ -16,8 +16,8 @@ export default function ChartCard(props) {
         chartType,
         chartLegendPosition,
         chartDisableCurves,
-        className,
         maintainAspectRatio,
+        className,
         chartClassName,
     } = props;
 
