@@ -167,7 +167,8 @@ export default class Users extends Component {
                                 <Chart
                                     labels={['January', 'February', 'March', 'April', 'May', 'Jun', '']}
                                     type="line"
-                                    showLegend={false}>
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
                                     <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
@@ -186,7 +187,8 @@ export default class Users extends Component {
                                 <Chart
                                     labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
-                                    showLegend={false}>
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
                                     <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
