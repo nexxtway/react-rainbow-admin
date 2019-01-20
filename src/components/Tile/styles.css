@@ -7,19 +7,25 @@
     margin-right: 24px;
 }
 
-.react-rainbow-admin-tile--title {
+.react-rainbow-admin-tile_title {
     letter-spacing: 0.3px;
+    color: #a4a7b5;
 }
 
-.react-rainbow-admin-tile--content {
+.react-rainbow-admin-tile_title--inverse {
+    color: #e3e5ed;
+}
+
+.react-rainbow-admin-tile_content {
     font-size: 28px;
     line-height: 1.07;
     letter-spacing: 1.8px;
-    color: #FFF;
+    color: #061c3f;
+    
 }
 
-.react-rainbow-admin-tile--content-dark {
-    color: #061c3f;
+.react-rainbow-admin-tile_content--inverse {
+    color: #FFF;
 }
 
 @media (max-width: 800px) {

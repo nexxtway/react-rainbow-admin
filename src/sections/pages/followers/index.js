@@ -25,7 +25,7 @@ export default function Followers() {
         <div className="react-rainbow-admin-followers_view-port rainbow-background-color_gray-1">
             <Breadcrumbs>
                 <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
-                <Breadcrumb label="Users" />
+                <Breadcrumb label="Followers" />
             </Breadcrumbs>
             <PageHeader
                 className="react-rainbow-admin-followers_header"

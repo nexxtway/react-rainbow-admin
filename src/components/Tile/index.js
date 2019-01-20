@@ -11,29 +11,25 @@ export default function Tile(props) {
         label,
         variant,
         className,
+        style,
     } = props;
 
-    function getClassNames() {
-        return classnames('react-rainbow-admin-tile rainbow-align-content_space-between rainbow-p-vertical_medium rainbow-p-horizontal_small',
-            className);
-    }
+    const getContainerClassName = () => classnames('react-rainbow-admin-tile',
+        'rainbow-align-content_space-between',
+        'rainbow-p-vertical_medium',
+        'rainbow-p-horizontal_small',
+        className);
 
-    function getVariantClassNames() {
-        if (variant === 'inverse') {
-            return 'react-rainbow-admin-tile--content rainbow-p-top_small';
-        }
-        return 'react-rainbow-admin-tile--content rainbow-p-top_small react-rainbow-admin-tile--content-dark';
-    }
+    const getVariantClassNames = () => classnames('react-rainbow-admin-tile_content rainbow-p-top_small', {
+        'react-rainbow-admin-tile_content--inverse': variant === 'inverse',
+    });
 
-    function getTitleClassNames() {
-        if (variant === 'inverse') {
-            return 'react-rainbow-admin-tile--title rainbow-color_gray-2 rainbow-font-size-text_medium';
-        }
-        return 'react-rainbow-admin-tile--title rainbow-color_gray-3 rainbow-font-size-text_medium';
-    }
+    const getTitleClassNames = () => classnames('react-rainbow-admin-tile_title rainbow-font-size-text_medium', {
+        'react-rainbow-admin-tile_title--inverse': variant === 'inverse',
+    });
 
     return (
-        <Card className={getClassNames()}>
+        <Card className={getContainerClassName()} style={style}>
             {icon}
             <div className="rainbow-flex rainbow-flex_column rainbow-align_end">
                 <h2 className={getTitleClassNames()}>{title}</h2>
@@ -54,6 +50,7 @@ Tile.propTypes = {
         'base',
         'inverse',
     ]),
+    style: PropTypes.object,
 };
 
 Tile.defaultProps = {
@@ -62,4 +59,5 @@ Tile.defaultProps = {
     className: undefined,
     label: undefined,
     variant: 'base',
+    style: undefined,
 };

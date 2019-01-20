@@ -37,7 +37,7 @@ export default function ChartCard(props) {
     return (
         <Card className={getContainerClassNames()}>
             <div className="react-rainbow-admin-charts_header-title-container">
-                <RenderIf isTrue={icon}>
+                <RenderIf isTrue={!!icon}>
                     <span className="react-rainbow-admin-charts_header-icon rainbow-p-right_small">
                         {icon}
                     </span>
