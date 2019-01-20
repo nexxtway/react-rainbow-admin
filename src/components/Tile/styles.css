@@ -1,0 +1,35 @@
+.react-rainbow-admin-tile {
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-tile:not(:last-child) {
+    margin-right: 24px;
+}
+
+.react-rainbow-admin-tile_title {
+    letter-spacing: 0.3px;
+    color: #a4a7b5;
+}
+
+.react-rainbow-admin-tile_title--inverse {
+    color: #e3e5ed;
+}
+
+.react-rainbow-admin-tile_content {
+    font-size: 28px;
+    line-height: 1.07;
+    letter-spacing: 1.8px;
+    color: #061c3f;
+    
+}
+
+.react-rainbow-admin-tile_content--inverse {
+    color: #FFF;
+}
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-tile:not(:last-child) {
+        margin: 0 0 8px 0;
+    }
+}
