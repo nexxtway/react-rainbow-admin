@@ -23,7 +23,7 @@ import Tile from '../../components/Tile';
 import fetchDashboardData from '../../redux/actions/dashboard';
 import './styles.css';
 
-function Cards(props) {
+function ContentPage(props) {
     const {
         totals: {
             orders,
@@ -132,7 +132,7 @@ function Cards(props) {
     );
 }
 
-Cards.propTypes = {
+ContentPage.propTypes = {
     totals: PropTypes.object.isRequired,
     chartsData: PropTypes.object.isRequired,
     lastMessages: PropTypes.array.isRequired,
@@ -152,7 +152,7 @@ class Dashboard extends Component {
                 <PageHeader
                     title="Dashboard"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                <Cards {...this.props} />
+                <ContentPage {...this.props} />
             </div>
         );
     }

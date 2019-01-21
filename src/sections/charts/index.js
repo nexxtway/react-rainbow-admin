@@ -16,7 +16,7 @@ import {
 import fetchChartsData from '../../redux/actions/charts';
 import './styles.css';
 
-function Cards(props) {
+function ContentPage(props) {
     const {
         isLoading,
         data: {
@@ -204,7 +204,7 @@ function Cards(props) {
     );
 }
 
-Cards.propTypes = {
+ContentPage.propTypes = {
     data: PropTypes.object.isRequired,
     isLoading: PropTypes.bool.isRequired,
 };
@@ -221,7 +221,7 @@ class Charts extends Component {
                 <PageHeader
                     title="Charts"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. You can learn more about it here: https://www.chartjs.org" />
-                <Cards {...this.props} />
+                <ContentPage {...this.props} />
             </div>
         );
     }
