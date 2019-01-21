@@ -18,6 +18,14 @@ import OrderIcon from './Order';
 import PricingIcon from './Pricing';
 import TimelineIcon from './Timeline';
 import GithubIcon from './Github';
+import BellIcon from './Bell';
+import SalesIcon from './Sales';
+import CompletedTasksIcon from './CompletedTasks';
+import IncompletedTasksIcon from './IncompletedTasks';
+import GoogleIcon from './Google';
+import FacebookIcon from './Facebook';
+import TwitterIcon from './Twitter';
+import LinkedinIcon from './Linkedin';
 
 export {
     ApplicationIcon,
@@ -39,4 +47,12 @@ export {
     PricingIcon,
     TimelineIcon,
     GithubIcon,
+    BellIcon,
+    SalesIcon,
+    CompletedTasksIcon,
+    IncompletedTasksIcon,
+    GoogleIcon,
+    FacebookIcon,
+    TwitterIcon,
+    LinkedinIcon,
 };

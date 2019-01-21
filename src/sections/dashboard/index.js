@@ -15,15 +15,15 @@ import {
     LikeIcon,
     ErrorIcon,
 } from '../../components/icons';
-import Tile from './tile';
 import ListCard from './listCard';
 import LastMessagesList from './lastMessagesList';
 import NewUsersList from './newUsersList';
 import PageHeader from '../../components/PageHeader';
+import Tile from '../../components/Tile';
 import fetchDashboardData from '../../redux/actions/dashboard';
 import './styles.css';
 
-function Cards(props) {
+function ContentPage(props) {
     const {
         totals: {
             orders,
@@ -46,23 +46,23 @@ function Cards(props) {
         <div>
             <section className="react-rainbow-admin-dashboard_section rainbow-align-content_space-between rainbow-p-top_large">
                 <Tile
-                    label="Orders"
-                    total={orders}
+                    title="Orders"
+                    label={orders}
                     icon={<ShoppingCartIcon />} />
 
                 <Tile
-                    label="Users"
-                    total={users}
+                    title="Users"
+                    label={users}
                     icon={<UsersIcon className="react-rainbow-admin-dashboard_tile-icon" />} />
 
                 <Tile
-                    label="Followers"
-                    total={followers}
+                    title="Followers"
+                    label={followers}
                     icon={<LikeIcon />} />
 
                 <Tile
-                    label="Errors"
-                    total={errors}
+                    title="Errors"
+                    label={errors}
                     icon={<ErrorIcon />} />
             </section>
 
@@ -132,7 +132,7 @@ function Cards(props) {
     );
 }
 
-Cards.propTypes = {
+ContentPage.propTypes = {
     totals: PropTypes.object.isRequired,
     chartsData: PropTypes.object.isRequired,
     lastMessages: PropTypes.array.isRequired,
@@ -152,7 +152,7 @@ class Dashboard extends Component {
                 <PageHeader
                     title="Dashboard"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
-                <Cards {...this.props} />
+                <ContentPage {...this.props} />
             </div>
         );
     }

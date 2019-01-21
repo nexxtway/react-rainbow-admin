@@ -21,6 +21,7 @@
     height: 6rem;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .react-rainbow-admin-pages_anchor {
@@ -34,4 +35,17 @@
 
 .react-rainbow-admin-pages_anchor:last-child {
     margin-right: 0;
+}
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-pages_container {
+        padding: 16px;
+    }
+    .react-rainbow-admin-pages_anchor, .react-rainbow-admin-pages_card {
+        width: 100%;
+        margin-right: 0;
+    }
+    .react-rainbow-admin-pages_card-image {
+        height: 8rem;
+    }
 }

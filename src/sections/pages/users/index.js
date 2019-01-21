@@ -17,6 +17,7 @@ import PageHeader from '../../../components/PageHeader';
 import Status from './status';
 import UserCell from '../../../components/UserCell';
 import TablePagination from '../../../components/TablePagination';
+import { navigateTo } from '../../../history';
 import './styles.css';
 
 const users = [
@@ -201,7 +202,7 @@ export default class Users extends Component {
             <div className="react-rainbow-admin-users_container">
                 <div className="react-rainbow-admin-users_header-container">
                     <Breadcrumbs>
-                        <Breadcrumb label="Pages" href="/pages" />
+                        <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
                         <Breadcrumb label="Users" />
                     </Breadcrumbs>
                     <PageHeader
@@ -225,7 +226,7 @@ export default class Users extends Component {
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b6" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b
                                 </Chart>
                             </div>
                         </Card>
