@@ -69,7 +69,6 @@ export default function SectionHeading() {
                         )} />
                 </ButtonMenu>
                 <AvatarMenu
-                    id="avatar-menu"
                     src="/assets/images/user2.jpg"
                     assistiveText="Tahimi Leon"
                     menuAlignment="right"
