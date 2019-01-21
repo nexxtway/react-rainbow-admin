@@ -30,6 +30,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "CI=true yarn test",
     "lint": "./node_modules/.bin/eslint src",
     "eject": "react-scripts eject",
     "deploy": "yarn build && firebase deploy"
@@ -57,6 +58,6 @@
   },
   "pre-push": [
     "lint",
-    "test"
+    "test:ci"
   ]
 }
