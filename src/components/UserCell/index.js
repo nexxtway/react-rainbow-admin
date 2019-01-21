@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import { Avatar } from 'react-rainbow-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import './styles.css';
 
-export default function User({ value }) {
+export default function UserCell({ value }) {
     return (
-        <div className="react-rainbow-admin-users_user">
+        <div className="react-rainbow-admin-table-user_container">
             <Avatar src={value.photoUrl} icon={<FontAwesomeIcon icon={faUserCircle} size="3x" />} size="small" />
-            <div className="react-rainbow-admin-users_user-name">{value.name}</div>
+            <div className="react-rainbow-admin-table-user_name">{value.name}</div>
         </div>
     );
 }
 
-User.propTypes = {
+UserCell.propTypes = {
     value: PropTypes.object,
 };
 
-User.defaultProps = {
+UserCell.defaultProps = {
     value: undefined,
 };

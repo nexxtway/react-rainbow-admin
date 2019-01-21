@@ -1,5 +1,5 @@
 .react-rainbow-admin-orders_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
     background-color: #f4f6f9;
 }
 
@@ -48,15 +48,6 @@
 }
 
 .react-rainbow-admin-orders_status_value {
-    margin-left: 8px;
-}
-
-.react-rainbow-admin-orders_user {
-    display: flex;
-    align-items: center;
-}
-
-.react-rainbow-admin-orders_user-name {
     margin-left: 8px;
 }
 

@@ -1,0 +1,8 @@
+.react-rainbow-admin-table-user_container {
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-table-user_name {
+    margin-left: 8px;
+}

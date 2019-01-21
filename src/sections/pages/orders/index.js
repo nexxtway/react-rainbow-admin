@@ -8,16 +8,16 @@ import {
     Badge,
     Table,
     Column,
-    Pagination,
 } from 'react-rainbow-components';
-import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '../../../components/PageHeader';
 import Status from './status';
-import User from './user';
+import UserCell from '../../../components/UserCell';
+import TablePagination from '../../../components/TablePagination';
+import './styles.css';
 
-const users = [
+const orders = [
     {
         user: { name: 'Sara', photoUrl: '/assets/images/user2.jpg' },
         status: 'VERIFIED',
@@ -109,34 +109,20 @@ export default class Orders extends Component {
         const { activePage } = this.state;
         const firstItem = (activePage - 1) * 8;
         const lastItem = firstItem + 8;
-        return users.slice(firstItem, lastItem);
+        return orders.slice(firstItem, lastItem);
     }
 
     handleOnChange(event, page) {
         this.setState({ activePage: page });
     }
 
-    renderPagination() {
-        const { activePage } = this.state;
-        if (users.length > 8) {
-            return (
-                <div className="react-rainbow-admin-orders_pagination">
-                    <Pagination
-                        pages={Math.ceil(users.length / 8)}
-                        activePage={activePage}
-                        onChange={this.handleOnChange} />
-                </div>
-            );
-        }
-        return null;
-    }
-
     render() {
+        const { activePage } = this.state;
         return (
             <div className="react-rainbow-admin-orders_container">
                 <div className="react-rainbow-admin-orders_cards-container">
                     <Breadcrumbs>
-                        <Breadcrumb label="Pages" href="pages" />
+                        <Breadcrumb label="Pages" href="/pages" />
                         <Breadcrumb label="Orders" />
                     </Breadcrumbs>
                     <PageHeader
@@ -158,7 +144,8 @@ export default class Orders extends Component {
                                 <Chart
                                     labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
-                                    showLegend={false}>
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
                                     <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
@@ -177,7 +164,8 @@ export default class Orders extends Component {
                                 <Chart
                                     labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
-                                    showLegend={false}>
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
                                     <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
@@ -186,13 +174,15 @@ export default class Orders extends Component {
                 </div>
                 <div className="react-rainbow-admin-orders_table-container">
                     <Table className="react-rainbow-admin-orders_table" data={this.getTableData()}>
-                        <Column header="USER" field="user" component={User} />
+                        <Column header="USER" field="user" component={UserCell} />
                         <Column header="STATUS" field="status" component={Status} />
                         <Column header="AMOUNT" field="amount" />
                         <Column header="DATE" field="date" />
-                        <Column field="edit" />
                     </Table>
-                    {this.renderPagination()}
+                    <TablePagination
+                        pages={Math.ceil(orders.length / 8)}
+                        activePage={activePage}
+                        onChange={this.handleOnChange} />
                 </div>
             </div>
         );

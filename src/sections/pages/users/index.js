@@ -10,14 +10,14 @@ import {
     Tab,
     Table,
     Column,
-    Pagination,
 } from 'react-rainbow-components';
-import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '../../../components/PageHeader';
 import Status from './status';
-import User from './user';
+import UserCell from '../../../components/UserCell';
+import TablePagination from '../../../components/TablePagination';
+import './styles.css';
 
 const users = [
     {
@@ -153,6 +153,7 @@ const users = [
         phoneNumber: '+1 166 666 6666',
         status: 'ONLINE',
     },
+
 ];
 
 const activeUsers = users.filter(user => user.status === 'ONLINE');
@@ -194,39 +195,13 @@ export default class Users extends Component {
         this.setState({ activePage: page });
     }
 
-    renderPagination() {
-        const { activeTabName, activePage } = this.state;
-        if (activeTabName === 'allUsers') {
-            if (users.length > 8) {
-                return (
-                    <div className="react-rainbow-admin-users_pagination">
-                        <Pagination
-                            pages={this.getPages()}
-                            activePage={activePage}
-                            onChange={this.handleOnChange} />
-                    </div>
-                );
-            }
-        } else if (activeUsers.length > 8) {
-            return (
-                <div className="react-rainbow-admin-users_pagination">
-                    <Pagination
-                        pages={this.getPages()}
-                        activePage={activePage}
-                        onChange={this.handleOnChange} />
-                </div>
-            );
-        }
-        return null;
-    }
-
     render() {
-        const { activeTabName } = this.state;
+        const { activeTabName, activePage } = this.state;
         return (
             <div className="react-rainbow-admin-users_container">
                 <div className="react-rainbow-admin-users_header-container">
                     <Breadcrumbs>
-                        <Breadcrumb label="Pages" href="pages" />
+                        <Breadcrumb label="Pages" href="/pages" />
                         <Breadcrumb label="Users" />
                     </Breadcrumbs>
                     <PageHeader
@@ -246,10 +221,11 @@ export default class Users extends Component {
                             <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
-                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', '']}
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul', '']}
                                     type="line"
-                                    showLegend={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" />
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>
@@ -265,10 +241,11 @@ export default class Users extends Component {
                             <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
-                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul', '']}
                                     type="line"
-                                    showLegend={false}>
-                                    <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
+                                    showLegend={false}
+                                    maintainAspectRatio={false}>
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 800, 1000]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>
@@ -288,13 +265,16 @@ export default class Users extends Component {
                 </Tabset>
                 <div className="react-rainbow-admin-users_tab-content">
                     <Table data={this.getTableData()}>
-                        <Column header="USER" field="user" component={User} />
+                        <Column header="USER" field="user" component={UserCell} />
                         <Column header="EMAIL" field="email" />
                         <Column header="PHONE NUMBER" field="phoneNumber" />
                         <Column header="CURRENT STATUS" field="status" component={Status} />
                         <Column field="edit" />
                     </Table>
-                    {this.renderPagination()}
+                    <TablePagination
+                        pages={this.getPages()}
+                        activePage={activePage}
+                        onChange={this.handleOnChange} />
                 </div>
             </div>
         );

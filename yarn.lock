@@ -8432,9 +8432,10 @@ react-rainbow-components@^0.5.0:
     react-dom "^16.4.2"
     react-ga "^2.5.3"
 
-react-rainbow-components@^0.8.0:
-  version "0.8.0"
-  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-0.8.0.tgz#7f1ebbb1f7c6f16247788301aebcba3b63c34575"
+react-rainbow-components@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-0.9.0.tgz#3c73b29ec6d94e76f45880bc2e00797f361eb9bf"
+  integrity sha512-9cO7uPy8g4bmdOpS0HxqvkGARsT/SiUchxwOvbieF973R7vhUd6ilS1YsNQLZFwchHICdmjIGrsgoGLWz3fyfg==
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"
