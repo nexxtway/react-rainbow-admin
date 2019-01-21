@@ -226,7 +226,7 @@ export default class Users extends Component {
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b" />
                                 </Chart>
                             </div>
                         </Card>
