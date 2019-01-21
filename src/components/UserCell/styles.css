@@ -1,8 +1,8 @@
-.react-rainbow-admin-table-user_container {
+.react-rainbow-admin-user-cell_container {
     display: flex;
     align-items: center;
 }
 
-.react-rainbow-admin-table-user_name {
+.react-rainbow-admin-user-cell_name {
     margin-left: 8px;
 }

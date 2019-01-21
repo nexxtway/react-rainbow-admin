@@ -75,14 +75,3 @@
     border-top: 1px solid #e3e5ed;
     margin-top: 8px;
 }
-
-.react-rainbow-admin-orders_pagination {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    border-top: 1px solid #e3e5ed;
-    border-bottom: 1px solid #e3e5ed;
-    margin-bottom: 24px;
-}

@@ -222,11 +222,11 @@ export default class Users extends Component {
                             <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
-                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul', '']}
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650, 1000]} borderColor="#1de9b" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b" />
                                 </Chart>
                             </div>
                         </Card>
@@ -242,11 +242,11 @@ export default class Users extends Component {
                             <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
-                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul', '']}
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 800, 1000]} borderColor="#1de9b6" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 800]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>

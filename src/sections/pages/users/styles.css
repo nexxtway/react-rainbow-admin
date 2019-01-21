@@ -71,17 +71,6 @@
     background-color: #1de9b6;
 }
 
-.react-rainbow-admin-users_pagination {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    border-top: 1px solid #e3e5ed;
-    border-bottom: 1px solid #e3e5ed;
-    margin-bottom: 24px;
-}
-
 @media (max-width: 800px) {
     .react-rainbow-admin-users_header-container {
         padding: 16px;

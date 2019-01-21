@@ -15,6 +15,7 @@ import PageHeader from '../../../components/PageHeader';
 import Status from './status';
 import UserCell from '../../../components/UserCell';
 import TablePagination from '../../../components/TablePagination';
+import { navigateTo } from '../../../history';
 import './styles.css';
 
 const orders = [
@@ -118,11 +119,13 @@ export default class Orders extends Component {
 
     render() {
         const { activePage } = this.state;
+        const pages = Math.ceil(orders.length / 8);
+
         return (
             <div className="react-rainbow-admin-orders_container">
                 <div className="react-rainbow-admin-orders_cards-container">
                     <Breadcrumbs>
-                        <Breadcrumb label="Pages" href="/pages" />
+                        <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
                         <Breadcrumb label="Orders" />
                     </Breadcrumbs>
                     <PageHeader
@@ -180,7 +183,7 @@ export default class Orders extends Component {
                         <Column header="DATE" field="date" />
                     </Table>
                     <TablePagination
-                        pages={Math.ceil(orders.length / 8)}
+                        pages={pages}
                         activePage={activePage}
                         onChange={this.handleOnChange} />
                 </div>

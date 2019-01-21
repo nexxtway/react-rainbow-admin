@@ -7,9 +7,9 @@ import './styles.css';
 
 export default function UserCell({ value }) {
     return (
-        <div className="react-rainbow-admin-table-user_container">
+        <div className="react-rainbow-admin-user-cell_container">
             <Avatar src={value.photoUrl} icon={<FontAwesomeIcon icon={faUserCircle} size="3x" />} size="small" />
-            <div className="react-rainbow-admin-table-user_name">{value.name}</div>
+            <div className="react-rainbow-admin-user-cell_name">{value.name}</div>
         </div>
     );
 }

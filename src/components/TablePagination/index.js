@@ -11,7 +11,7 @@ export default function TablePagination(props) {
 
     if (pages > 1) {
         return (
-            <div className="react-rainbow-admin-orders_pagination">
+            <div className="react-rainbow-admin-table-pagination">
                 <Pagination
                     pages={pages}
                     activePage={activePage}
