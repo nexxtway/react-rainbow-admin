@@ -1,34 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { Badge } from 'react-rainbow-components';
 
+const iconMap = {
+    VERIFIED: faCheck,
+    EXPIRED: faExclamation,
+    PROCESSING: faClock,
+};
 export default function Status({ value }) {
-    function getClassName() {
-        if (value === 'VERIFIED') {
-            return 'react-rainbow-admin-orders_status-verified';
-        }
-        if (value === 'EXPIRED') {
-            return 'react-rainbow-admin-orders_status-expired';
-        }
-        return 'react-rainbow-admin-orders_status-processing';
-    }
+    const getClassName = () => classnames({
+        'react-rainbow-admin-orders_status-verified': value === 'VERIFIED',
+        'react-rainbow-admin-orders_status-expired': value === 'EXPIRED',
+        'react-rainbow-admin-orders_status-processing': value === 'PROCESSING',
+    });
 
-    function getIcon() {
-        if (value === 'VERIFIED') {
-            return faCheck;
-        }
-        if (value === 'EXPIRED') {
-            return faExclamation;
-        }
-        return faClock;
-    }
+    const Icon = iconMap[value];
 
     return (
         <Badge className={getClassName()} variant="lightest">
-            <FontAwesomeIcon icon={getIcon()} pull="left" size="sm" />
+            <FontAwesomeIcon icon={Icon} pull="left" size="sm" />
             {value}
         </Badge>
     );
