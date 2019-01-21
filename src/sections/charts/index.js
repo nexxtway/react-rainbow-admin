@@ -210,7 +210,7 @@ Cards.propTypes = {
 };
 
 class Charts extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const { fetchChartsData } = this.props;
         fetchChartsData();
     }
