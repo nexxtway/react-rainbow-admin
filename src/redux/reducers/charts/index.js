@@ -75,6 +75,7 @@ function loadData(state, action) {
     const newState = {
         ...state,
         data: action.payload,
+        isFirstTime: false,
     };
     return newState;
 }
@@ -90,7 +91,6 @@ function stopLoading(state) {
     return {
         ...state,
         isLoading: false,
-        isFirstTime: false,
     };
 }
 
