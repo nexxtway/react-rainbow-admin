@@ -17,10 +17,10 @@ const pages = [
     { name: 'Orders', icon: <OrderIcon />, href: '/pages/orders' },
     { name: 'Users', icon: <UsersIcon />, href: '/pages/users' },
     { name: 'Followers', icon: <FollowerIcon />, href: '/pages/followers' },
-    { name: 'Timeline', icon: <TimelineIcon />, href: '/pages/timeline' },
-    { name: 'Gallery', icon: <GalleryIcon />, href: '/pages/gallery' },
-    { name: 'Calendar', icon: <CalendarIcon />, href: '/pages/calendar' },
-    { name: 'Pricing', icon: <PricingIcon />, href: '/pages/pricing' },
+    { name: 'Timeline', icon: <TimelineIcon />, href: '../comingSoon' },
+    { name: 'Gallery', icon: <GalleryIcon />, href: '../comingSoon' },
+    { name: 'Calendar', icon: <CalendarIcon />, href: '../comingSoon' },
+    { name: 'Pricing', icon: <PricingIcon />, href: '../comingSoon' },
 ];
 
 function Cards() {

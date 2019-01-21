@@ -15,6 +15,7 @@ import Messages from './sections/messages';
 import Pages from './sections/pages';
 import Users from './sections/pages/users';
 import Followers from './sections/pages/followers';
+import ComingSoon from './sections/comingSoon';
 
 export default function Routes() {
     return (
@@ -30,6 +31,7 @@ export default function Routes() {
                 <Route path="/pages" exact component={Pages} />
                 <Route path="/pages/users" component={Users} />
                 <Route path="/pages/followers" component={Followers} />
+                <Route path="/comingSoon" component={ComingSoon} />
             </Switch>
         </Router>
     );
