@@ -10,15 +10,15 @@ import {
     Tab,
     Table,
     Column,
-    Pagination,
 } from 'react-rainbow-components';
-import './styles.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import PageHeader from '../../../components/PageHeader';
 import Status from './status';
-import User from './user';
+import UserCell from '../../../components/UserCell';
+import TablePagination from '../../../components/TablePagination';
 import { navigateTo } from '../../../history';
+import './styles.css';
 
 const users = [
     {
@@ -105,7 +105,60 @@ const users = [
         phoneNumber: '+1 166 666 6666',
         status: 'ONLINE',
     },
+
+    {
+        user: { name: 'Pedro' },
+        email: 'pedro@gmail.com',
+        phoneNumber: '+1 777 777 7777',
+        status: 'ONLINE',
+    },
+    {
+        user: { name: 'Juan' },
+        email: 'juan@gmail.com',
+        phoneNumber: '+1 888 888 8888',
+        status: 'ONLINE',
+    },
+    {
+        user: { name: 'Pablo' },
+        email: 'pablo@gmail.com',
+        phoneNumber: '+1 999 999 9999',
+        status: 'ONLINE',
+    },
+    {
+        user: { name: 'Maria' },
+        email: 'maria@gmail.com',
+        phoneNumber: '+1 122 222 2222',
+        status: 'OFFLINE',
+    },
+    {
+        user: { name: 'Juana' },
+        email: 'juana@gmail.com',
+        phoneNumber: '+1 133 333 3333',
+        status: 'ONLINE',
+    },
+    {
+        user: { name: 'Julio' },
+        email: 'julio@gmail.com',
+        phoneNumber: '+1 144 444 4444',
+        status: 'ONLINE',
+    },
+    {
+        user: { name: 'Olga' },
+        email: 'olga@gmail.com',
+        phoneNumber: '+1 155 555 5555',
+        status: 'OFFLINE',
+    },
+    {
+        user: { name: 'Armando' },
+        email: 'armando@gmail.com',
+        phoneNumber: '+1 166 666 6666',
+        status: 'ONLINE',
+    },
+
 ];
+
+const activeUsers = users.filter(user => user.status === 'ONLINE');
+
 export default class Users extends Component {
     constructor(props) {
         super(props);
@@ -119,7 +172,6 @@ export default class Users extends Component {
 
     getTableData() {
         const { activeTabName, activePage } = this.state;
-        const activeUsers = users.filter(user => user.status === 'ONLINE');
         const firstItem = (activePage - 1) * 8;
         const lastItem = firstItem + 8;
         if (activeTabName === 'allUsers') {
@@ -128,8 +180,16 @@ export default class Users extends Component {
         return activeUsers.slice(firstItem, lastItem);
     }
 
+    getPages() {
+        const { activeTabName } = this.state;
+        if (activeTabName === 'allUsers') {
+            return Math.ceil(users.length / 8);
+        }
+        return Math.ceil(activeUsers.length / 8);
+    }
+
     handleOnSelect(event, tab) {
-        this.setState({ activeTabName: tab });
+        this.setState({ activeTabName: tab, activePage: 1 });
     }
 
     handleOnChange(event, page) {
@@ -137,10 +197,7 @@ export default class Users extends Component {
     }
 
     render() {
-        const {
-            activeTabName,
-            activePage,
-        } = this.state;
+        const { activeTabName, activePage } = this.state;
         return (
             <div className="react-rainbow-admin-users_container">
                 <div className="react-rainbow-admin-users_header-container">
@@ -165,11 +222,11 @@ export default class Users extends Component {
                             <h1 className="react-rainbow-admin-users_card-title">Total users</h1>
                             <div className="react-rainbow-admin-users_chart">
                                 <Chart
-                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', '']}
+                                    labels={['January', 'February', 'March', 'April', 'May', 'Jun', 'Jul']}
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b" />
                                 </Chart>
                             </div>
                         </Card>
@@ -189,7 +246,7 @@ export default class Users extends Component {
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 800]} borderColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>
@@ -209,18 +266,16 @@ export default class Users extends Component {
                 </Tabset>
                 <div className="react-rainbow-admin-users_tab-content">
                     <Table data={this.getTableData()}>
-                        <Column header="USER" field="user" component={User} />
+                        <Column header="USER" field="user" component={UserCell} />
                         <Column header="EMAIL" field="email" />
                         <Column header="PHONE NUMBER" field="phoneNumber" />
                         <Column header="CURRENT STATUS" field="status" component={Status} />
                         <Column field="edit" />
                     </Table>
-                    <div className="react-rainbow-admin-users_pagination">
-                        <Pagination
-                            pages={5}
-                            activePage={activePage}
-                            onChange={this.handleOnChange} />
-                    </div>
+                    <TablePagination
+                        pages={this.getPages()}
+                        activePage={activePage}
+                        onChange={this.handleOnChange} />
                 </div>
             </div>
         );

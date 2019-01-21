@@ -14,6 +14,7 @@ import Forms from './sections/forms';
 import Messages from './sections/messages';
 import Pages from './sections/pages';
 import Users from './sections/pages/users';
+import Orders from './sections/pages/orders';
 import Followers from './sections/pages/followers';
 
 export default function Routes() {
@@ -29,6 +30,7 @@ export default function Routes() {
                 <Route path="/messages" component={Messages} />
                 <Route path="/pages" exact component={Pages} />
                 <Route path="/pages/users" component={Users} />
+                <Route path="/pages/orders" component={Orders} />
                 <Route path="/pages/followers" component={Followers} />
             </Switch>
         </Router>

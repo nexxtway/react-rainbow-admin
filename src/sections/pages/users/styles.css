@@ -1,5 +1,5 @@
 .react-rainbow-admin-users_container {
-    min-height: 100vh;
+    min-height: calc(100vh - 68px);
     background-color: #f4f6f9;
 }
 
@@ -45,6 +45,7 @@
     height: max-content;
     padding-top: 24px;
     background-color: white;
+    padding-bottom: 24px;
 }
 
 .react-rainbow-admin-users_current-status {
@@ -53,15 +54,6 @@
 }
 
 .react-rainbow-admin-users_current-status_value {
-    margin-left: 8px;
-}
-
-.react-rainbow-admin-users_user {
-    display: flex;
-    align-items: center;
-}
-
-.react-rainbow-admin-users_user-name {
     margin-left: 8px;
 }
 
@@ -77,17 +69,6 @@
 
 .react-rainbow-admin-users_badge {
     background-color: #1de9b6;
-}
-
-.react-rainbow-admin-users_pagination {
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #ffffff;
-    border-top: 1px solid #e3e5ed;
-    border-bottom: 1px solid #e3e5ed;
-    margin-bottom: 48px;
 }
 
 @media (max-width: 800px) {
