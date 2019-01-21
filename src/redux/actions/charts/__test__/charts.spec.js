@@ -18,6 +18,7 @@ describe('fetchChartsData action', () => {
         expect(dispatch.mock.calls[0][0]).toEqual({ type: 'START_LOADING_CHARTS' });
     });
     it('should dispatch LOAD_CHARTS_DATA and STOP_LOADING_CHARTS when is first time', () => {
+        expect.assertions(3);
         return fetchChartsData()(dispatch, getState)
             .then(() => {
                 expect(dispatch.mock.calls[1][0]).toEqual({
