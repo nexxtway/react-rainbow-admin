@@ -1,9 +1,6 @@
 .react-rainbow-admin-coming-soon_container {
     min-height: calc(100vh - 68px);
     padding: 16px 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .react-rainbow-admin-coming-soon_image {
