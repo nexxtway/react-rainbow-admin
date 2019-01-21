@@ -1,9 +1,11 @@
 import React from 'react';
 import ButtonGroup from 'react-rainbow-components/components/ButtonGroup';
 import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import AvatarMenu from 'react-rainbow-components/components/AvatarMenu';
 import Avatar from 'react-rainbow-components/components/Avatar';
 import Input from 'react-rainbow-components/components/Input';
 import MenuItem from 'react-rainbow-components/components/MenuItem';
+import MenuDivider from 'react-rainbow-components/components/MenuDivider';
 import ButtonMenu from 'react-rainbow-components/components/ButtonMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -11,6 +13,8 @@ import {
     faAngleDown,
     faBullhorn,
     faSearch,
+    faPencilAlt,
+    faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
 import { ShoppingCartIcon, MessageIcon } from '../icons';
@@ -64,10 +68,34 @@ export default function SectionHeading() {
                                 content="You have 5 unread messages" />
                         )} />
                 </ButtonMenu>
-                <Avatar
-                    src="/assets/images/user3.jpg"
-                    assistiveText="Carlos Miguel"
-                    title="Carlos Miguel" />
+                <AvatarMenu
+                    id="avatar-menu"
+                    src="/assets/images/user2.jpg"
+                    assistiveText="Tahimi Leon"
+                    menuAlignment="right"
+                    menuSize="small"
+                    title="Tahimi Leon">
+                    <li className="rainbow-p-horizontal_small rainbow-align_center rainbow-flex">
+                        <Avatar
+                            src="/assets/images/user2.jpg"
+                            assistiveText="Tahimi Leon"
+                            title="Tahimi Leon"
+                            size="medium" />
+                        <div className="rainbow-m-left_x-small">
+                            <p className="rainbow-font-size-text_medium rainbow-color_dark-1">Tahimi</p>
+                            <p className="rainbow-font-size-text_small rainbow-color_gray-3">janedoe@gmail.com</p>
+                        </div>
+                    </li>
+                    <MenuDivider variant="space" />
+                    <MenuItem
+                        label="Edit Profile"
+                        icon={<FontAwesomeIcon icon={faPencilAlt} />}
+                        iconPosition="left" />
+                    <MenuItem
+                        label="Logout"
+                        icon={<FontAwesomeIcon icon={faPowerOff} />}
+                        iconPosition="left" />
+                </AvatarMenu>
             </section>
         </header>
     );
