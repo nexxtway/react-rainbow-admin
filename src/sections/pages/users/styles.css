@@ -4,19 +4,15 @@
 }
 
 .react-rainbow-admin-users_header-container {
-    padding: 16px 40px 24px 40px;
+    padding: 16px 40px 0;
 }
 
 .react-rainbow-admin-users_header {
     margin-top: 14px;
 }
 
-.react-rainbow-admin-users_chart {
-    margin: 0 20px;
-}
-
 .react-rainbow-admin-users_cards-container {
-    margin-top: 16px;
+    padding: 16px 40px 24px 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -25,6 +21,10 @@
 .react-rainbow-admin-users_card {
     width: 48%;
     padding-bottom: 16px;
+}
+
+.react-rainbow-admin-users_chart {
+    margin: 0 20px;
 }
 
 .react-rainbow-admin-users_card-title {
