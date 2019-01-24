@@ -26,6 +26,15 @@ import GoogleIcon from './Google';
 import FacebookIcon from './Facebook';
 import TwitterIcon from './Twitter';
 import LinkedinIcon from './Linkedin';
+import Avatar from './Avatar';
+import City from './City';
+import Company from './Company';
+import Email from './Email';
+import Lock from './Lock';
+import Map from './Map';
+import Phone from './Phone';
+import SignPost from './SignPost';
+import User from './User';
 
 export {
     ApplicationIcon,
@@ -55,4 +64,13 @@ export {
     FacebookIcon,
     TwitterIcon,
     LinkedinIcon,
+    Avatar,
+    City,
+    Company,
+    Email,
+    Lock,
+    Map,
+    Phone,
+    SignPost,
+    User,
 };
