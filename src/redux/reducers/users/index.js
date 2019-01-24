@@ -1,7 +1,6 @@
 import {
-    START_LOADING_USERS,
     STOP_LOADING_USERS,
-    LOAD_CHARTS_USERS,
+    LOAD_USERS_DATA,
 } from '../../actions/users';
 
 const initialState = {
@@ -16,7 +15,7 @@ const initialState = {
             value: [],
         },
     },
-    isLoading: false,
+    isLoading: true,
     isFirstTime: true,
 };
 
@@ -30,13 +29,6 @@ function loadData(state, action) {
     return newState;
 }
 
-function startLoading(state) {
-    return {
-        ...state,
-        isLoading: true,
-    };
-}
-
 function stopLoading(state) {
     return {
         ...state,
@@ -46,10 +38,8 @@ function stopLoading(state) {
 
 export default function usersData(state = initialState, action) {
     switch (action.type) {
-        case LOAD_CHARTS_USERS:
+        case LOAD_USERS_DATA:
             return loadData(state, action);
-        case START_LOADING_USERS:
-            return startLoading(state);
         case STOP_LOADING_USERS:
             return stopLoading(state);
         default:
