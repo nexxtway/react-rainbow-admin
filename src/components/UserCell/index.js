@@ -1,14 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Avatar } from 'react-rainbow-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import { PersonIcon } from '../icons';
 import './styles.css';
 
 export default function UserCell({ value }) {
     return (
         <div className="react-rainbow-admin-user-cell_container">
-            <Avatar src={value.photoUrl} icon={<FontAwesomeIcon icon={faUserCircle} size="3x" />} size="small" />
+            <Avatar src={value.photoUrl} icon={<PersonIcon />} size="small" />
             <div className="react-rainbow-admin-user-cell_name">{value.name}</div>
         </div>
     );
