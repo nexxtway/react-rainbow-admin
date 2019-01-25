@@ -6,6 +6,7 @@ import {
 import UserCell from '../../../components/UserCell';
 import Status from './status';
 import TablePagination from '../../../components/TablePagination';
+import getActiveUsers from './getActiveUsers';
 
 export default class UsersTabs extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ export default class UsersTabs extends Component {
 
     getTableData() {
         const { users } = this.props;
-        const activeUsers = users.filter(user => user.status === 'ONLINE');
+        const activeUsers = getActiveUsers(users);
         const { activeTabName, activePage } = this.state;
         const firstItem = (activePage - 1) * 8;
         const lastItem = firstItem + 8;
@@ -32,7 +33,7 @@ export default class UsersTabs extends Component {
 
     getPages() {
         const { users } = this.props;
-        const activeUsers = users.filter(user => user.status === 'ONLINE');
+        const activeUsers = getActiveUsers(users);
         const { activeTabName } = this.state;
         if (activeTabName === 'allUsers') {
             return Math.ceil(users.length / 8);
