@@ -87,7 +87,7 @@ function ContentPage(props) {
                         labels={chartsData.facebook.labels}
                         type="line"
                         showLegend={false}>
-                        <Dataset values={chartsData.facebook.value} borderColor="#3c5997" />
+                        <Dataset values={chartsData.facebook.value} borderColor="#3c5997" backgroundColor="#3c5997" />
                     </Chart>
                 </Card>
 
@@ -108,7 +108,7 @@ function ContentPage(props) {
                         labels={chartsData.google.labels}
                         type="line"
                         showLegend={false}>
-                        <Dataset values={chartsData.google.value} borderColor="#fe4849" />
+                        <Dataset values={chartsData.google.value} borderColor="#fe4849" backgroundColor="#fe4849" />
                     </Chart>
                 </Card>
             </section>
@@ -131,7 +131,7 @@ function ContentPage(props) {
                         labels={chartsData.twitter.labels}
                         type="line"
                         showLegend={false}>
-                        <Dataset values={chartsData.twitter.value} borderColor="#00b0f3" />
+                        <Dataset values={chartsData.twitter.value} borderColor="#00b0f3" backgroundColor="#00b0f3" />
                     </Chart>
                 </Card>
 
@@ -152,7 +152,7 @@ function ContentPage(props) {
                         labels={chartsData.linkedin.labels}
                         type="line"
                         showLegend={false}>
-                        <Dataset values={chartsData.linkedin.value} borderColor="#0077b5" />
+                        <Dataset values={chartsData.linkedin.value} borderColor="#0077b5" backgroundColor="#0077b5" />
                     </Chart>
                 </Card>
             </section>
