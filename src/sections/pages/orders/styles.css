@@ -3,12 +3,23 @@
     background-color: #f4f6f9;
 }
 
-.react-rainbow-admin-orders_cards-container {
-    padding: 16px 40px 24px 40px;
+.react-rainbow-admin-orders_header-container {
+    padding: 16px 40px 0;
 }
 
 .react-rainbow-admin-orders_header {
     margin-top: 14px;
+}
+
+.react-rainbow-admin-orders_cards-container {
+    padding: 16px 40px 24px 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.react-rainbow-admin-orders_card {
+    width: 48%;
 }
 
 .react-rainbow-admin-orders_chart-title {
@@ -22,17 +33,6 @@
 
 .react-rainbow-admin-orders_chart {
     margin: 0 20px 16px 20px;
-}
-
-.react-rainbow-admin-orders_cards {
-    margin-top: 16px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-.react-rainbow-admin-orders_card {
-    width: 48%;
 }
 
 .react-rainbow-admin-orders_status-processing {
