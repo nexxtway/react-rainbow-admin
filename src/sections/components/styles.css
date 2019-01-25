@@ -1,0 +1,65 @@
+.react-rainbow-admin-components_view-port {
+    min-height: calc(100vh - 68px);
+    padding: 16px 40px 24px 40px;
+}
+
+.react-rainbow-admin-components_finder-section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1.25rem;
+}
+
+.react-rainbow-admin-components_section-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+}
+
+.react-rainbow-admin-components_finder-section_title {
+    text-align: center;
+    margin-bottom: 1rem;
+    font-family: Lato;
+    font-size: 1.25rem;
+    font-weight: 300;
+    letter-spacing: 0.3px;
+    color: #01b6f5;
+}
+
+.react-rainbow-admin-components_finder-section_search {
+    width: 70%;
+}
+
+.react-rainbow-admin-components_cards-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-components_cards-section_title {
+    font-family: Lato;
+    font-size: 20px;
+    font-weight: 300;
+    color: #576574;
+    display: block;
+    padding-top: 40px;
+}
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-components_finder-section_title {
+        font-size: 1.25rem;
+        font-weight: 300;
+        letter-spacing: 0.01875rem;
+    }
+
+    .react-rainbow-admin-components_finder-section_search {
+        width: 100%;
+    }
+
+    .react-rainbow-admin-components_cards-section_title {
+        text-align: center;
+    }
+}
+
+
