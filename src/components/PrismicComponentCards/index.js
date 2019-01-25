@@ -1,16 +1,16 @@
-/* eslint-disable no-param-reassign */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import './styles.css';
 
 function handleOnError(event) {
-    event.target.src = '../icons/ComponentDefaultImage';
+    const { receivedEvent } = event.target;
+    receivedEvent.src = './../../../public/assets/images/ComponentDefaultImage';
 }
 
 export default function PrismicComponentCards({ results }) {
     return results.map(({ data }, index) => {
-        const key = `PrismicComponentCards-${index}`;
+        const key = `component-card-${index}`;
         return (
             <a
                 className="react-rainbow-admin-component-cards_link"
