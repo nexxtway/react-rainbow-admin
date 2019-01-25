@@ -149,7 +149,7 @@ export default class Orders extends Component {
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" />
+                                    <Dataset values={[370, 90, 950, 530, 800, 960, 650]} borderColor="#1de9b6" backgroundColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>
@@ -169,7 +169,7 @@ export default class Orders extends Component {
                                     type="line"
                                     showLegend={false}
                                     maintainAspectRatio={false}>
-                                    <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" />
+                                    <Dataset values={[270, 190, 350, 930, 500, 960, 1000]} borderColor="#1de9b6" backgroundColor="#1de9b6" />
                                 </Chart>
                             </div>
                         </Card>
