@@ -37,7 +37,7 @@ export default function ContentPage(props) {
                             type="line"
                             showLegend={false}
                             maintainAspectRatio={false}>
-                            <Dataset values={chartsData.totalUsers.value} borderColor="#1de9b6" />
+                            <Dataset values={chartsData.totalUsers.value} borderColor="#1de9b6" backgroundColor="#1de9b6" />
                         </Chart>
                     </div>
                 </Card>
@@ -57,7 +57,7 @@ export default function ContentPage(props) {
                             type="line"
                             showLegend={false}
                             maintainAspectRatio={false}>
-                            <Dataset values={chartsData.activeUsers.value} borderColor="#1de9b6" />
+                            <Dataset values={chartsData.activeUsers.value} borderColor="#1de9b6" backgroundColor="#1de9b6" />
                         </Chart>
                     </div>
                 </Card>
