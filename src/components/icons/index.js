@@ -26,6 +26,7 @@ import GoogleIcon from './Google';
 import FacebookIcon from './Facebook';
 import TwitterIcon from './Twitter';
 import LinkedinIcon from './Linkedin';
+import SearchIcon from './Search';
 
 export {
     ApplicationIcon,
@@ -55,4 +56,5 @@ export {
     FacebookIcon,
     TwitterIcon,
     LinkedinIcon,
+    SearchIcon,
 };
