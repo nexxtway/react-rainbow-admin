@@ -2,13 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import RenderIf from 'react-rainbow-components/components/RenderIf';
 import PrismicComponentCards from '../../components/PrismicComponentCards';
-
-function filter(query, data) {
-    return data.filter((item) => {
-        const regex = new RegExp(query, 'i');
-        return regex.test(item.data['component-name'][0].text);
-    });
-}
+import filter from './filter';
 
 export default function ComponentCards(props) {
     const {

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
-import './styles.css';
 
 const defaultImage = '/assets/images/component-default-image.svg';
 
@@ -16,7 +15,7 @@ export default class PrismicComponentCard extends Component {
     }
 
     handleOnError() {
-        this.setState({ src: 'assets/images/component-default-image.svg' });
+        this.setState({ src: defaultImage });
     }
 
     render() {
