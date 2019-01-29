@@ -5,4 +5,9 @@
 
 .react-rainbow-admin-user-cell_name {
     margin-left: 8px;
+    font-weight: 400;
+}
+
+.react-rainbow-admin-user-cell_container:hover {
+    color: #01b6f5;
 }

@@ -5,7 +5,7 @@
 }
 
 .react-rainbow-admin-user-detail_top-container {
-    padding: 20px 30px;
+    padding: 20px 30px 30px 30px;
 }
 
 .react-rainbow-admin-user-detail_card {
@@ -14,6 +14,24 @@
 
 .react-rainbow-admin-user-detail_card-content {
     padding: 0.75rem 1rem;
+}
+
+.react-rainbow-admin-user-detail_icon {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: #3b5998;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.react-rainbow-admin-user-detail_icon > svg {
+    margin-right: 0 !important;
+    color: white;
+    fill: white;
 }
 
 .react-rainbow-admin-user-detail_user-name {
@@ -80,7 +98,7 @@
 .react-rainbow-admin-user-detail_orders {
     color: #061c3f;
     font-size: 16px;
-    padding: 0 20px;
+    padding: 0 30px;
 }
 
 .react-rainbow-admin-user-detail_table-container {

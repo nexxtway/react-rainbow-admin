@@ -6,7 +6,7 @@ import {
     faAngleDown,
     faCheck,
 } from '@fortawesome/free-solid-svg-icons';
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import {
     Badge,
     Breadcrumb,
@@ -102,8 +102,10 @@ const orders = [
 ];
 
 const userCardTitle = (
-    <span>
-        <FontAwesomeIcon icon={faFacebook} style={{ marginRight: '4px' }} />
+    <span className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-flex">
+        <span className="react-rainbow-admin-user-detail_icon">
+            <FontAwesomeIcon icon={faFacebookF} style={{ marginRight: '4px' }} />
+        </span>
         Facebook user
     </span>
 );

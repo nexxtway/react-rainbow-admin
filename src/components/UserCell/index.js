@@ -9,7 +9,7 @@ export default function UserCell({ value }) {
     return (
         <Link className="react-rainbow-admin-user-cell_container" to="/pages/users/detail">
             <Avatar src={value.photoUrl} icon={<PersonIcon />} size="small" />
-            <div className="react-rainbow-admin-user-cell_name">{value.name}</div>
+            <div className="react-rainbow-admin-user-cell_name rainbow-color_brand">{value.name}</div>
         </Link>
     );
 }
