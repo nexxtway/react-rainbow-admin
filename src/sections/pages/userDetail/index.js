@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faPlus,
-    faEdit,
+    faPencilAlt,
     faAngleDown,
     faCheck,
 } from '@fortawesome/free-solid-svg-icons';
@@ -113,7 +113,7 @@ const userCardTitle = (
 const userCardAction = (
     <ButtonGroup>
         <ButtonIcon variant="border-filled" icon={<FontAwesomeIcon icon={faPlus} />} />
-        <ButtonIcon variant="border-filled" icon={<FontAwesomeIcon icon={faEdit} />} />
+        <ButtonIcon variant="border-filled" icon={<FontAwesomeIcon icon={faPencilAlt} />} />
     </ButtonGroup>
 );
 
@@ -159,7 +159,7 @@ export default class UserDetail extends Component {
                     </Card>
                     <Card
                         title="Identity"
-                        actions={<ButtonIcon variant="border" icon={<FontAwesomeIcon icon={faEdit} />} />}
+                        actions={<ButtonIcon variant="border" icon={<FontAwesomeIcon icon={faPencilAlt} />} />}
                         className="react-rainbow-admin-user-detail_card">
 
                         <div className="react-rainbow-admin-user-detail_card-content react-rainbow-admin-user-detail_user-identity">
