@@ -45,6 +45,10 @@
 }
 
 @media (max-width: 600px) {
+    .react-rainbow-admin-components_view-port {
+        min-height: calc(100vh - 116px);
+    }
+
     .react-rainbow-admin-components_title {
         font-size: 1.25rem;
         font-weight: 300;

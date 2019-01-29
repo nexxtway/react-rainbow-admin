@@ -91,3 +91,9 @@
         margin: 0 0 8px 0;
     }
 }
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-dashboard_view-port {
+        min-height: calc(100vh - 116px);
+    }
+}

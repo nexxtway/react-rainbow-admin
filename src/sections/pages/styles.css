@@ -42,10 +42,16 @@
         padding: 16px;
     }
     .react-rainbow-admin-pages_anchor, .react-rainbow-admin-pages_card {
-        width: 100%;
-        margin-right: 0;
+        margin-right: 8px;
     }
     .react-rainbow-admin-pages_card-image {
         height: 8rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-pages_anchor, .react-rainbow-admin-pages_card {
+        width: 100%;
+        margin-right: 0;
     }
 }

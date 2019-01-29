@@ -18,3 +18,9 @@
         padding: 0;
     }
 }
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-applications_view-port {
+        min-height: calc(100vh - 116px);
+    }
+}

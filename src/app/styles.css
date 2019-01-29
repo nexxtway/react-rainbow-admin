@@ -1,0 +1,37 @@
+.react-rainbow-admin-app_sidebar {
+    position: fixed;
+    border-right: 1px solid #f4f6f9;
+    width: 88px;
+    padding-top: 82px;
+    background-color: #fff;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.react-rainbow-admin-app_router-container {
+    padding-top: 68px;
+    padding-left: 88px;
+}
+
+.react-rainbow-admin-app_sidebar-item {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-app_sidebar {
+        padding-top: 130px;
+        padding-bottom: 14px;
+    }
+
+    .react-rainbow-admin-app_router-container {
+        padding-top: 116px;
+    }
+
+    .react-rainbow-admin-app_sidebar--hidden {
+        display: none;
+    }
+
+    .react-rainbow-admin-app_router-container--sidebar-hidden {
+        padding-left: 0;
+    }
+}
