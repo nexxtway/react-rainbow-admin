@@ -53,7 +53,7 @@ export default class Components extends Component {
         const { searchTerm } = this.state;
         return (
             <Prismic repo="rainbow-components">
-                <section className="react-rainbow-admin-components_view-port rainbow-background-color_gray-1">
+                <section className="react-rainbow-admin-components_view-port">
                     <PageHeader
                         className="react-rainbow-admin-components_page-header"
                         title="Components"

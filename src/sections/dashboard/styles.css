@@ -1,5 +1,4 @@
 .react-rainbow-admin-dashboard_view-port {
-    min-height: calc(100vh - 68px);
     padding: 16px 40px 24px 40px;
 }
 
@@ -89,11 +88,5 @@
 
     .react-rainbow-admin-dashboard_card:not(:last-child) {
         margin: 0 0 8px 0;
-    }
-}
-
-@media (max-width: 600px) {
-    .react-rainbow-admin-dashboard_view-port {
-        min-height: calc(100vh - 116px);
     }
 }

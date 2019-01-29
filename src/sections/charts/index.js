@@ -217,7 +217,7 @@ class Charts extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-charts_container rainbow-background-color_gray-1">
+            <div className="react-rainbow-admin-charts_container">
                 <PageHeader
                     title="Charts"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. You can learn more about it here: https://www.chartjs.org" />

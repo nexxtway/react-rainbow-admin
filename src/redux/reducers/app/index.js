@@ -1,11 +1,11 @@
 import { APP_TOOGLE_SIDEBAR } from '../../actions/app';
 
 const initialState = {
-    isSidebarVisible: true,
+    isSidebarHidden: true,
 };
 
 function toogleSidebar(state) {
-    return { isSidebarVisible: !state.isSidebarVisible };
+    return { isSidebarHidden: !state.isSidebarHidden };
 }
 
 export default function dashboardData(state = initialState, action) {

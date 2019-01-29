@@ -2,9 +2,10 @@
     position: fixed;
     border-right: 1px solid #f4f6f9;
     width: 88px;
-    padding-top: 82px;
+    padding-top: 14px;
+    margin-top: 68px;
     background-color: #fff;
-    height: 100%;
+    height: Calc(100% - 68px);
     overflow-y: scroll;
     z-index: 999;
 }
@@ -12,6 +13,8 @@
 .react-rainbow-admin-app_router-container {
     padding-top: 68px;
     padding-left: 88px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
 }
 
 .react-rainbow-admin-app_sidebar-item {
@@ -20,7 +23,8 @@
 
 @media (max-width: 600px) {
     .react-rainbow-admin-app_sidebar {
-        padding-top: 130px;
+        height: Calc(100% - 116px);
+        margin-top: 116px;
         padding-bottom: 14px;
         transform: translateX(0%);
         transition: transform 230ms linear, opacity 230ms linear;

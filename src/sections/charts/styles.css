@@ -1,5 +1,4 @@
 .react-rainbow-admin-charts_container {
-    min-height: calc(100vh - 68px);
     padding: 16px 40px;
 }
 .react-rainbow-admin-charts_section {
@@ -59,11 +58,5 @@
     .react-rainbow-admin-charts_header {
         flex-direction: column;
         align-items: center;
-    }
-}
-
-@media (max-width: 600px) {
-    .react-rainbow-admin-charts_container {
-        min-height: calc(100vh - 116px);
     }
 }

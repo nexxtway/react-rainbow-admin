@@ -17,7 +17,7 @@ class Users extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-users_container">
+            <div>
                 <div className="react-rainbow-admin-users_header-container">
                     <Breadcrumbs>
                         <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />

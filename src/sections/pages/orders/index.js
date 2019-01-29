@@ -17,7 +17,7 @@ class Orders extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-orders_container">
+            <div>
                 <div className="react-rainbow-admin-orders_header-container">
                     <Breadcrumbs>
                         <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
