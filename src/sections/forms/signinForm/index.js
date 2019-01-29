@@ -4,12 +4,23 @@ import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
 import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
-import { Email, Lock } from '../../components/icons';
+import { Email, Lock } from '../../../components/icons';
 
-function Form() {
+function Form(props) {
+    const {
+        handleSubmit,
+        reset,
+        onSubmit,
+    } = props;
+
+    const submit = (values) => {
+        onSubmit(values);
+        reset();
+    };
+
     return (
         <Card className="react-rainbow-admin-forms_card rainbow-p-top_large">
-            <form>
+            <form onSubmit={handleSubmit(submit)}>
                 <div className="react-rainbow-admin-forms_header">
                     <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin-forms_logo" />
                     <h1>Sign in</h1>
@@ -41,6 +52,7 @@ function Form() {
                         type="password" />
                     <Button
                         className="rainbow-m-top_medium"
+                        type="submit"
                         variant="brand">
                         <span>Login</span>
                     </Button>

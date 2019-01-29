@@ -3,12 +3,23 @@ import { Field, reduxForm } from 'redux-form';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
-import { Email, User } from '../../components/icons';
+import { Email, User } from '../../../components/icons';
 
-function Form() {
+function Form(props) {
+    const {
+        handleSubmit,
+        reset,
+        onSubmit,
+    } = props;
+
+    const submit = (values) => {
+        onSubmit(values);
+        reset();
+    };
+
     return (
         <Card className="react-rainbow-admin-forms_card rainbow-p-top_large" style={{ alignSelf: 'baseline' }}>
-            <form>
+            <form onSubmit={handleSubmit(submit)}>
                 <div className="react-rainbow-admin-forms_header">
                     <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin-forms_logo" />
                     <h1>Subscribe</h1>
@@ -39,6 +50,7 @@ function Form() {
                         type="email" />
                     <Button
                         className="rainbow-m-top_medium"
+                        type="submit"
                         variant="brand">
                         <span>Subscribe</span>
                     </Button>
