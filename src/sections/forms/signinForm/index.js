@@ -1,12 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Field, reduxForm } from 'redux-form';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
 import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
 import { Email, Lock } from '../../../components/icons';
+import validate from './validate';
 
-function Form(props) {
+function SignForm(props) {
     const {
         handleSubmit,
         reset,
@@ -34,7 +36,7 @@ function Form(props) {
                         className="rainbow-m-top_small"
                         icon={<Email />}
                         component={Input}
-                        name="Email"
+                        name="email"
                         label="Email"
                         defaultMessage="Email address"
                         required
@@ -44,7 +46,7 @@ function Form(props) {
                         className="rainbow-m-top_small"
                         icon={<Lock />}
                         component={Input}
-                        name="Password"
+                        name="password"
                         label="Password"
                         defaultMessage="Password"
                         required
@@ -56,11 +58,11 @@ function Form(props) {
                         variant="brand">
                         <span>Login</span>
                     </Button>
-                    <CheckboxGroup
+                    <Field
+                        name="remember"
+                        component={CheckboxGroup}
                         className="rainbow-m-top_small"
-                        lable="recover"
-                        value={['Remember me']}
-                        options={[{ value: 'Remember me', label: 'Remember me', disabled: false }]} />
+                        options={[{ value: 'Remember Me', label: 'Remember Me', disabled: false }]} />
                     <p className="rainbow-rainbow-forms_forgot rainbow-m-top_small">Forgot your password?</p>
                 </article>
             </form>
@@ -69,8 +71,16 @@ function Form(props) {
     );
 }
 
-const SignForm = reduxForm({
-    form: 'sign-in-form',
-})(Form);
+SignForm.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
+};
 
-export default SignForm;
+SignForm.defaultProps = {
+    onSubmit: () => {},
+};
+export default reduxForm({
+    form: 'sign-in-form',
+    validate,
+})(SignForm);

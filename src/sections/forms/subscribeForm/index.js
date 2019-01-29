@@ -1,11 +1,13 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
+import validate from './validate';
 import { Email, User } from '../../../components/icons';
 
-function Form(props) {
+function SubscribeForm(props) {
     const {
         handleSubmit,
         reset,
@@ -32,7 +34,7 @@ function Form(props) {
                         className="rainbow-m-top_small"
                         icon={<User />}
                         component={Input}
-                        name="Full Name"
+                        name="fullName"
                         label="Full Name"
                         defaultMessage="Enter your Full Name"
                         required
@@ -42,7 +44,7 @@ function Form(props) {
                         className="rainbow-m-top_small"
                         icon={<Email />}
                         component={Input}
-                        name="Email Address"
+                        name="email"
                         label="Email Address"
                         defaultMessage="Email Address"
                         required
@@ -61,8 +63,17 @@ function Form(props) {
     );
 }
 
-const SubscribeForm = reduxForm({
-    form: 'subscribe-form',
-})(Form);
+SubscribeForm.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
+};
 
-export default SubscribeForm;
+SubscribeForm.defaultProps = {
+    onSubmit: () => {},
+};
+
+export default reduxForm({
+    form: 'subscribe-form',
+    validate,
+})(SubscribeForm);

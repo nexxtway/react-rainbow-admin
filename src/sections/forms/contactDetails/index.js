@@ -1,16 +1,26 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
 import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
 import Textarea from 'react-rainbow-components/components/Textarea';
 import Select from 'react-rainbow-components/components/Select';
+import validate from './validate';
 import {
-    Email, User, Phone, Company, Avatar, SignPost, City, Map, CalendarIcon,
+    Email,
+    User,
+    Phone,
+    Company,
+    Avatar,
+    SignPost,
+    City,
+    Map,
+    CalendarIcon,
 } from '../../../components/icons';
 
-function Form(props) {
+function ContactDetails(props) {
     const {
         handleSubmit,
         reset,
@@ -37,14 +47,13 @@ function Form(props) {
                     </Button>
                 )}>
                 <article className="rainbow-rainbow-forms_inputs-container">
-                    <div className="rainbow-flex rainbow-p-bottom_medium rainbow-justify rainbow-p-horizontal_small">
+                    <div className="rainbow-flex  rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<User />}
                             component={Input}
-                            name="Full Name"
+                            name="name"
                             label="Full Name"
-                            defaultMessage="Enter your Full Name"
                             required
                             placeholder="Enter your Full Name"
                             type="text" />
@@ -52,19 +61,18 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<Email />}
                             component={Input}
-                            name="Email Address"
+                            name="email"
                             label="Email Address"
-                            defaultMessage="Email Address"
                             required
                             placeholder="Enter your email"
                             type="email" />
                     </div>
-                    <div className="rainbow-flex rainbow-p-bottom_medium rainbow-justify rainbow-p-horizontal_small">
+                    <div className="rainbow-flex  rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<Phone />}
                             component={Input}
-                            name="Phone Number"
+                            name="phone"
                             label="Phone Number"
                             defaultMessage="Phone Number"
                             placeholder="Enter your Phone Number"
@@ -73,18 +81,18 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<Company />}
                             component={Input}
-                            name="Company"
+                            name="company"
                             label="Company"
                             defaultMessage="Company"
                             placeholder="Enter your Company Name"
                             type="text" />
                     </div>
-                    <div className="rainbow-flex rainbow-p-bottom_medium rainbow-justify rainbow-p-horizontal_small">
+                    <div className="rainbow-flex  rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<SignPost />}
                             component={Input}
-                            name="Address"
+                            name="address"
                             label="Address"
                             defaultMessage="Address"
                             placeholder="Enter your Address"
@@ -95,7 +103,7 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<City />}
                             component={Input}
-                            name="City"
+                            name="city"
                             label="City"
                             defaultMessage="City"
                             placeholder="City"
@@ -104,7 +112,7 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<Map />}
                             component={Input}
-                            name="Postal Code"
+                            name="postCode"
                             label="Postal Code"
                             defaultMessage="Postal Code"
                             placeholder="Postal Code"
@@ -113,7 +121,7 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             component={Select}
                             options={[{ value: 'US', label: 'US' }, { value: 'Canada', label: 'Canada' }]}
-                            name="Country"
+                            name="country"
                             label="Select your Country"
                             defaultMessage="Country"
                             placeholder="Country"
@@ -124,7 +132,7 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<CalendarIcon />}
                             component={Input}
-                            name="Date"
+                            name="date"
                             label="Date of Birthday"
                             defaultMessage="Date of Birthday"
                             type="date" />
@@ -132,7 +140,7 @@ function Form(props) {
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<City />}
                             component={Input}
-                            name="City of Birth"
+                            name="cityOfBirth"
                             label="City of Birth"
                             defaultMessage="Postal Code"
                             placeholder="City"
@@ -142,16 +150,14 @@ function Form(props) {
                             icon={<CalendarIcon />}
                             component={CheckboxGroup}
                             options={[{ value: 'Female', label: 'Female', disabled: false }, { value: 'Male', label: 'Male', disabled: false }]}
-                            name="Gender"
-                            label="Gender"
-                            defaultMessage="Date of Birthday"
-                            type="radio" />
+                            name="gender"
+                            label="Gender" />
                     </div>
                     <div className="rainbow-flex rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             component={Textarea}
-                            name="About me"
+                            name="aboutMe"
                             label="About me"
                             row={4}
                             defaultMessage="Enter about your description"
@@ -164,8 +170,17 @@ function Form(props) {
     );
 }
 
-const ContactDetails = reduxForm({
-    form: 'contact-details-form',
-})(Form);
+ContactDetails.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
+};
 
-export default ContactDetails;
+ContactDetails.defaultProps = {
+    onSubmit: () => {},
+};
+
+export default reduxForm({
+    form: 'contact-details-form',
+    validate,
+})(ContactDetails);

@@ -71,9 +71,9 @@
     border-bottom: 1px solid #e3e5ed;
 }
 
-.rainbow-rainbow-forms_contact-details >.rainbow-card_footer {
+.rainbow-rainbow-forms_contact-details > .rainbow-card_footer {
     text-align: right;
-    margin-right: 24px;
+    padding-right: 30px;
 }
 
 @media (max-width: 800px){

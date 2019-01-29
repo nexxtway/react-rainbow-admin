@@ -1,16 +1,19 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
-import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
-import Textarea from 'react-rainbow-components/components/Textarea';
-import Select from 'react-rainbow-components/components/Select';
+import validate from './validate';
 import {
-    Email, User, Phone, Company, Avatar, SignPost, City, Map, CalendarIcon,
+    User,
+    Map,
+    CalendarIcon,
+    Lock,
+    CreditCard,
 } from '../../../components/icons';
 
-function Form(props) {
+function PaymentForm(props) {
     const {
         handleSubmit,
         reset,
@@ -26,69 +29,63 @@ function Form(props) {
         <form onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
             <Card
                 className="rainbow-rainbow-forms_contact-details"
-                icon={<Avatar style={{ backgroundColor: '#f4f6f9', borderRadius: '32px' }} />}
-                title="Contact Details"
-                actions={<Button variant="neutral" label="Edit" />}
+                title="Your Payment Details"
                 footer={(
                     <Button
                         variant="brand"
                         type="submit">
-                        <span>Update Profile</span>
+                        <span>Complete Payment</span>
                     </Button>
                 )}>
                 <article className="rainbow-rainbow-forms_inputs-container">
-                    <div className="rainbow-flex rainbow-p-bottom_medium rainbow-justify rainbow-p-horizontal_small">
+                    <div className="rainbow-flex rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<User />}
                             component={Input}
-                            name="Full Name"
-                            label="Full Name"
-                            defaultMessage="Enter your Full Name"
+                            name="name"
+                            label="Name on Card"
                             required
-                            placeholder="Enter your Full Name"
-                            type="text" />
-/>
-                                                            </div>
-                    <div className="rainbow-flex rainbow-p-bottom_medium rainbow-justify rainbow-p-horizontal_small">
-                        <Field
-                            className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
-                            icon={<Phone />}
-                            component={Input}
-                            name="Phone Number"
-                            label="Phone Number"
-                            defaultMessage="Phone Number"
-                            placeholder="Enter your Phone Number"
+                            placeholder="Name on Card"
                             type="text" />
                     </div>
                     <div className="rainbow-flex rainbow-justify rainbow-p-horizontal_small">
+                        <Field
+                            className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
+                            icon={<CreditCard />}
+                            component={Input}
+                            name="cardNumber"
+                            label="Card Number"
+                            required
+                            placeholder="111 111 111 1111"
+                            type="text" />
+                    </div>
+                    <div className="rainbow-flex rainbow-justify rainbow-p-horizontal_small">
+                        <Field
+                            className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
+                            icon={<Lock />}
+                            component={Input}
+                            name="cvc"
+                            required
+                            label="CVC code"
+                            type="text" />
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<CalendarIcon />}
                             component={Input}
-                            name="Date"
-                            label="Date of Birthday"
-                            defaultMessage="Date of Birthday"
+                            name="date"
+                            label="Exp. Date"
+                            required
                             type="date" />
-                        <Field
-                            className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
-                            icon={<City />}
-                            component={Input}
-                            name="City of Birth"
-                            label="City of Birth"
-                            defaultMessage="Postal Code"
-                            placeholder="City"
-                            type="text" />
                     </div>
                     <div className="rainbow-flex rainbow-justify rainbow-p-horizontal_small">
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
-                            icon={<City />}
+                            icon={<Map />}
                             component={Input}
-                            name="City of Birth"
-                            label="City of Birth"
-                            defaultMessage="Postal Code"
-                            placeholder="City"
+                            name="zip"
+                            label="Zip code"
+                            placeholder="Zip code"
                             type="text" />
                     </div>
                 </article>
@@ -97,8 +94,17 @@ function Form(props) {
     );
 }
 
-const PaymentForm = reduxForm({
-    form: 'payment-form',
-})(Form);
+PaymentForm.propTypes = {
+    handleSubmit: PropTypes.func.isRequired,
+    reset: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func,
+};
 
-export default PaymentForm;
+PaymentForm.defaultProps = {
+    onSubmit: () => {},
+};
+
+export default reduxForm({
+    form: 'payment-form',
+    validate,
+})(PaymentForm);
