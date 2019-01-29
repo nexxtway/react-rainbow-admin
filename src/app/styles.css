@@ -6,6 +6,7 @@
     background-color: #fff;
     height: 100%;
     overflow-y: scroll;
+    z-index: 999;
 }
 
 .react-rainbow-admin-app_router-container {
@@ -21,17 +22,25 @@
     .react-rainbow-admin-app_sidebar {
         padding-top: 130px;
         padding-bottom: 14px;
+        transform: translateX(0%);
+        transition: transform 230ms linear, opacity 230ms linear;
     }
 
     .react-rainbow-admin-app_router-container {
         padding-top: 116px;
+        padding-left: 0;
+        pointer-events: none;
+        opacity: 0.3;
+
     }
 
     .react-rainbow-admin-app_sidebar--hidden {
-        display: none;
+        transform: translateX(-100%);
+        transition: transform 250ms linear, opacity 250ms linear;
     }
 
     .react-rainbow-admin-app_router-container--sidebar-hidden {
-        padding-left: 0;
+        pointer-events: unset;
+        opacity: 1;
     }
 }

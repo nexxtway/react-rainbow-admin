@@ -17,7 +17,7 @@ import {
     PagesIcon,
     PuzzleIcon,
 } from '../components/icons';
-import history, { navigateTo } from '../history';
+import history from '../history';
 import fetchSidebarState from '../redux/actions/app';
 import './styles.css';
 
@@ -67,43 +67,43 @@ class App extends Component {
                         icon={<DashboardIcon />}
                         name="dashboard"
                         label="Dashboard"
-                        onClick={() => navigateTo('/dashboard')} />
+                        onClick={() => fetchSidebarState('/dashboard')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<PagesIcon />}
                         name="pages"
                         label="Pages"
-                        onClick={() => navigateTo('/pages')} />
+                        onClick={() => fetchSidebarState('/pages')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<ApplicationIcon />}
                         name="applications"
                         label="Applications"
-                        onClick={() => navigateTo('/applications')} />
+                        onClick={() => fetchSidebarState('/applications')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<PuzzleIcon />}
                         name="components"
                         label="Components"
-                        onClick={() => navigateTo('/components')} />
+                        onClick={() => fetchSidebarState('/components')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<MessageIcon />}
                         name="messages"
                         label="Messages"
-                        onClick={() => navigateTo('/messages')} />
+                        onClick={() => fetchSidebarState('/messages')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<FormsIcon />}
                         name="forms"
                         label="Forms"
-                        onClick={() => navigateTo('/forms')} />
+                        onClick={() => fetchSidebarState('/forms')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<ChartsIcon />}
                         name="charts"
                         label="Charts"
-                        onClick={() => navigateTo('/charts')} />
+                        onClick={() => fetchSidebarState('/charts')} />
                 </Sidebar>
                 <div className={this.getRouterContainerClassNames()}>
                     <Routes />
