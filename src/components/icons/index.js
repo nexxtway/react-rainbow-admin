@@ -35,6 +35,7 @@ import Map from './Map';
 import Phone from './Phone';
 import SignPost from './SignPost';
 import User from './User';
+import CreditCard from './CreditCard';
 
 export {
     ApplicationIcon,
@@ -73,4 +74,5 @@ export {
     Phone,
     SignPost,
     User,
+    CreditCard,
 };
