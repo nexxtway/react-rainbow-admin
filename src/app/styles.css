@@ -5,7 +5,7 @@
     padding-top: 14px;
     margin-top: 68px;
     background-color: #fff;
-    height: Calc(100% - 68px);
+    height: calc(100% - 68px);
     overflow-y: scroll;
     z-index: 999;
 }
@@ -23,7 +23,7 @@
 
 @media (max-width: 600px) {
     .react-rainbow-admin-app_sidebar {
-        height: Calc(100% - 116px);
+        height: calc(100% - 116px);
         margin-top: 116px;
         padding-bottom: 14px;
         transform: translateX(0%);

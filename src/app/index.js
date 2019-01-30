@@ -18,7 +18,7 @@ import {
     PuzzleIcon,
 } from '../components/icons';
 import history from '../history';
-import toogleSidebar from '../redux/actions/app';
+import toogleSidebar, { navigate } from '../redux/actions/app';
 import './styles.css';
 
 function resolveCurrentUrl() {
@@ -54,7 +54,7 @@ class App extends Component {
 
     render() {
         const { selectedItem } = this.state;
-        const { toogleSidebar } = this.props;
+        const { toogleSidebar, navigate } = this.props;
         return (
             <Application>
                 <SectionHeading onToogleSidebar={toogleSidebar} />
@@ -67,43 +67,43 @@ class App extends Component {
                         icon={<DashboardIcon />}
                         name="dashboard"
                         label="Dashboard"
-                        onClick={() => toogleSidebar('/dashboard')} />
+                        onClick={() => navigate('/dashboard')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<PagesIcon />}
                         name="pages"
                         label="Pages"
-                        onClick={() => toogleSidebar('/pages')} />
+                        onClick={() => navigate('/pages')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<ApplicationIcon />}
                         name="applications"
                         label="Applications"
-                        onClick={() => toogleSidebar('/applications')} />
+                        onClick={() => navigate('/applications')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<PuzzleIcon />}
                         name="components"
                         label="Components"
-                        onClick={() => toogleSidebar('/components')} />
+                        onClick={() => navigate('/components')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<MessageIcon />}
                         name="messages"
                         label="Messages"
-                        onClick={() => toogleSidebar('/messages')} />
+                        onClick={() => navigate('/messages')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<FormsIcon />}
                         name="forms"
                         label="Forms"
-                        onClick={() => toogleSidebar('/forms')} />
+                        onClick={() => navigate('/forms')} />
                     <SidebarItem
                         className="react-rainbow-admin-app_sidebar-item"
                         icon={<ChartsIcon />}
                         name="charts"
                         label="Charts"
-                        onClick={() => toogleSidebar('/charts')} />
+                        onClick={() => navigate('/charts')} />
                 </Sidebar>
                 <div className={this.getRouterContainerClassNames()}>
                     <Routes />
@@ -115,6 +115,7 @@ class App extends Component {
 
 App.propTypes = {
     toogleSidebar: PropTypes.func.isRequired,
+    navigate: PropTypes.func.isRequired,
     isSidebarHidden: PropTypes.bool.isRequired,
 };
 
@@ -125,6 +126,7 @@ function stateToProps(state) {
 function dispatchToProps(dispatch) {
     return bindActionCreators({
         toogleSidebar,
+        navigate,
     }, dispatch);
 }
 
