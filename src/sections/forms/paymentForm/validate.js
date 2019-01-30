@@ -22,6 +22,7 @@ function validate(values) {
     if (!zip) {
         errors.zip = 'Zip is a required field';
     }
+    return errors;
 }
 
 export default validate;

@@ -6,6 +6,11 @@ import ContactDetails from './contactDetails';
 import PaymentForm from './paymentForm';
 import './styles.css';
 
+function showAlert(values) {
+    // eslint-disable-next-line no-alert
+    alert(JSON.stringify(values));
+}
+
 export default function Forms() {
     return (
         <div className="react-rainbow-admin-forms_container rainbow-background-color_gray-1">
@@ -13,14 +18,14 @@ export default function Forms() {
                 title="Forms"
                 description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
             <section className="react-rainbow-admin-forms_section rainbow-p-top_large">
-                <SignForm onSubmit={values => console.log(values)} />
-                <SubscribeForm onSubmit={values => console.log(values)} />
+                <SignForm onSubmit={showAlert} />
+                <SubscribeForm onSubmit={showAlert} />
             </section>
             <section className="react-rainbow-admin-forms_section rainbow-p-top_large">
-                <ContactDetails onSubmit={values => console.log(values)} />
+                <ContactDetails onSubmit={showAlert} />
             </section>
             <section className="react-rainbow-admin-forms_section rainbow-p-top_large" style={{ width: '75%' }}>
-                <PaymentForm onSubmit={values => console.log(values)} />
+                <PaymentForm onSubmit={showAlert} />
             </section>
         </div>
     );

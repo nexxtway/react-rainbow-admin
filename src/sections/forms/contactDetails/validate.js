@@ -50,6 +50,7 @@ function validate(values) {
     if (!aboutMe) {
         errors.country = 'About me is a required field';
     }
+    return errors;
 }
 
 export default validate;

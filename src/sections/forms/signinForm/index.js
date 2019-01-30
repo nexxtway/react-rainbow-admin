@@ -4,7 +4,6 @@ import { Field, reduxForm } from 'redux-form';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
-import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
 import { Email, Lock } from '../../../components/icons';
 import validate from './validate';
 
@@ -22,7 +21,7 @@ function SignForm(props) {
 
     return (
         <Card className="react-rainbow-admin-forms_card rainbow-p-top_large">
-            <form onSubmit={handleSubmit(submit)}>
+            <form noValidate onSubmit={handleSubmit(submit)}>
                 <div className="react-rainbow-admin-forms_header">
                     <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin-forms_logo" />
                     <h1>Sign in</h1>
@@ -60,9 +59,10 @@ function SignForm(props) {
                     </Button>
                     <Field
                         name="remember"
-                        component={CheckboxGroup}
-                        className="rainbow-m-top_small"
-                        options={[{ value: 'Remember Me', label: 'Remember Me', disabled: false }]} />
+                        component={Input}
+                        type="checkbox"
+                        label="Remember me"
+                        className="rainbow-m-top_small" />
                     <p className="rainbow-rainbow-forms_forgot rainbow-m-top_small">Forgot your password?</p>
                 </article>
             </form>

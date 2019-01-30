@@ -7,6 +7,7 @@ function validate(values) {
     if (!email) {
         errors.email = 'Password is a required field';
     }
+    return errors;
 }
 
 export default validate;

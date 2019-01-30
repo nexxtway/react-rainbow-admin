@@ -21,7 +21,7 @@ function SubscribeForm(props) {
 
     return (
         <Card className="react-rainbow-admin-forms_card rainbow-p-top_large" style={{ alignSelf: 'baseline' }}>
-            <form onSubmit={handleSubmit(submit)}>
+            <form noValidate onSubmit={handleSubmit(submit)}>
                 <div className="react-rainbow-admin-forms_header">
                     <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin-forms_logo" />
                     <h1>Subscribe</h1>

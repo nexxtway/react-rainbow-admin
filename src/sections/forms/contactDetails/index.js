@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Card from 'react-rainbow-components/components/Card';
 import Input from 'react-rainbow-components/components/Input';
 import Button from 'react-rainbow-components/components/Button';
-import CheckboxGroup from 'react-rainbow-components/components/CheckboxGroup';
+import RadioGroup from 'react-rainbow-components/components/RadioGroup';
 import Textarea from 'react-rainbow-components/components/Textarea';
 import Select from 'react-rainbow-components/components/Select';
 import validate from './validate';
@@ -33,7 +33,7 @@ function ContactDetails(props) {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
+        <form noValidate onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
             <Card
                 className="rainbow-rainbow-forms_contact-details"
                 icon={<Avatar style={{ backgroundColor: '#f4f6f9', borderRadius: '32px' }} />}
@@ -148,8 +148,8 @@ function ContactDetails(props) {
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<CalendarIcon />}
-                            component={CheckboxGroup}
-                            options={[{ value: 'Female', label: 'Female', disabled: false }, { value: 'Male', label: 'Male', disabled: false }]}
+                            component={RadioGroup}
+                            options={[{ value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' }]}
                             name="gender"
                             label="Gender" />
                     </div>

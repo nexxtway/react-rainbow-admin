@@ -26,7 +26,7 @@ function PaymentForm(props) {
     };
 
     return (
-        <form onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
+        <form noValidate onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
             <Card
                 className="rainbow-rainbow-forms_contact-details"
                 title="Your Payment Details"
