@@ -34,3 +34,45 @@
 .react-rainbow-admin_header--notification-icon {
     height: 12px;
 }
+
+.react-rainbow-admin_header-hamburger-button {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .react-rainbow-admin_header {
+        height: 116px;
+        padding: 16px 16px 0 16px;
+        align-items: flex-start;
+    }
+
+    .react-rainbow-admin_header-search {
+        margin: 0;
+        flex-shrink: 0;
+        position: absolute;
+        bottom: 12px;
+        width: calc(100% - 80px);
+    }
+
+    .react-rainbow-admin_header-actions {
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+    .react-rainbow-admin_header-hamburger-button {
+        display: inherit;
+        height: 40px;
+        width: 40px;
+    }
+
+    .react-rainbow-admin_header-button-notification {
+        margin: 0 8px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 12px;
+        right: 4px;
+    }
+}

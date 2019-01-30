@@ -1,5 +1,4 @@
 .react-rainbow-admin-components_view-port {
-    min-height: calc(100vh - 68px);
     padding: 16px 40px 24px 40px;
     display: flex;
     flex-wrap: wrap;

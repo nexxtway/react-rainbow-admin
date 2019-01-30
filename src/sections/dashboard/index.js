@@ -157,7 +157,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
+            <div className="react-rainbow-admin-dashboard_view-port">
                 <PageHeader
                     title="Dashboard"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />

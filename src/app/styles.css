@@ -1,0 +1,50 @@
+.react-rainbow-admin-app_sidebar {
+    position: fixed;
+    border-right: 1px solid #f4f6f9;
+    width: 88px;
+    padding-top: 14px;
+    margin-top: 68px;
+    background-color: #fff;
+    height: calc(100% - 68px);
+    overflow-y: scroll;
+    z-index: 999;
+}
+
+.react-rainbow-admin-app_router-container {
+    padding-top: 68px;
+    padding-left: 88px;
+    background-color: #f4f6f9;
+    min-height: 100vh;
+}
+
+.react-rainbow-admin-app_sidebar-item {
+    margin-bottom: 16px;
+}
+
+@media (max-width: 600px) {
+    .react-rainbow-admin-app_sidebar {
+        height: calc(100% - 116px);
+        margin-top: 116px;
+        padding-bottom: 14px;
+        transform: translateX(0%);
+        transition: transform 230ms linear, opacity 230ms linear;
+    }
+
+    .react-rainbow-admin-app_router-container {
+        padding-top: 116px;
+        padding-left: 0;
+        pointer-events: none;
+        opacity: 0.3;
+
+    }
+
+    .react-rainbow-admin-app_sidebar--hidden {
+        transform: translateX(-100%);
+        transition: transform 250ms linear, opacity 250ms linear;
+    }
+
+    .react-rainbow-admin-app_router-container--sidebar-hidden {
+        pointer-events: unset;
+        opacity: 1;
+    }
+}
