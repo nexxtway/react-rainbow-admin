@@ -14,7 +14,7 @@ export default function Tile(props) {
         style,
     } = props;
 
-    const getContainerClassName = () => classnames('react-rainbow-admin-tile',
+    const getContainerClassNames = () => classnames('react-rainbow-admin-tile',
         'rainbow-align-content_space-between',
         'rainbow-p-vertical_medium',
         'rainbow-p-horizontal_small',
@@ -29,7 +29,7 @@ export default function Tile(props) {
     });
 
     return (
-        <Card className={getContainerClassName()} style={style}>
+        <Card className={getContainerClassNames()} style={style}>
             {icon}
             <div className="rainbow-flex rainbow-flex_column rainbow-align_end">
                 <h2 className={getTitleClassNames()}>{title}</h2>

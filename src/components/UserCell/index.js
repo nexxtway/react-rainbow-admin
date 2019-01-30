@@ -1,15 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { Avatar } from 'react-rainbow-components';
 import { PersonIcon } from '../icons';
 import './styles.css';
 
 export default function UserCell({ value }) {
     return (
-        <div className="react-rainbow-admin-user-cell_container">
+        <Link className="react-rainbow-admin-user-cell_container" to="/pages/user/detail">
             <Avatar src={value.photoUrl} icon={<PersonIcon />} size="small" />
-            <div className="react-rainbow-admin-user-cell_name">{value.name}</div>
-        </div>
+            <div className="react-rainbow-admin-user-cell_name rainbow-color_brand">{value.name}</div>
+        </Link>
     );
 }
 

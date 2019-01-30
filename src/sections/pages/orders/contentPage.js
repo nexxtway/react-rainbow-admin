@@ -5,7 +5,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import {
     Badge, Card, Chart, Dataset, Spinner,
 } from 'react-rainbow-components';
-import OrdersTable from './ordersTable';
+import OrderStatus from '../../../components/OrderStatus';
 
 export default function ContentPage(props) {
     const {
@@ -61,7 +61,7 @@ export default function ContentPage(props) {
                     </div>
                 </Card>
             </div>
-            <OrdersTable orders={orders} />
+            <OrderStatus orders={orders} />
         </div>
     );
 }
