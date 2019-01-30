@@ -17,7 +17,7 @@ import {
 } from 'react-rainbow-components';
 import { navigateTo } from '../../../history';
 import UserField from './userField';
-import OrderStatus from '../../../components/OrderStatus';
+import OrdersTable from '../../../components/OrdersTable';
 import './styles.css';
 
 const orders = [
@@ -187,7 +187,7 @@ export default class UserDetail extends Component {
                     </Card>
                 </div>
                 <span className="react-rainbow-admin-user-detail_orders">Orders</span>
-                <OrderStatus orders={orders} />
+                <OrdersTable orders={orders} />
             </div>
         );
     }

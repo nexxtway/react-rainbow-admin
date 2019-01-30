@@ -14,9 +14,9 @@ const iconMap = {
 };
 export default function Status({ value }) {
     const getClassNames = () => classnames({
-        'react-rainbow-admin-order-status--verified': value === 'VERIFIED',
-        'react-rainbow-admin-order-status--expired': value === 'EXPIRED',
-        'react-rainbow-admin-order-status--processing': value === 'PROCESSING',
+        'react-rainbow-admin-orders-table--verified': value === 'VERIFIED',
+        'react-rainbow-admin-orders-table--expired': value === 'EXPIRED',
+        'react-rainbow-admin-orders-table--processing': value === 'PROCESSING',
     });
 
     const Icon = iconMap[value];
