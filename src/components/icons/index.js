@@ -27,6 +27,7 @@ import FacebookIcon from './Facebook';
 import TwitterIcon from './Twitter';
 import LinkedinIcon from './Linkedin';
 import SearchIcon from './Search';
+import BarsIcon from './Bars';
 
 export {
     ApplicationIcon,
@@ -57,4 +58,5 @@ export {
     TwitterIcon,
     LinkedinIcon,
     SearchIcon,
+    BarsIcon,
 };

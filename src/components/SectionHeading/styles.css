@@ -41,7 +41,7 @@
 
 @media (max-width: 600px) {
     .react-rainbow-admin_header {
-        height: 116px;
+        height: 124px;
         padding: 16px 16px 0 16px;
         align-items: flex-start;
     }
@@ -56,13 +56,13 @@
 
     .react-rainbow-admin_header-actions {
         align-items: flex-start;
-        justify-content: space-around;
     }
 
     .react-rainbow-admin_header-hamburger-button {
         display: inherit;
         height: 40px;
         width: 40px;
+        margin-left: 16px;
     }
 
     .react-rainbow-admin_header-button-notification {

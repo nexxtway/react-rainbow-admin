@@ -26,7 +26,10 @@
 }
 
 @media (max-width: 600px) {
+    .react-rainbow-admin-coming-soon_container {
+        min-height: calc(100vh - 116px);
+    }
     .react-rainbow-admin-coming-soon_image {
-        height: 40vh;
+        height: 50vh;
     }
 }
