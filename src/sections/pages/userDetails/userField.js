@@ -1,18 +1,14 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
 export default function UserField(props) {
     const { label, value, className } = props;
 
-    const getClassName = () => {
-        if (className) {
-            return ` react-rainbow-admin-user-detail_field ${className}`;
-        }
-        return 'react-rainbow-admin-user-detail_field';
-    };
+    const getClassNames = () => classnames('react-rainbow-admin-user-detail_field', className);
 
     return (
-        <div className={getClassName()}>
+        <div className={getClassNames()}>
             <span className="react-rainbow-admin-user-detail_field-label">{label}</span>
             <span className="react-rainbow-admin-user-detail_field-value">{value}</span>
         </div>

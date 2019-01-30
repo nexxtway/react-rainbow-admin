@@ -17,7 +17,7 @@ import {
 } from 'react-rainbow-components';
 import { navigateTo } from '../../../history';
 import UserField from './userField';
-import OrdersTable from './ordersTable';
+import OrderStatus from '../../../components/OrderStatus';
 import './styles.css';
 
 const orders = [
@@ -104,7 +104,7 @@ const orders = [
 const userCardTitle = (
     <span className="rainbow-color_gray-4 rainbow-font-size-heading_small rainbow-flex">
         <span className="react-rainbow-admin-user-detail_icon">
-            <FontAwesomeIcon icon={faFacebookF} style={{ marginRight: '4px' }} />
+            <FontAwesomeIcon icon={faFacebookF} />
         </span>
         Facebook user
     </span>
@@ -152,7 +152,7 @@ export default class UserDetail extends Component {
                         <div className="react-rainbow-admin-user-detail_card-content">
                             <span className="react-rainbow-admin-user-detail_user-name">Leandro Torres</span>
                             <Badge variant="lightest" className="react-rainbow-admin-user-detail_user-status">
-                                <FontAwesomeIcon icon={faCheck} style={{ marginRight: '4px' }} />
+                                <FontAwesomeIcon icon={faCheck} pull="left" />
                                 <span>Verified</span>
                             </Badge>
                         </div>
@@ -187,7 +187,7 @@ export default class UserDetail extends Component {
                     </Card>
                 </div>
                 <span className="react-rainbow-admin-user-detail_orders">Orders</span>
-                <OrdersTable orders={orders} />
+                <OrderStatus orders={orders} />
             </div>
         );
     }
