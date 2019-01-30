@@ -5,7 +5,7 @@ import UserCell from '../UserCell';
 import Status from './status';
 import TablePagination from '../TablePagination';
 
-export default class OrdersStatus extends Component {
+export default class OrdersTable extends Component {
     constructor(props) {
         super(props);
         this.state = { activePage: 1 };
@@ -29,8 +29,8 @@ export default class OrdersStatus extends Component {
         const { activePage } = this.state;
         const pages = Math.ceil(orders.length / 8);
         return (
-            <div className="react-rainbow-admin-order-status_table-container">
-                <Table className="react-rainbow-admin-order-status_table" data={this.getTableData()}>
+            <div className="react-rainbow-admin-orders-table_table-container">
+                <Table className="react-rainbow-admin-orders-table_table" data={this.getTableData()}>
                     <Column header="USER" field="user" component={UserCell} />
                     <Column header="STATUS" field="status" component={Status} />
                     <Column header="AMOUNT" field="amount" />
@@ -45,6 +45,6 @@ export default class OrdersStatus extends Component {
     }
 }
 
-OrdersStatus.propTypes = {
+OrdersTable.propTypes = {
     orders: PropTypes.array.isRequired,
 };
