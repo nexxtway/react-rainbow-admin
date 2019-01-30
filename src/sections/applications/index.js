@@ -7,7 +7,7 @@ import './styles.css';
 export default function Applications() {
     return (
         <Prismic repo="rainbow-doc">
-            <div className="react-rainbow-admin-applications_view-port rainbow-background-color_gray-1">
+            <div className="react-rainbow-admin-applications_view-port">
                 <PageHeader
                     className="react-rainbow-admin-applications_header-page"
                     title="Applications"

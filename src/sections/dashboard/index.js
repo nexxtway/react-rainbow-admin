@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Link } from 'react-router-dom';
 import Card from 'react-rainbow-components/components/Card';
 import Badge from 'react-rainbow-components/components/Badge';
 import Chart from 'react-rainbow-components/components/Chart';
@@ -121,12 +122,20 @@ function ContentPage(props) {
                 <ListCard
                     title="Last Messages"
                     component={<LastMessagesList lastMessages={lastMessages} />}
-                    footerLink="View all messages" />
+                    footerLink={(
+                        <Link className="react-rainbow-admin-dashboard_list-card--footer-link rainbow-color_brand" to="/messages">
+                            View all messages
+                        </Link>
+                    )} />
 
                 <ListCard
                     title="New Users"
                     component={<NewUsersList newUsers={newUsers} />}
-                    footerLink="View all users" />
+                    footerLink={(
+                        <Link className="react-rainbow-admin-dashboard_list-card--footer-link rainbow-color_brand" to="/pages/users">
+                            View all users
+                        </Link>
+                    )} />
             </section>
         </div>
     );
@@ -148,7 +157,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-dashboard_view-port rainbow-background-color_gray-1">
+            <div className="react-rainbow-admin-dashboard_view-port">
                 <PageHeader
                     title="Dashboard"
                     description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />

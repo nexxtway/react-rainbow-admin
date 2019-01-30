@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Pagination } from 'react-rainbow-components';
+import './styles.css';
 
 export default function TablePagination(props) {
     const {

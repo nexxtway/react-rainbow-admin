@@ -19,13 +19,7 @@ export default function ListCard(props) {
             {component}
             <div className="react-rainbow-admin-dashboard_divider" />
             <div className="rainbow-p-top_small rainbow-align-content_center">
-                <a
-                    className="react-rainbow-admin-dashboard_list-card--footer-link rainbow-color_brand"
-                    href="javascript:void(0);"
-                    target="_blank"
-                    rel="noopener noreferrer">
-                    {footerLink}
-                </a>
+                {footerLink}
             </div>
         </Card>
     );
@@ -34,7 +28,7 @@ export default function ListCard(props) {
 ListCard.propTypes = {
     title: PropTypes.string,
     component: PropTypes.object,
-    footerLink: PropTypes.string,
+    footerLink: PropTypes.node,
 };
 
 ListCard.defaultProps = {

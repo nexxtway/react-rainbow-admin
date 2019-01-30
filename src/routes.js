@@ -9,6 +9,7 @@ import history from './history';
 import Applications from './sections/applications';
 import Charts from './sections/charts';
 import Dashboard from './sections/dashboard';
+import Components from './sections/components';
 import Pages from './sections/pages';
 import Users from './sections/pages/users';
 import Orders from './sections/pages/orders';
@@ -23,7 +24,7 @@ export default function Routes() {
                 <Redirect from="/" exact to="/dashboard" />
                 <Route path="/applications" component={Applications} />
                 <Route path="/charts" component={Charts} />
-                <Route path="/components" component={ComingSoon} />
+                <Route path="/components" component={Components} />
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/forms" component={Forms} />
                 <Route path="/messages" component={ComingSoon} />

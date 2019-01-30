@@ -8409,9 +8409,9 @@ react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
-react-prismic-cms@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/react-prismic-cms/-/react-prismic-cms-0.3.0.tgz#d92dac71e2ca4a15e63978a8b0327d89e1076a5d"
+react-prismic-cms@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/react-prismic-cms/-/react-prismic-cms-0.3.1.tgz#63357769076514b51f2429bd31f1baaf81057e7a"
   dependencies:
     classnames "^2.2.6"
     prismic-javascript "^1.5.0"
@@ -8435,7 +8435,6 @@ react-rainbow-components@^0.5.0:
 react-rainbow-components@^0.9.0:
   version "0.9.0"
   resolved "https://registry.yarnpkg.com/react-rainbow-components/-/react-rainbow-components-0.9.0.tgz#3c73b29ec6d94e76f45880bc2e00797f361eb9bf"
-  integrity sha512-9cO7uPy8g4bmdOpS0HxqvkGARsT/SiUchxwOvbieF973R7vhUd6ilS1YsNQLZFwchHICdmjIGrsgoGLWz3fyfg==
   dependencies:
     autosize "^4.0.2"
     chart.js "^2.7.3"

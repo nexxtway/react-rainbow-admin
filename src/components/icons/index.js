@@ -36,6 +36,8 @@ import Phone from './Phone';
 import SignPost from './SignPost';
 import User from './User';
 import CreditCard from './CreditCard';
+import SearchIcon from './Search';
+
 
 export {
     ApplicationIcon,
@@ -75,4 +77,5 @@ export {
     SignPost,
     User,
     CreditCard,
+    SearchIcon,
 };
