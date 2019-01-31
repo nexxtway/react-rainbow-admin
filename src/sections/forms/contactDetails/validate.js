@@ -48,7 +48,7 @@ function validate(values) {
         errors.gender = 'Gender is a required field';
     }
     if (!aboutMe) {
-        errors.country = 'About me is a required field';
+        errors.aboutMe = 'About me is a required field';
     }
     return errors;
 }

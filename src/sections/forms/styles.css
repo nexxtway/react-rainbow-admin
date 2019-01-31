@@ -1,11 +1,14 @@
 .react-rainbow-admin-forms_container {
-    min-height: 100vh;
     padding: 16px 40px;
 }
 
 .react-rainbow-admin-forms_section {
     display: flex;
     align-items: stretch;
+}
+
+.react-rainbow-admin-forms_section:last-child  {
+    width: 75%;
 }
 
 .react-rainbow-admin-forms_card{
@@ -66,6 +69,11 @@
     font-size: 1rem;
 }
 
+.rainbow-rainbow-forms_contact-details-avatar {
+    background-color: #f4f6f9;
+    border-radius: 32px; 
+}
+
 .rainbow-rainbow-forms_contact-details > .rainbow-card_header-container {
     padding-bottom: 10px;
     border-bottom: 1px solid #e3e5ed;
@@ -81,7 +89,18 @@
         flex-direction: column;
     }
 
+    .react-rainbow-admin-forms_section:last-child  {
+        width: 100%;
+    }
+
     .react-rainbow-admin-forms_card {
         margin-top: 24px;
+    }
+    
+    .rainbow-rainbow-forms_inputs-container > .rainbow-flex {
+        flex-direction: column;
+    }
+    .rainbow-rainbow-forms_inputs-field {
+        margin: 0 0 18px 0 !important;
     }
 }

@@ -24,7 +24,7 @@ export default function Forms() {
             <section className="react-rainbow-admin-forms_section rainbow-p-top_large">
                 <ContactDetails onSubmit={showAlert} />
             </section>
-            <section className="react-rainbow-admin-forms_section rainbow-p-top_large" style={{ width: '75%' }}>
+            <section className="react-rainbow-admin-forms_section rainbow-p-top_large">
                 <PaymentForm onSubmit={showAlert} />
             </section>
         </div>

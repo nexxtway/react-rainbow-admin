@@ -32,11 +32,13 @@ function ContactDetails(props) {
         reset();
     };
 
+    const COUNTRY_OPTIONS = [{ value: 'US', label: 'US' }, { value: 'Canada', label: 'Canada' }];
+    const GENDER_OPTIONS = [{ value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' }];
     return (
         <form noValidate onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
             <Card
                 className="rainbow-rainbow-forms_contact-details"
-                icon={<Avatar style={{ backgroundColor: '#f4f6f9', borderRadius: '32px' }} />}
+                icon={<Avatar className="rainbow-rainbow-forms_contact-details-avatar" />}
                 title="Contact Details"
                 actions={<Button variant="neutral" label="Edit" />}
                 footer={(
@@ -74,7 +76,6 @@ function ContactDetails(props) {
                             component={Input}
                             name="phone"
                             label="Phone Number"
-                            defaultMessage="Phone Number"
                             placeholder="Enter your Phone Number"
                             type="text" />
                         <Field
@@ -83,7 +84,6 @@ function ContactDetails(props) {
                             component={Input}
                             name="company"
                             label="Company"
-                            defaultMessage="Company"
                             placeholder="Enter your Company Name"
                             type="text" />
                     </div>
@@ -94,7 +94,6 @@ function ContactDetails(props) {
                             component={Input}
                             name="address"
                             label="Address"
-                            defaultMessage="Address"
                             placeholder="Enter your Address"
                             type="text" />
                     </div>
@@ -105,7 +104,6 @@ function ContactDetails(props) {
                             component={Input}
                             name="city"
                             label="City"
-                            defaultMessage="City"
                             placeholder="City"
                             type="text" />
                         <Field
@@ -114,16 +112,14 @@ function ContactDetails(props) {
                             component={Input}
                             name="postCode"
                             label="Postal Code"
-                            defaultMessage="Postal Code"
                             placeholder="Postal Code"
                             type="text" />
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             component={Select}
-                            options={[{ value: 'US', label: 'US' }, { value: 'Canada', label: 'Canada' }]}
+                            options={COUNTRY_OPTIONS}
                             name="country"
                             label="Select your Country"
-                            defaultMessage="Country"
                             placeholder="Country"
                             type="text" />
                     </div>
@@ -134,7 +130,6 @@ function ContactDetails(props) {
                             component={Input}
                             name="date"
                             label="Date of Birthday"
-                            defaultMessage="Date of Birthday"
                             type="date" />
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
@@ -142,14 +137,13 @@ function ContactDetails(props) {
                             component={Input}
                             name="cityOfBirth"
                             label="City of Birth"
-                            defaultMessage="Postal Code"
                             placeholder="City"
                             type="text" />
                         <Field
                             className="rainbow-m-top_small rainbow-rainbow-forms_inputs-field"
                             icon={<CalendarIcon />}
                             component={RadioGroup}
-                            options={[{ value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' }]}
+                            options={GENDER_OPTIONS}
                             name="gender"
                             label="Gender" />
                     </div>
@@ -160,7 +154,6 @@ function ContactDetails(props) {
                             name="aboutMe"
                             label="About me"
                             row={4}
-                            defaultMessage="Enter about your description"
                             placeholder="Enter about your description"
                             type="textarea" />
                     </div>
