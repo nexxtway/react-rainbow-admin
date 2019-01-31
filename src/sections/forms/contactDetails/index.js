@@ -20,6 +20,9 @@ import {
     CalendarIcon,
 } from '../../../components/icons';
 
+const COUNTRY_OPTIONS = [{ value: 'US', label: 'US' }, { value: 'Canada', label: 'Canada' }];
+const GENDER_OPTIONS = [{ value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' }];
+
 function ContactDetails(props) {
     const {
         handleSubmit,
@@ -32,8 +35,6 @@ function ContactDetails(props) {
         reset();
     };
 
-    const COUNTRY_OPTIONS = [{ value: 'US', label: 'US' }, { value: 'Canada', label: 'Canada' }];
-    const GENDER_OPTIONS = [{ value: 'Female', label: 'Female' }, { value: 'Male', label: 'Male' }];
     return (
         <form noValidate onSubmit={handleSubmit(submit)} className="react-rainbow-admin-forms_card">
             <Card
