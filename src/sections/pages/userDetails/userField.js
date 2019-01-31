@@ -16,11 +16,13 @@ export default function UserField(props) {
 }
 
 UserField.propTypes = {
-    label: PropTypes.string.isRequired,
-    value: PropTypes.string.isRequired,
+    label: PropTypes.string,
+    value: PropTypes.string,
     className: PropTypes.string,
 };
 
 UserField.defaultProps = {
+    label: undefined,
+    value: undefined,
     className: undefined,
 };
