@@ -3,6 +3,7 @@
     display: flex;
     align-items: center;
     align-content: center;
+    min-height: calc(100vh - 68px);
 }
 
 .react-rainbow-admin-coming-soon_image {
