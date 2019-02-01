@@ -32,6 +32,7 @@ function PaymentForm(props) {
                 title="Your Payment Details"
                 footer={(
                     <Button
+                        className="rainbow-rainbow-forms_button"
                         variant="brand"
                         type="submit">
                         <span>Complete Payment</span>
