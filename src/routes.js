@@ -31,7 +31,7 @@ export default function Routes() {
                 <Route path="/messages" component={ComingSoon} />
                 <Route path="/pages" exact component={Pages} />
                 <Route path="/pages/users" component={Users} />
-                <Route path="/pages/user/details" component={UserDetails} />
+                <Route path="/pages/user/:uid" component={UserDetails} />
                 <Route path="/pages/orders" component={Orders} />
                 <Route path="/pages/followers" component={Followers} />
                 <Route path="/comingSoon" component={ComingSoon} />

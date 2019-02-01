@@ -79,7 +79,7 @@ const orders = [
     },
 ];
 
-export default function resolveOrders() {
+export default function resolveUserOrders() {
     return new Promise((resolve) => {
         setTimeout(() => resolve(orders), 2000);
     });

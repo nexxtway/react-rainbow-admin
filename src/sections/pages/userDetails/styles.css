@@ -2,8 +2,12 @@
     overflow-y: auto;
 }
 
-.react-rainbow-admin-user-detail_top-container {
-    padding: 20px 30px 30px 30px;
+.react-rainbow-admin-user-detail_breadcrumbs {
+    padding: 20px 30px 0 30px;
+}
+
+.react-rainbow-admin-user-detail_cards-container {
+    padding: 0 30px 30px 30px;
 }
 
 .react-rainbow-admin-user-detail_card {
