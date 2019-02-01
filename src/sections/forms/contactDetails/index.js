@@ -44,6 +44,7 @@ function ContactDetails(props) {
                 actions={<Button variant="neutral" label="Edit" />}
                 footer={(
                     <Button
+                        className="rainbow-rainbow-forms_button"
                         variant="brand"
                         type="submit">
                         <span>Update Profile</span>
