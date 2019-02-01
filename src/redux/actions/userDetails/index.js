@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { resolveOrders } from '../../services/orders';
+import { resolveUserOrders } from '../../services/orders';
 import resolveUserDetails from '../../services/userDetails';
 
 export const STOP_LOADING_ORDERS = 'STOP_LOADING_ORDERS';
@@ -10,7 +10,7 @@ export default function fetchUserDetailsData(uid) {
         const { isFirstTime } = getState().userDetails;
         if (isFirstTime) {
             const promises = [
-                resolveOrders(uid),
+                resolveUserOrders(uid),
                 resolveUserDetails(uid),
             ];
             return Promise.all(promises)

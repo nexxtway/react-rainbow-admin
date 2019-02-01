@@ -22,14 +22,14 @@ export default function ContentPage(props) {
     const {
         orders,
         userDetails: {
-            account,
+            dataProvider,
             name,
             status,
             payments,
             totalBalance,
             birth,
             address,
-            mail,
+            email,
             phoneNumber,
         },
         isLoading,
@@ -40,7 +40,7 @@ export default function ContentPage(props) {
             <span className="react-rainbow-admin-user-detail_icon">
                 <FontAwesomeIcon icon={faFacebookF} />
             </span>
-            {account}
+            {dataProvider}
         </span>
     );
 
@@ -94,7 +94,7 @@ export default function ContentPage(props) {
                             className="react-rainbow-admin-user-detail_user-identity_field" />
                         <UserField
                             label="Email address"
-                            value={mail}
+                            value={email}
                             className="react-rainbow-admin-user-detail_user-identity_field" />
                         <UserField
                             label="Date of birth"
