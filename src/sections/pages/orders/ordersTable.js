@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Column, Table } from 'react-rainbow-components';
-import UserCell from '../UserCell';
-import Status from './status';
-import TablePagination from '../TablePagination';
+import UserCell from '../../../components/UserCell';
+import Status from '../../../components/OrdersStatus';
+import OrderId from '../../../components/OrderId';
+import TablePagination from '../../../components/TablePagination';
 
 export default class OrdersTable extends Component {
     constructor(props) {
@@ -29,9 +30,10 @@ export default class OrdersTable extends Component {
         const { activePage } = this.state;
         const pages = Math.ceil(orders.length / 8);
         return (
-            <div className="react-rainbow-admin-orders-table_table-container">
-                <Table className="react-rainbow-admin-orders-table_table" data={this.getTableData()}>
+            <div className="react-rainbow-admin-orders_table-container">
+                <Table className="react-rainbow-admin-orders_table" data={this.getTableData()}>
                     <Column header="USER" field="user" component={UserCell} />
+                    <Column header="ORDER ID" field="id" component={OrderId} />
                     <Column header="STATUS" field="status" component={Status} />
                     <Column header="AMOUNT" field="amount" />
                     <Column header="DATE" field="date" />

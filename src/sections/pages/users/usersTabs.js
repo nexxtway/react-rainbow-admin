@@ -4,6 +4,7 @@ import {
     Column, Tab, Table, Tabset,
 } from 'react-rainbow-components';
 import UserCell from '../../../components/UserCell';
+import UserId from './userId';
 import Status from './status';
 import TablePagination from '../../../components/TablePagination';
 import getActiveUsers from './getActiveUsers';
@@ -68,6 +69,7 @@ export default class UsersTabs extends Component {
                 <div className="react-rainbow-admin-users_tab-content">
                     <Table data={this.getTableData()}>
                         <Column header="USER" field="user" component={UserCell} />
+                        <Column header="USER ID" field="user" component={UserId} defaultWidth={300} />
                         <Column header="EMAIL" field="email" />
                         <Column header="PHONE NUMBER" field="phoneNumber" />
                         <Column header="CURRENT STATUS" field="status" component={Status} />

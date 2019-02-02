@@ -66,6 +66,20 @@
     background-color: #1de9b6;
 }
 
+.react-rainbow-admin-users_user-id-container {
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-users_user-id {
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.react-rainbow-admin-users_user-id-container:hover {
+    color: #01b6f5;
+}
+
 @media (max-width: 800px) {
     .react-rainbow-admin-users_header-container {
         padding: 16px;

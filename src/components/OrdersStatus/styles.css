@@ -1,0 +1,11 @@
+.react-rainbow-admin-orders-table--processing {
+    color: #a0a0bc;
+}
+
+.react-rainbow-admin-orders-table--verified {
+    color: #1de9b6;
+}
+
+.react-rainbow-admin-orders-table--expired {
+    color: #fe4849;
+}
