@@ -27,6 +27,13 @@ import FacebookIcon from './Facebook';
 import TwitterIcon from './Twitter';
 import LinkedinIcon from './Linkedin';
 import SearchIcon from './Search';
+import ArrowUp from './ArrowUp';
+import Attach from './Attach';
+import Checked from './Checked';
+import Emoji from './Emoji';
+import Microphone from './Microphone';
+import PhotoCamera from './PhotoCamera';
+import Picture from './Picture';
 
 export {
     ApplicationIcon,
@@ -57,4 +64,11 @@ export {
     TwitterIcon,
     LinkedinIcon,
     SearchIcon,
+    ArrowUp,
+    Attach,
+    Checked,
+    Emoji,
+    Microphone,
+    PhotoCamera,
+    Picture,
 };
