@@ -174,7 +174,7 @@ class Folloers extends Component {
 
     render() {
         return (
-            <div className="react-rainbow-admin-followers_view-port rainbow-background-color_gray-1">
+            <div className="react-rainbow-admin-followers_view-port">
                 <Breadcrumbs>
                     <Breadcrumb label="Pages" onClick={() => navigateTo('/pages')} />
                     <Breadcrumb label="Followers" />

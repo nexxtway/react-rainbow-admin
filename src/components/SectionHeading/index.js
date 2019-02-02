@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ButtonGroup from 'react-rainbow-components/components/ButtonGroup';
 import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
 import AvatarMenu from 'react-rainbow-components/components/AvatarMenu';
@@ -17,12 +18,12 @@ import {
     faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { ShoppingCartIcon, MessageIcon } from '../icons';
+import { ShoppingCartIcon, MessageIcon, BarsIcon } from '../icons';
 import Notification from './notification';
 import IconNotification from './iconNotification';
 import './styles.css';
 
-export default function SectionHeading() {
+export default function SectionHeading({ onToogleSidebar }) {
     return (
         <header className="react-rainbow-admin_header rainbow-position_fixed rainbow-flex rainbow-align_center rainbow-p-horizontal_large rainbow-background-color_white">
             <img src="/assets/images/rainbow-logo.svg" alt="rainbow logo" className="react-rainbow-admin_header-logo" />
@@ -33,7 +34,7 @@ export default function SectionHeading() {
                 hideLabel
                 icon={<FontAwesomeIcon icon={faSearch} className="rainbow-color_gray-2" />} />
             <section className="rainbow-flex rainbow-align_center react-rainbow-admin_header-actions">
-                <ButtonGroup>
+                <ButtonGroup className="rainbow-m-right_medium">
                     <ButtonIcon icon={<FontAwesomeIcon icon={faRocket} />} variant="border-filled" disabled />
                     <ButtonIcon icon={<FontAwesomeIcon icon={faBullhorn} />} variant="border-filled" />
                     <ButtonMenu menuAlignment="right" menuSize="xx-small" icon={<FontAwesomeIcon icon={faAngleDown} />}>
@@ -43,7 +44,7 @@ export default function SectionHeading() {
                     </ButtonMenu>
                 </ButtonGroup>
                 <ButtonMenu
-                    className="rainbow-m-horizontal_medium"
+                    className="rainbow-m-horizontal_medium react-rainbow-admin_header-button-notification"
                     menuAlignment="right"
                     buttonVariant="base"
                     buttonSize="large"
@@ -96,6 +97,19 @@ export default function SectionHeading() {
                         iconPosition="left" />
                 </AvatarMenu>
             </section>
+            <ButtonIcon
+                onClick={onToogleSidebar}
+                className="react-rainbow-admin_header-hamburger-button"
+                size="large"
+                icon={<BarsIcon />} />
         </header>
     );
 }
+
+SectionHeading.propTypes = {
+    onToogleSidebar: PropTypes.func,
+};
+
+SectionHeading.defaultProps = {
+    onToogleSidebar: () => {},
+};

@@ -1,0 +1,116 @@
+.react-rainbow-admin-forms_container {
+    padding: 16px 40px;
+}
+
+.react-rainbow-admin-forms_section {
+    display: flex;
+    align-items: stretch;
+}
+
+.react-rainbow-admin-forms_section:last-child  {
+    width: 75%;
+}
+
+.react-rainbow-admin-forms_card{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.react-rainbow-admin-forms_card:not(:last-child) {
+    margin-right: 48px;
+}
+
+.react-rainbow-admin-forms_header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.react-rainbow-admin-forms_header h1 {
+    font-size: 1.2rem;
+    color: #061c3f;
+}
+
+.react-rainbow-admin-forms_header p {
+    font-weight: 300;
+    color: #576574;
+    line-height: 1.71;
+}
+
+.react-rainbow-admin-forms_header p:nth-child(2){
+    font-weight: normal;
+    color: #01b6f5;
+    margin-left: 3px;
+}
+
+.react-rainbow-admin-forms_logo {
+    width: 24px;
+    height: 24px;
+}
+
+.rainbow-rainbow-forms_inputs-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 24px 24px;
+    width: 100%;
+}
+
+.rainbow-rainbow-forms_inputs-field {
+    flex:1;
+}
+
+.rainbow-rainbow-forms_inputs-field:not(:last-child) {
+    margin-right: 24px;
+}
+
+.rainbow-rainbow-forms_forgot {
+    text-align: center;
+    color: #01b6f5;
+    font-size: 1rem;
+}
+
+.rainbow-rainbow-forms_contact-details-avatar {
+    background-color: #f4f6f9;
+    border-radius: 32px; 
+}
+
+.rainbow-rainbow-forms_contact-details > .rainbow-card_header-container {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e5ed;
+}
+
+.rainbow-rainbow-forms_contact-details > .rainbow-card_footer {
+    text-align: right;
+    padding-right: 30px;
+}
+
+@media (max-width: 800px){
+    .react-rainbow-admin-forms_container {
+        padding: 16px;
+    }
+
+    .react-rainbow-admin-forms_section {
+        flex-direction: column;
+        padding-top: 0;
+    }
+
+    .rainbow-rainbow-forms_button {
+        width: 100%;
+    }
+
+    .react-rainbow-admin-forms_section:last-child  {
+        width: 100%;
+    }
+
+    .react-rainbow-admin-forms_card {
+        margin-top: 24px;
+    }
+    
+    .rainbow-rainbow-forms_inputs-container > .rainbow-flex {
+        flex-direction: column;
+    }
+
+    .rainbow-rainbow-forms_inputs-field {
+        margin: 0 0 18px 0 !important;
+    }
+}

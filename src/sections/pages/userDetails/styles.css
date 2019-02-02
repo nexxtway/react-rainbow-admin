@@ -1,0 +1,86 @@
+.react-rainbow-admin-user-detail_wrapper {
+    overflow-y: auto;
+}
+
+.react-rainbow-admin-user-detail_breadcrumbs {
+    padding: 20px 30px 0 30px;
+}
+
+.react-rainbow-admin-user-detail_cards-container {
+    padding: 0 30px 30px 30px;
+}
+
+.react-rainbow-admin-user-detail_card {
+    margin-top: 16px;
+}
+
+.react-rainbow-admin-user-detail_card-content {
+    padding: 0.75rem 1rem;
+}
+
+.react-rainbow-admin-user-detail_icon {
+    height: 25px;
+    width: 25px;
+    border-radius: 100%;
+    background-color: #3b5998;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+}
+
+.react-rainbow-admin-user-detail_icon > svg {
+    margin-right: 0 !important;
+    color: white;
+    fill: white;
+}
+
+.react-rainbow-admin-user-detail_user-name {
+    color: #061c3f;
+    font-size: 1.25rem;
+    margin-right: 12px;
+}
+
+.react-rainbow-admin-user-detail_user-status {
+    color: #1ad1a3;
+}
+
+.react-rainbow-admin-user-detail_vertical-divider {
+    background-color: #e3e5ed;
+    width: 1px;
+    margin: 0 16px;
+    height: 38px;
+}
+
+.react-rainbow-admin-user-detail_user-identity {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 0.0625rem solid #e3e5ed;
+}
+
+.react-rainbow-admin-user-detail_user-identity_field {
+    width: 50%;
+    margin-bottom: 8px;
+}
+
+.react-rainbow-admin-user-detail_field {
+    display: flex;
+    flex-direction: column;
+}
+
+.react-rainbow-admin-user-detail_field-label {
+    font-size: 0.75rem;
+    color: #576574;
+}
+
+.react-rainbow-admin-user-detail_field-value {
+    font-size: 1rem;
+    color: #061c3f;
+}
+
+.react-rainbow-admin-user-detail_orders {
+    color: #061c3f;
+    font-size: 20px;
+    padding: 0 30px;
+}

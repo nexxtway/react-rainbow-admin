@@ -1,6 +1,9 @@
 .react-rainbow-admin-coming-soon_container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-content: center;
     min-height: calc(100vh - 68px);
-    padding: 16px 40px;
 }
 
 .react-rainbow-admin-coming-soon_image {
@@ -12,7 +15,22 @@
 }
 
 @media (max-width: 1024px) {
+    .react-rainbow-admin-coming-soon_image {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 800px) {
+    .react-rainbow-admin-coming-soon_image {
+        height: 60vh;
+    }
+}
+
+@media (max-width: 600px) {
     .react-rainbow-admin-coming-soon_container {
-        padding: 16px;
+        min-height: calc(100vh - 116px);
+    }
+    .react-rainbow-admin-coming-soon_image {
+        height: 50vh;
     }
 }

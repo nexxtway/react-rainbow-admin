@@ -3,6 +3,8 @@ import charts from './charts';
 import followers from './followers';
 import users from './users';
 import orders from './orders';
+import app from './app';
+import userDetails from './userDetails';
 
 export default {
     charts,
@@ -10,4 +12,6 @@ export default {
     followers,
     users,
     orders,
+    app,
+    userDetails,
 };

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faExclamation } from '@fortawesome/free-solid-svg-icons';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import { Badge } from 'react-rainbow-components';
+import './styles.css';
 
 const iconMap = {
     VERIFIED: faCheck,
@@ -12,16 +13,16 @@ const iconMap = {
     PROCESSING: faClock,
 };
 export default function Status({ value }) {
-    const getClassName = () => classnames({
-        'react-rainbow-admin-orders_status-verified': value === 'VERIFIED',
-        'react-rainbow-admin-orders_status-expired': value === 'EXPIRED',
-        'react-rainbow-admin-orders_status-processing': value === 'PROCESSING',
+    const getClassNames = () => classnames({
+        'react-rainbow-admin-orders-table--verified': value === 'VERIFIED',
+        'react-rainbow-admin-orders-table--expired': value === 'EXPIRED',
+        'react-rainbow-admin-orders-table--processing': value === 'PROCESSING',
     });
 
     const Icon = iconMap[value];
 
     return (
-        <Badge className={getClassName()} variant="lightest">
+        <Badge className={getClassNames()} variant="lightest">
             <FontAwesomeIcon icon={Icon} pull="left" size="sm" />
             {value}
         </Badge>
