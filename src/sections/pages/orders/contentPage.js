@@ -5,7 +5,7 @@ import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import {
     Badge, Card, Chart, Dataset, Spinner,
 } from 'react-rainbow-components';
-import OrdersTable from '../../../components/OrdersTable';
+import OrdersTable from './ordersTable';
 
 export default function ContentPage(props) {
     const {

@@ -16,7 +16,7 @@ import {
     Spinner,
 } from 'react-rainbow-components';
 import UserField from './userField';
-import OrdersTable from '../../../components/OrdersTable';
+import OrdersTable from './ordersTable';
 
 export default function ContentPage(props) {
     const {

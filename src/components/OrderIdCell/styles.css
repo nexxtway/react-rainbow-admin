@@ -1,0 +1,13 @@
+.react-rainbow-admin-order-id-cell_container {
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-order-id-cell_name {
+    margin-left: 8px;
+    font-weight: 400;
+}
+
+.react-rainbow-admin-order-id-cell_container:hover {
+    color: #01b6f5;
+}
