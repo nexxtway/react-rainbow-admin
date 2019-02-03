@@ -66,17 +66,17 @@
     background-color: #1de9b6;
 }
 
-.react-rainbow-admin-users_user-id-container {
+.react-rainbow-admin-users_user-id-cell-container {
     display: flex;
     align-items: center;
 }
 
-.react-rainbow-admin-users_user-id {
+.react-rainbow-admin-users_user-id-cell {
     margin-left: 8px;
     font-weight: 400;
 }
 
-.react-rainbow-admin-users_user-id-container:hover {
+.react-rainbow-admin-users_user-id-cell-container:hover {
     color: #01b6f5;
 }
 

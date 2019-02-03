@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Column, Table } from 'react-rainbow-components';
 import Status from '../../../components/OrdersStatus';
-import OrderId from '../../../components/OrderId';
+import OrderIdCell from '../../../components/OrderIdCell';
 import TablePagination from '../../../components/TablePagination';
 
-export default class OrdersDetailsTable extends Component {
+export default class OrdersTable extends Component {
     constructor(props) {
         super(props);
         this.state = { activePage: 1 };
@@ -31,7 +31,7 @@ export default class OrdersDetailsTable extends Component {
         return (
             <div className="react-rainbow-admin-user-details_table-container">
                 <Table className="react-rainbow-admin-user-details_table" data={this.getTableData()}>
-                    <Column header="ORDER ID" field="id" component={OrderId} />
+                    <Column header="ORDER ID" field="id" component={OrderIdCell} />
                     <Column header="STATUS" field="status" component={Status} />
                     <Column header="AMOUNT" field="amount" />
                     <Column header="DATE" field="date" />
@@ -45,6 +45,6 @@ export default class OrdersDetailsTable extends Component {
     }
 }
 
-OrdersDetailsTable.propTypes = {
+OrdersTable.propTypes = {
     orders: PropTypes.array.isRequired,
 };
