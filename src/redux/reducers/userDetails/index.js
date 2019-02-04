@@ -35,7 +35,7 @@ function stopLoading(state) {
     };
 }
 
-export default function ordersData(state = initialState, action) {
+export default function userDetails(state = initialState, action) {
     switch (action.type) {
         case START_LOADING_ORDERS:
             return startLoading(state);
