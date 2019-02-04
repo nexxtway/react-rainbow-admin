@@ -1,5 +1,6 @@
 import {
     STOP_LOADING_ORDERS,
+    START_LOADING_ORDERS,
     LOAD_ORDERS_DATA,
 } from '../../actions/orders';
 
@@ -14,6 +15,13 @@ const initialState = {
     isLoading: true,
     isFirstTime: true,
 };
+
+function startLoading(state) {
+    return {
+        ...state,
+        isLoading: true,
+    };
+}
 
 function loadData(state, action) {
     const newState = {
@@ -34,6 +42,8 @@ function stopLoading(state) {
 
 export default function ordersData(state = initialState, action) {
     switch (action.type) {
+        case START_LOADING_ORDERS:
+            return startLoading(state);
         case LOAD_ORDERS_DATA:
             return loadData(state, action);
         case STOP_LOADING_ORDERS:

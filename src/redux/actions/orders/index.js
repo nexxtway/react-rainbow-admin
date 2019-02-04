@@ -4,6 +4,7 @@ import {
     resolveChartsData,
 } from '../../services/orders';
 
+export const START_LOADING_ORDERS = 'START_LOADING_ORDERS';
 export const STOP_LOADING_ORDERS = 'STOP_LOADING_ORDERS';
 export const LOAD_ORDERS_DATA = 'LOAD_ORDERS_DATA';
 
@@ -15,6 +16,7 @@ export default function fetchOrdersData() {
                 resolveOrders(),
                 resolveChartsData(),
             ];
+            dispatch({ type: START_LOADING_ORDERS });
             return Promise.all(promises)
                 .then((results) => {
                     const [orders, chartsData] = results;
