@@ -1,10 +1,10 @@
 import reducer from '..';
 
-const START_LOADING_ORDERS = 'START_LOADING_ORDERS';
 const STOP_LOADING_ORDERS = 'STOP_LOADING_ORDERS';
-const LOAD_ORDERS_DATA = 'LOAD_ORDERS_DATA';
+const START_LOADING_ORDERS = 'START_LOADING_ORDERS';
+const LOAD_USER_DETAILS = 'LOAD_USER_DETAILS';
 
-describe('orders reducer', () => {
+describe('userDetails reducer', () => {
     describe(`when ${START_LOADING_ORDERS} action`, () => {
         it('should set isLoading to true', () => {
             const initialState = {
@@ -25,22 +25,22 @@ describe('orders reducer', () => {
         });
     });
 
-    describe(`when ${LOAD_ORDERS_DATA} action`, () => {
+    describe(`when ${LOAD_USER_DETAILS} action`, () => {
         it('should set the right loaded data', () => {
             const initialState = {
                 orders: [],
-                chartsData: {},
+                userDetails: {},
                 isFirstTime: true,
             };
             const action = {
-                type: LOAD_ORDERS_DATA,
+                type: LOAD_USER_DETAILS,
                 orders: [1, 2, 3],
-                chartsData: { test: 1 },
+                userDetails: { test: 1 },
             };
             const state = reducer(initialState, action);
             expect(state).toEqual({
                 orders: action.orders,
-                chartsData: action.chartsData,
+                userDetails: action.userDetails,
                 isFirstTime: false,
             });
         });

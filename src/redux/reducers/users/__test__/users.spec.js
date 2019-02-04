@@ -1,9 +1,20 @@
 import reducer from '..';
 
+export const START_LOADING_USERS = 'START_LOADING_USERS';
 export const STOP_LOADING_USERS = 'STOP_LOADING_USERS';
 export const LOAD_USERS_DATA = 'LOAD_USERS_DATA';
 
 describe('users reducer', () => {
+    describe(`when ${START_LOADING_USERS} action`, () => {
+        it('should set isLoading to true', () => {
+            const initialState = {
+                isLoading: false,
+            };
+            const state = reducer(initialState, { type: START_LOADING_USERS });
+            expect(state.isLoading).toBe(true);
+        });
+    });
+
     describe(`when ${STOP_LOADING_USERS} action`, () => {
         const initialState = {
             isLoading: true,

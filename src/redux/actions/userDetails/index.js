@@ -2,6 +2,7 @@
 import { resolveUserOrders } from '../../services/orders';
 import resolveUserDetails from '../../services/userDetails';
 
+export const START_LOADING_ORDERS = 'START_LOADING_ORDERS';
 export const STOP_LOADING_ORDERS = 'STOP_LOADING_ORDERS';
 export const LOAD_USER_DETAILS = 'LOAD_USER_DETAILS';
 
@@ -13,6 +14,7 @@ export default function fetchUserDetailsData(uid) {
                 resolveUserOrders(uid),
                 resolveUserDetails(uid),
             ];
+            dispatch({ type: START_LOADING_ORDERS });
             return Promise.all(promises)
                 .then((results) => {
                     const [orders, userDetails] = results;

@@ -14,17 +14,21 @@ beforeEach(() => {
 });
 
 describe('fetchUsersData action', () => {
+    it('should dispatch START_LOADING_USERS when is first time', () => {
+        fetchUsersData()(dispatch, getState);
+        expect(dispatch.mock.calls[0][0]).toEqual({ type: 'START_LOADING_USERS' });
+    });
     it('should dispatch LOAD_USERS_DATA and STOP_LOADING_USERS when is first time', () => {
         expect.assertions(3);
         return fetchUsersData()(dispatch, getState)
             .then(() => {
-                expect(dispatch.mock.calls[0][0]).toEqual({
+                expect(dispatch.mock.calls[1][0]).toEqual({
                     type: 'LOAD_USERS_DATA',
                     users: 'users',
                     chartsData: 'chartsData',
                 });
-                expect(dispatch.mock.calls[1][0]).toEqual({ type: 'STOP_LOADING_USERS' });
-                expect(dispatch).toHaveBeenCalledTimes(2);
+                expect(dispatch.mock.calls[2][0]).toEqual({ type: 'STOP_LOADING_USERS' });
+                expect(dispatch).toHaveBeenCalledTimes(3);
             });
     });
     it('should dispatch STOP_LOADING_USERS when first time and there is a reject', () => {
@@ -35,8 +39,8 @@ describe('fetchUsersData action', () => {
 
         return fetchUsersData()(dispatch, getState)
             .then(() => {
-                expect(dispatch).toHaveBeenCalledTimes(1);
-                expect(dispatch.mock.calls[0][0]).toEqual({ type: 'STOP_LOADING_USERS' });
+                expect(dispatch).toHaveBeenCalledTimes(2);
+                expect(dispatch.mock.calls[1][0]).toEqual({ type: 'STOP_LOADING_USERS' });
             });
     });
     it('should not call dispatch when is not first time', () => {
