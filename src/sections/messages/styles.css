@@ -1,0 +1,201 @@
+.react-rainbow-admin-messages {
+    display: flex;
+    min-height: calc(100vh - 68px);
+}
+
+.react-rainbow-admin-messages_contacts-container {
+    width: 30%;
+    background-color: #f4f6f9;
+}
+
+.react-rainbow-admin-messages_contacts-search {
+    padding: 0.75rem 0.625rem;
+    border-bottom: 1px solid #eceef6;
+}
+
+.react-rainbow-admin-messages_contacts {
+    padding: 0 0.625rem;
+}
+
+.react-rainbow-admin-messages_contact {
+    display: flex;
+    padding: 0.5rem;
+    margin: 0.75rem 0;
+    width: 100%;
+    height: 3.25rem;
+    border-radius: 100px;
+}
+
+.react-rainbow-admin-messages_contact--active {
+    background-color: #eceef6;
+}
+
+.react-rainbow-admin-messages_contact-avatar {
+    flex-shrink: 0;
+}
+
+.react-rainbow-admin-messages_contact-content {
+    width: 88%;
+    margin-left: 0.75rem;
+}
+
+.react-rainbow-admin-messages_contact-name {
+    font-size: 0.875rem;
+    line-height: 1.29;
+    letter-spacing: 0.5px;
+    color: #061c3f;
+}
+
+.react-rainbow-admin-messages_contact-time {
+    font-size: 0.75rem;
+    display: flex;
+    justify-content: flex-end;
+    letter-spacing: 0.5px;
+    text-align: right;
+    color: #a4a7b5;
+}
+
+.react-rainbow-admin-messages_contact-message {
+    line-height: 1.4;
+    color: #576574;
+    font-size: 0.625rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 98%;
+}
+
+.react-rainbow-admin-messages_body {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #eff1f7;
+    padding: 1rem 2.25rem;
+    position: relative;
+}
+
+.react-rainbow-admin-messages_input-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 0 2px 0 rgba(160, 160, 180, 0.5);
+    background-color: #fff;
+    padding: 0.5rem;
+}
+
+.react-rainbow-admin-messages_input-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem 1rem;
+}
+
+.react-rainbow-admin-messages_body-messages {
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.react-rainbow-admin-messages_message {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.react-rainbow-admin-messages_message:not(:first-child) {
+    margin-top: 1rem;
+}
+
+.react-rainbow-admin-messages_message-avatar {
+    flex-shrink: 0;
+}
+
+.react-rainbow-admin-messages_message-text-contact {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    font-size: 1rem;
+    margin: -0.625rem 0 0.25rem 0.75rem;
+    background-color: #081832;
+    color: #fff;
+}
+
+.react-rainbow-admin-messages_message-text-contact:before {
+    width: 0;
+    height: 0;
+    content:"";
+    top:0.875rem;
+    right: 1.375rem;
+    margin-right: -0.875rem;
+    position:relative;
+    border-style: solid;
+    border-width: 0.75rem 1rem 0 0;
+    border-color: transparent #081832 transparent transparent;
+    transform: rotateZ(-20deg);
+}
+
+.react-rainbow-admin-messages_message-text-user {
+    display: flex;
+    align-items: flex-start;
+    border-radius: 0.625rem;
+    padding: 0.625rem;
+    margin: -0.625rem 0.75rem 0.25rem 0;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.react-rainbow-admin-messages_message-text-user:after {
+    width: 0;
+    height: 0;
+    content:"";
+    top:0.875rem;
+    left: 1.375rem;
+    margin-left: -0.875rem;
+    position:relative;
+    border-style: solid;
+    border-width: 0 1rem 0.75rem 0;
+    border-color: transparent transparent #fff transparent;
+    transform: rotateZ(20deg);
+}
+
+.react-rainbow-admin-messages_message--sent {
+    position: absolute;
+    right: 3.15rem;
+    bottom: -0.875rem;
+    display: flex;
+    align-items: center;
+}
+
+.react-rainbow-admin-messages_message--sent svg {
+    margin-left: 0.25rem;
+}
+
+.react-rainbow-admin-messages_message--sent-date {
+    position: absolute;
+    left: 3.75rem;
+    bottom: -0.875rem;
+}
+
+.react-rainbow-admin-messages_message--checked svg {
+    fill: #01b6f5;
+    stroke: #01b6f5;
+}
+
+.react-rainbow-admin-messages_input .rainbow-input_icon-container .rainbow-input_icon {
+    width: 1.875rem;
+    height: 1.875rem;
+    border-radius: 100%;
+    background-color: #01b6f5;
+    margin-top: 0.25rem;
+    margin-right: -0.25rem;
+}
+
+.react-rainbow-admin-messages_body-selected-contact {
+    position: absolute;
+    top: 1rem;
+    left: 2.25rem;
+}

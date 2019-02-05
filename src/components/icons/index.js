@@ -37,8 +37,14 @@ import SignPost from './SignPost';
 import User from './User';
 import CreditCard from './CreditCard';
 import SearchIcon from './Search';
+import ArrowUp from './ArrowUp';
+import Attach from './Attach';
+import Checked from './Checked';
+import Emoji from './Emoji';
+import Microphone from './Microphone';
+import PhotoCamera from './PhotoCamera';
+import Picture from './Picture';
 import BarsIcon from './Bars';
-
 
 export {
     ApplicationIcon,
@@ -79,5 +85,12 @@ export {
     User,
     CreditCard,
     SearchIcon,
+    ArrowUp,
+    Attach,
+    Checked,
+    Emoji,
+    Microphone,
+    PhotoCamera,
+    Picture,
     BarsIcon,
 };
