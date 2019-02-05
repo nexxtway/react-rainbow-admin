@@ -5,31 +5,31 @@ import Avatar from 'react-rainbow-components/components/Avatar';
 import { PersonIcon } from '../../components/icons';
 import './styles.css';
 
-export default function Contacts({ contacts }) {
-    const getClassNames = isActive => classnames('react-rainbow-admin-messages_contact', {
-        'react-rainbow-admin-messages_contact--active': isActive,
-    });
+const getClassNames = isActive => classnames('react-rainbow-admin-messages_contact', {
+    'react-rainbow-admin-messages_contact--active': isActive,
+});
 
+export default function Contacts({ contacts }) {
     return contacts.map((contact, index) => {
         const {
             name,
-            avatarSrc,
-            lastDateSeen,
+            photoUrl,
+            lastSeenDate,
             lastMessage,
-            isActive,
+            isSelected,
         } = contact;
         const key = `contact-${index}`;
         return (
-            <article key={key} className={getClassNames(isActive)}>
+            <article key={key} className={getClassNames(isSelected)}>
                 <Avatar
                     className="react-rainbow-admin-messages_contact-avatar"
-                    src={avatarSrc}
+                    src={photoUrl}
                     icon={<PersonIcon />}
                     size="small" />
                 <div className="react-rainbow-admin-messages_contact-content">
                     <div className="rainbow-flex rainbow-justify_spread">
                         <h3 className="react-rainbow-admin-messages_contact-name">{name}</h3>
-                        <p className="react-rainbow-admin-messages_contact-time">{lastDateSeen}</p>
+                        <p className="react-rainbow-admin-messages_contact-time">{lastSeenDate}</p>
                     </div>
                     <p className="react-rainbow-admin-messages_contact-message">{lastMessage}</p>
                 </div>
@@ -40,11 +40,11 @@ export default function Contacts({ contacts }) {
 
 Contacts.propTypes = {
     contacts: PropTypes.arrayOf(PropTypes.shape({
-        avatarSrc: PropTypes.string,
+        photoUrl: PropTypes.string,
         name: PropTypes.string,
-        lastDateSeen: PropTypes.string,
+        lastSeenDate: PropTypes.string,
         lastMessage: PropTypes.string,
-        isActive: PropTypes.bool,
+        isSelected: PropTypes.bool,
     })),
 };
 

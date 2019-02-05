@@ -28,7 +28,6 @@ export default function Routes() {
                 <Route path="/charts" component={Charts} />
                 <Route path="/components" component={Components} />
                 <Route path="/dashboard" component={Dashboard} />
-                <Route path="/forms" component={ComingSoon} />
                 <Route path="/messages" component={Messages} />
                 <Route path="/forms" component={Forms} />
                 <Route path="/pages" exact component={Pages} />

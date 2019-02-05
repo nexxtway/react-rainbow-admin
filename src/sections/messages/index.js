@@ -1,3 +1,4 @@
+/* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
 import { Input } from 'react-rainbow-components/components';
 import {
@@ -10,75 +11,75 @@ import {
     Picture,
 } from '../../components/icons';
 import Contacts from './contacts';
-import filter from './filter';
-import Texts from './texts';
+import searchFilter from '../../utils/searchFilter';
+import ChatMessages from './chatMessages';
 import './styles.css';
 
 const contacts = [
     {
         name: 'Saray',
-        lastDateSeen: '8:30 am',
+        lastSeenDate: '8:30 am',
         lastMessage: 'A rainbow i a meteorological phenomenon that is A rainbow i a meteorological phenomenon that is something',
-        avatarSrc: '/assets/images/user2.jpg',
-        isActive: true,
+        photoUrl: '/assets/images/user2.jpg',
+        isSelected: true,
     },
     {
         name: 'Leo',
-        lastDateSeen: '5:30 pm',
+        lastSeenDate: '5:30 pm',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
-        avatarSrc: '/assets/images/user1.jpg',
+        photoUrl: '/assets/images/user1.jpg',
     },
     {
         name: 'Rey',
-        lastDateSeen: '10:15 pm',
+        lastSeenDate: '10:15 pm',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
-        avatarSrc: '/assets/images/user3.jpg',
+        photoUrl: '/assets/images/user3.jpg',
     },
     {
         name: 'Jose',
-        lastDateSeen: '8:45 am',
+        lastSeenDate: '8:45 am',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
     },
     {
         name: 'Juan',
-        lastDateSeen: 'yesterday',
+        lastSeenDate: 'yesterday',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
     },
     {
         name: 'Tahimi',
-        lastDateSeen: 'yesterday',
+        lastSeenDate: 'yesterday',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
     },
     {
         name: 'Pepe',
-        lastDateSeen: 'yesterday',
+        lastSeenDate: 'yesterday',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
     },
 ];
 
-const texts = [
+const messages = [
     {
-        avatarSrc: '/assets/images/user2.jpg',
-        message: 'I have a problem with a topup',
-        dateSend: '1:06 PM',
+        photoUrl: '/assets/images/user2.jpg',
+        text: 'I have a problem with a topup',
+        sentDate: '1:06 PM',
     },
     {
-        avatarSrc: '/assets/images/user4.jpg',
-        message: 'Verify the account',
+        photoUrl: '/assets/images/user4.jpg',
+        text: 'Verify the account',
         isUser: true,
-        checked: true,
-        dateSend: '1:07 PM',
+        isChecked: true,
+        sentDate: '1:07 PM',
     },
     {
-        avatarSrc: '/assets/images/user2.jpg',
-        message: 'Already all is ok, thanks',
-        dateSend: '1:19 PM',
+        photoUrl: '/assets/images/user2.jpg',
+        text: 'Already all is ok, thanks',
+        sentDate: '1:19 PM',
     },
     {
-        avatarSrc: '/assets/images/user4.jpg',
-        message: 'ok',
+        photoUrl: '/assets/images/user4.jpg',
+        text: 'ok',
         isUser: true,
-        dateSend: '1:22 PM',
+        sentDate: '1:22 PM',
     },
 ];
 
@@ -93,7 +94,12 @@ export default class Messages extends Component {
 
     getContacts() {
         const { searchTerm } = this.state;
-        return filter(searchTerm, contacts);
+        return searchFilter(searchTerm, contacts, 'name');
+    }
+
+    getSelectedContact() {
+        const selectedContact = contacts.find(contact => contact.isSelected);
+        return selectedContact.name;
     }
 
     handleOnChange(event) {
@@ -111,7 +117,6 @@ export default class Messages extends Component {
                         type="search"
                         hideLabel
                         placeholder="Find contact"
-                        aria-label="Find contact"
                         value={searchTerm}
                         onChange={this.handleOnChange}
                         icon={<SearchIcon />} />
@@ -120,8 +125,9 @@ export default class Messages extends Component {
                     </div>
                 </div>
                 <div className="react-rainbow-admin-messages_body">
+                    <p className="react-rainbow-admin-messages_body-selected-contact">{this.getSelectedContact()}</p>
                     <div className="react-rainbow-admin-messages_body-messages">
-                        <Texts texts={texts} />
+                        <ChatMessages messages={messages} />
                     </div>
                     <div className="react-rainbow-admin-messages_input-container">
                         <div className="react-rainbow-admin-messages_input-options">
