@@ -6,6 +6,9 @@ import { bindActionCreators } from 'redux';
 import Application from 'react-rainbow-components/components/Application';
 import Sidebar from 'react-rainbow-components/components/Sidebar';
 import SidebarItem from 'react-rainbow-components/components/SidebarItem';
+import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Routes from '../routes';
 import SectionHeading from '../components/SectionHeading';
 import {
@@ -34,6 +37,16 @@ class App extends Component {
         this.handleOnSelect = this.handleOnSelect.bind(this);
     }
 
+    componentDidUpdate() {
+        const { isSidebarHidden } = this.props;
+        const isSidebarOpen = !isSidebarHidden;
+        const isMobileViewPort = document.body.offsetWidth < 600;
+        document.body.style.overflow = 'auto';
+        if (isSidebarOpen && isMobileViewPort) {
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
     getSidebarClassNames() {
         const { isSidebarHidden } = this.props;
         return classnames('react-rainbow-admin-app_sidebar', {
@@ -41,10 +54,10 @@ class App extends Component {
         });
     }
 
-    getRouterContainerClassNames() {
+    getBackdropClassNames() {
         const { isSidebarHidden } = this.props;
-        return classnames('react-rainbow-admin-app_router-container', {
-            'react-rainbow-admin-app_router-container--sidebar-hidden': isSidebarHidden,
+        return classnames('react-rainbow-admin-app_backdrop', {
+            'react-rainbow-admin-app_backdrop--sidebar-hidden': isSidebarHidden,
         });
     }
 
@@ -57,6 +70,7 @@ class App extends Component {
         const { toogleSidebar, navigate } = this.props;
         return (
             <Application>
+                <button type="button" onClick={toogleSidebar} className={this.getBackdropClassNames()} />
                 <SectionHeading onToogleSidebar={toogleSidebar} />
                 <Sidebar
                     className={this.getSidebarClassNames()}
@@ -104,8 +118,16 @@ class App extends Component {
                         name="charts"
                         label="Charts"
                         onClick={() => navigate('/charts')} />
+                    <div className="react-rainbow-admin-app_sidebar-back-button-container">
+                        <ButtonIcon
+                            onClick={toogleSidebar}
+                            size="large"
+                            icon={
+                                <FontAwesomeIcon className="react-rainbow-admin-app_sidebar-backb-button-icon" icon={faArrowLeft} />
+                            } />
+                    </div>
                 </Sidebar>
-                <div className={this.getRouterContainerClassNames()}>
+                <div className="react-rainbow-admin-app_router-container">
                     <Routes />
                 </div>
             </Application>

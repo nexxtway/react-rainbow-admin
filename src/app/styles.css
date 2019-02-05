@@ -6,8 +6,8 @@
     margin-top: 68px;
     background-color: #fff;
     height: calc(100% - 68px);
-    overflow-y: scroll;
-    z-index: 999;
+    overflow-y: auto;
+    z-index: 99999;
 }
 
 .react-rainbow-admin-app_router-container {
@@ -21,10 +21,18 @@
     margin-bottom: 16px;
 }
 
+.react-rainbow-admin-app_sidebar-back-button-container {
+    display: none;
+}
+
+.react-rainbow-admin-app_backdrop {
+    display: none;
+}
+
 @media (max-width: 600px) {
     .react-rainbow-admin-app_sidebar {
-        height: calc(100% - 116px);
-        margin-top: 116px;
+        height: 100vh;
+        margin-top: 0;
         padding-bottom: 14px;
         transform: translateX(0%);
         transition: transform 230ms linear, opacity 230ms linear;
@@ -33,9 +41,6 @@
     .react-rainbow-admin-app_router-container {
         padding-top: 116px;
         padding-left: 0;
-        pointer-events: none;
-        opacity: 0.3;
-
     }
 
     .react-rainbow-admin-app_sidebar--hidden {
@@ -43,8 +48,30 @@
         transition: transform 250ms linear, opacity 250ms linear;
     }
 
-    .react-rainbow-admin-app_router-container--sidebar-hidden {
-        pointer-events: unset;
-        opacity: 1;
+    .react-rainbow-admin-app_sidebar-back-button-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 12px;
+    }
+
+    .react-rainbow-admin-app_sidebar-back-button-icon {
+        color: #000;
+    }
+
+    .react-rainbow-admin-app_backdrop {
+        display: unset;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: fixed;
+        z-index: 99999;
+        top: 0;
+        left: 0;
+    }
+
+    .react-rainbow-admin-app_backdrop--sidebar-hidden {
+        display: none;
     }
 }
