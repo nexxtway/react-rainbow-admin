@@ -11,8 +11,9 @@ import {
     Picture,
 } from '../../components/icons';
 import Contacts from './contacts';
-import searchFilter from '../../utils/searchFilter';
+import filter from './filter';
 import ChatMessages from './chatMessages';
+import SelectedContact from './selectedContact';
 import './styles.css';
 
 const contacts = [
@@ -21,13 +22,14 @@ const contacts = [
         lastSeenDate: '8:30 am',
         lastMessage: 'A rainbow i a meteorological phenomenon that is A rainbow i a meteorological phenomenon that is something',
         photoUrl: '/assets/images/user2.jpg',
-        isSelected: true,
+        isOnline: true,
     },
     {
         name: 'Leo',
         lastSeenDate: '5:30 pm',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
         photoUrl: '/assets/images/user1.jpg',
+        isOnline: true,
     },
     {
         name: 'Rey',
@@ -39,6 +41,7 @@ const contacts = [
         name: 'Jose',
         lastSeenDate: '8:45 am',
         lastMessage: 'A rainbow i a meteorological phenomenon that is something',
+        isOnline: true,
     },
     {
         name: 'Juan',
@@ -88,26 +91,37 @@ export default class Messages extends Component {
         super(props);
         this.state = {
             searchTerm: '',
+            selectedContactIndex: 0,
         };
         this.handleOnChange = this.handleOnChange.bind(this);
+        this.handleOnClick = this.handleOnClick.bind(this);
     }
 
     getContacts() {
         const { searchTerm } = this.state;
-        return searchFilter(searchTerm, contacts, 'name');
+        return filter(searchTerm, contacts);
     }
 
     getSelectedContact() {
-        const selectedContact = contacts.find(contact => contact.isSelected);
-        return selectedContact.name;
+        const { selectedContactIndex } = this.state;
+        return contacts[selectedContactIndex];
     }
 
     handleOnChange(event) {
         this.setState({ searchTerm: event.target.value });
     }
 
+    handleOnClick(selectedIndex) {
+        this.setState({ selectedContactIndex: selectedIndex });
+    }
+
     render() {
-        const { searchTerm } = this.state;
+        const { searchTerm, selectedContactIndex } = this.state;
+        const {
+            photoUrl,
+            name,
+            isOnline,
+        } = this.getSelectedContact();
         return (
             <div className="react-rainbow-admin-messages">
                 <div className="react-rainbow-admin-messages_contacts-container">
@@ -121,11 +135,17 @@ export default class Messages extends Component {
                         onChange={this.handleOnChange}
                         icon={<SearchIcon />} />
                     <div className="react-rainbow-admin-messages_contacts">
-                        <Contacts contacts={this.getContacts()} />
+                        <Contacts
+                            contacts={this.getContacts()}
+                            onClick={this.handleOnClick}
+                            selectedContactIndex={selectedContactIndex} />
                     </div>
                 </div>
                 <div className="react-rainbow-admin-messages_body">
-                    <p className="react-rainbow-admin-messages_body-selected-contact">{this.getSelectedContact()}</p>
+                    <SelectedContact
+                        photoUrl={photoUrl}
+                        name={name}
+                        isOnline={isOnline} />
                     <div className="react-rainbow-admin-messages_body-messages">
                         <ChatMessages messages={messages} />
                     </div>
