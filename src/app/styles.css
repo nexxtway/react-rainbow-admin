@@ -1,13 +1,22 @@
-.react-rainbow-admin-app_sidebar {
+.react-rainbow-admin-app_sidebar-container {
     position: fixed;
-    border-right: 1px solid #f4f6f9;
-    width: 88px;
-    padding-top: 14px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: calc(100vh - 68px);
     margin-top: 68px;
     background-color: #fff;
-    height: calc(100% - 68px);
-    overflow-y: auto;
     z-index: 99999;
+    padding-bottom: 14px;
+    padding-top: 14px;
+}
+
+.react-rainbow-admin-app_sidebar {
+    width: 88px;
+    height: 100%;
+    border-right: 1px solid #f4f6f9;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .react-rainbow-admin-app_router-container {
@@ -25,15 +34,10 @@
     display: none;
 }
 
-.react-rainbow-admin-app_backdrop {
-    display: none;
-}
-
 @media (max-width: 600px) {
-    .react-rainbow-admin-app_sidebar {
+    .react-rainbow-admin-app_sidebar-container {
         height: 100vh;
         margin-top: 0;
-        padding-bottom: 14px;
         transform: translateX(0%);
         transition: transform 230ms linear, opacity 230ms linear;
     }
@@ -43,7 +47,7 @@
         padding-left: 0;
     }
 
-    .react-rainbow-admin-app_sidebar--hidden {
+    .react-rainbow-admin-app_sidebar-container--sidebar-hidden {
         transform: translateX(-100%);
         transition: transform 250ms linear, opacity 250ms linear;
     }
@@ -52,8 +56,9 @@
         width: 100%;
         display: flex;
         justify-content: center;
-        position: absolute;
-        bottom: 12px;
+        flex-grow: 2;
+        align-items: flex-end;
+        padding-top: 12px;
     }
 
     .react-rainbow-admin-app_sidebar-back-button-icon {
@@ -69,9 +74,5 @@
         z-index: 99999;
         top: 0;
         left: 0;
-    }
-
-    .react-rainbow-admin-app_backdrop--sidebar-hidden {
-        display: none;
     }
 }
