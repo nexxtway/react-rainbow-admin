@@ -146,16 +146,27 @@ export default class Messages extends Component {
                         photoUrl={photoUrl}
                         name={name}
                         isOnline={isOnline} />
+                    <span className="react-rainbow-admin-messages_body--divider" />
                     <div className="react-rainbow-admin-messages_body-messages">
                         <ChatMessages messages={messages} />
                     </div>
                     <div className="react-rainbow-admin-messages_input-container">
                         <div className="react-rainbow-admin-messages_input-options">
-                            <Emoji />
-                            <Attach />
-                            <Picture />
-                            <PhotoCamera />
-                            <Microphone />
+                            <div className="react-rainbow-admin-messages_input-options-icon-container">
+                                <Emoji />
+                            </div>
+                            <div className="react-rainbow-admin-messages_input-options-icon-container">
+                                <Attach />
+                            </div>
+                            <div className="react-rainbow-admin-messages_input-options-icon-container">
+                                <Picture />
+                            </div>
+                            <div className="react-rainbow-admin-messages_input-options-icon-container">
+                                <PhotoCamera />
+                            </div>
+                            <div className="react-rainbow-admin-messages_input-options-icon-container">
+                                <Microphone />
+                            </div>
                         </div>
                         <Input
                             className="react-rainbow-admin-messages_input"
