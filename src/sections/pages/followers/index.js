@@ -5,14 +5,8 @@ import { bindActionCreators } from 'redux';
 import {
     Breadcrumb,
     Breadcrumbs,
-    Card,
-    Chart,
-    Dataset,
-    Badge,
     Spinner,
 } from 'react-rainbow-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowUp, faArrowDown } from '@fortawesome/free-solid-svg-icons';
 import fetchFollowersData from '../../../redux/actions/followers';
 import { navigateTo } from '../../../history';
 import Tile from '../../../components/Tile';
@@ -23,6 +17,7 @@ import {
     TwitterIcon,
     LinkedinIcon,
 } from '../../../components/icons';
+import ChartsSection from './chartsSection';
 import './styles.css';
 
 function ContentPage(props) {
@@ -69,93 +64,8 @@ function ContentPage(props) {
                     icon={<LinkedinIcon className="react-rainbow-admin-followers_tile-icon" />} />
             </section>
 
-            <section className="react-rainbow-admin-followers_section rainbow-align-content_space-between rainbow-p-top_large">
-                <Card className="react-rainbow-admin-followers_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-followers_card-chart--title rainbow-color_dark-1 rainbow-p-bottom_medium">facebook users</h1>
-                        <Badge className="react-rainbow-admin-followers_badge--success">
-                            <FontAwesomeIcon icon={faArrowUp} pull="left" />
-                            20.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-followers_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
-                        Total users
-                    </p>
-                    <Chart
-                        className="react-rainbow-admin-followers_chart rainbow-p-top_x-small"
-                        maintainAspectRatio={false}
-                        labels={chartsData.facebook.labels}
-                        type="line"
-                        showLegend={false}>
-                        <Dataset values={chartsData.facebook.value} borderColor="#3c5997" backgroundColor="#3c5997" />
-                    </Chart>
-                </Card>
+            <ChartsSection chartsData={chartsData} />
 
-                <Card className="react-rainbow-admin-followers_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-followers_card-chart--title rainbow-color_dark-1 rainbow-p-bottom_medium">google users</h1>
-                        <Badge className="react-rainbow-admin-followers_badge--success">
-                            <FontAwesomeIcon icon={faArrowUp} pull="left" />
-                            20.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-followers_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
-                        Total users
-                    </p>
-                    <Chart
-                        className="react-rainbow-admin-followers_chart rainbow-p-top_x-small"
-                        maintainAspectRatio={false}
-                        labels={chartsData.google.labels}
-                        type="line"
-                        showLegend={false}>
-                        <Dataset values={chartsData.google.value} borderColor="#fe4849" backgroundColor="#fe4849" />
-                    </Chart>
-                </Card>
-            </section>
-
-            <section className="react-rainbow-admin-followers_section rainbow-align-content_space-between rainbow-p-top_large">
-                <Card className="react-rainbow-admin-followers_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-followers_card-chart--title rainbow-color_dark-1 rainbow-p-bottom_medium">twitter users</h1>
-                        <Badge className="react-rainbow-admin-followers_badge--success">
-                            <FontAwesomeIcon icon={faArrowUp} pull="left" />
-                            20.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-followers_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
-                        Total users
-                    </p>
-                    <Chart
-                        className="react-rainbow-admin-followers_chart rainbow-p-top_x-small"
-                        maintainAspectRatio={false}
-                        labels={chartsData.twitter.labels}
-                        type="line"
-                        showLegend={false}>
-                        <Dataset values={chartsData.twitter.value} borderColor="#00b0f3" backgroundColor="#00b0f3" />
-                    </Chart>
-                </Card>
-
-                <Card className="react-rainbow-admin-followers_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
-                    <div className="rainbow-flex rainbow-justify_spread">
-                        <h1 className="react-rainbow-admin-followers_card-chart--title rainbow-color_dark-1 rainbow-p-bottom_medium">linkedin users</h1>
-                        <Badge className="react-rainbow-admin-followers_badge--error">
-                            <FontAwesomeIcon icon={faArrowDown} pull="left" />
-                            2.5%
-                        </Badge>
-                    </div>
-                    <p className="react-rainbow-admin-followers_chart-title rainbow-align-content_center rainbow-font-size-text_x-small rainbow-color_gray-3">
-                        Total users
-                    </p>
-                    <Chart
-                        className="react-rainbow-admin-followers_chart rainbow-p-top_x-small"
-                        maintainAspectRatio={false}
-                        labels={chartsData.linkedin.labels}
-                        type="line"
-                        showLegend={false}>
-                        <Dataset values={chartsData.linkedin.value} borderColor="#0077b5" backgroundColor="#0077b5" />
-                    </Chart>
-                </Card>
-            </section>
         </div>
     );
 }

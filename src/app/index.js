@@ -6,6 +6,10 @@ import { bindActionCreators } from 'redux';
 import Application from 'react-rainbow-components/components/Application';
 import Sidebar from 'react-rainbow-components/components/Sidebar';
 import SidebarItem from 'react-rainbow-components/components/SidebarItem';
+import ButtonIcon from 'react-rainbow-components/components/ButtonIcon';
+import RenderIf from 'react-rainbow-components/components/RenderIf';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import Routes from '../routes';
 import SectionHeading from '../components/SectionHeading';
 import {
@@ -34,17 +38,19 @@ class App extends Component {
         this.handleOnSelect = this.handleOnSelect.bind(this);
     }
 
-    getSidebarClassNames() {
+    componentDidUpdate() {
         const { isSidebarHidden } = this.props;
-        return classnames('react-rainbow-admin-app_sidebar', {
-            'react-rainbow-admin-app_sidebar--hidden': isSidebarHidden,
-        });
+        const isSidebarOpen = !isSidebarHidden;
+        document.body.style.overflow = 'auto';
+        if (isSidebarOpen) {
+            document.body.style.overflow = 'hidden';
+        }
     }
 
-    getRouterContainerClassNames() {
+    getSidebarClassNames() {
         const { isSidebarHidden } = this.props;
-        return classnames('react-rainbow-admin-app_router-container', {
-            'react-rainbow-admin-app_router-container--sidebar-hidden': isSidebarHidden,
+        return classnames('react-rainbow-admin-app_sidebar-container', {
+            'react-rainbow-admin-app_sidebar-container--sidebar-hidden': isSidebarHidden,
         });
     }
 
@@ -54,58 +60,76 @@ class App extends Component {
 
     render() {
         const { selectedItem } = this.state;
-        const { toogleSidebar, navigate } = this.props;
+        const { toogleSidebar, navigate, isSidebarHidden } = this.props;
         return (
             <Application>
+                <RenderIf isTrue={!isSidebarHidden}>
+                    <div
+                        className="react-rainbow-admin-app_backdrop"
+                        role="presentation"
+                        onClick={toogleSidebar} />
+                </RenderIf>
                 <SectionHeading onToogleSidebar={toogleSidebar} />
-                <Sidebar
-                    className={this.getSidebarClassNames()}
-                    selectedItem={selectedItem}
-                    onSelect={this.handleOnSelect}>
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<DashboardIcon />}
-                        name="dashboard"
-                        label="Dashboard"
-                        onClick={() => navigate('/dashboard')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<PagesIcon />}
-                        name="pages"
-                        label="Pages"
-                        onClick={() => navigate('/pages')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<ApplicationIcon />}
-                        name="applications"
-                        label="Applications"
-                        onClick={() => navigate('/applications')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<PuzzleIcon />}
-                        name="components"
-                        label="Components"
-                        onClick={() => navigate('/components')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<MessageIcon />}
-                        name="messages"
-                        label="Messages"
-                        onClick={() => navigate('/messages')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<FormsIcon />}
-                        name="forms"
-                        label="Forms"
-                        onClick={() => navigate('/forms')} />
-                    <SidebarItem
-                        className="react-rainbow-admin-app_sidebar-item"
-                        icon={<ChartsIcon />}
-                        name="charts"
-                        label="Charts"
-                        onClick={() => navigate('/charts')} />
-                </Sidebar>
-                <div className={this.getRouterContainerClassNames()}>
+                <div className={this.getSidebarClassNames()}>
+                    <Sidebar
+                        className="react-rainbow-admin-app_sidebar"
+                        selectedItem={selectedItem}
+                        onSelect={this.handleOnSelect}>
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<DashboardIcon />}
+                            name="dashboard"
+                            label="Dashboard"
+                            onClick={() => navigate('/dashboard')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<PagesIcon />}
+                            name="pages"
+                            label="Pages"
+                            onClick={() => navigate('/pages')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<ApplicationIcon />}
+                            name="applications"
+                            label="Applications"
+                            onClick={() => navigate('/applications')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<PuzzleIcon />}
+                            name="components"
+                            label="Components"
+                            onClick={() => navigate('/components')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<MessageIcon />}
+                            name="messages"
+                            label="Messages"
+                            onClick={() => navigate('/messages')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<FormsIcon />}
+                            name="forms"
+                            label="Forms"
+                            onClick={() => navigate('/forms')} />
+                        <SidebarItem
+                            className="react-rainbow-admin-app_sidebar-item"
+                            icon={<ChartsIcon />}
+                            name="charts"
+                            label="Charts"
+                            onClick={() => navigate('/charts')} />
+                    </Sidebar>
+                    <RenderIf isTrue={!isSidebarHidden}>
+                        <div className="react-rainbow-admin-app_sidebar-back-button-container">
+                            <ButtonIcon
+                                onClick={toogleSidebar}
+                                size="large"
+                                icon={
+                                    <FontAwesomeIcon className="react-rainbow-admin-app_sidebar-back-button-icon" icon={faArrowLeft} />
+                                } />
+                        </div>
+                    </RenderIf>
+                </div>
+                <div className="react-rainbow-admin-app_router-container">
                     <Routes />
                 </div>
             </Application>

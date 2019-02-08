@@ -7,6 +7,12 @@ export default function toggleSidebar() {
 }
 
 export function navigate(path) {
-    navigateTo(path);
-    return toggleSidebar();
+    const isMobileViewPort = document.body.offsetWidth < 600;
+    return (dispatch) => {
+        if (isMobileViewPort) {
+            navigateTo(path);
+            return dispatch(toggleSidebar());
+        }
+        return navigateTo(path);
+    };
 }
