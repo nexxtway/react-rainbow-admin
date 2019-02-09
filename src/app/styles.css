@@ -69,7 +69,7 @@
         display: unset;
         width: 100vw;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(82, 95, 127, 0.4);
         position: fixed;
         z-index: 99999;
         top: 0;
