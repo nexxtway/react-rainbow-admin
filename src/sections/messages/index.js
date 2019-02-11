@@ -1,6 +1,6 @@
 /* eslint-disable class-methods-use-this */
 import React, { Component } from 'react';
-import { Input } from 'react-rainbow-components/components';
+import { Input, ButtonIcon } from 'react-rainbow-components/components';
 import {
     SearchIcon,
     ArrowUp,
@@ -152,21 +152,11 @@ export default class Messages extends Component {
                     </div>
                     <div className="react-rainbow-admin-messages_input-container">
                         <div className="react-rainbow-admin-messages_input-options">
-                            <div className="react-rainbow-admin-messages_input-options-icon-container">
-                                <Emoji />
-                            </div>
-                            <div className="react-rainbow-admin-messages_input-options-icon-container">
-                                <Attach />
-                            </div>
-                            <div className="react-rainbow-admin-messages_input-options-icon-container">
-                                <Picture />
-                            </div>
-                            <div className="react-rainbow-admin-messages_input-options-icon-container">
-                                <PhotoCamera />
-                            </div>
-                            <div className="react-rainbow-admin-messages_input-options-icon-container">
-                                <Microphone />
-                            </div>
+                            <ButtonIcon size="large" icon={<Emoji />} variant="border-filled" />
+                            <ButtonIcon size="large" icon={<Attach />} variant="border-filled" />
+                            <ButtonIcon size="large" icon={<Picture />} variant="border-filled" />
+                            <ButtonIcon size="large" icon={<PhotoCamera />} variant="border-filled" />
+                            <ButtonIcon size="large" icon={<Microphone />} variant="border-filled" />
                         </div>
                         <Input
                             className="react-rainbow-admin-messages_input"
