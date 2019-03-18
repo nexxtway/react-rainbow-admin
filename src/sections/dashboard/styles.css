@@ -18,14 +18,12 @@
 }
 
 .react-rainbow-admin-dashboard_badge--success {
-    color: #FFF;
-    background-color: #1de9b6;
+    background-color: #1de9b6 !important;
     align-self: flex-start;
 }
 
 .react-rainbow-admin-dashboard_badge--error {
-    color: #FFF;
-    background-color: #fe4849;
+    background-color: #fe4849 !important;
     align-self: flex-start;
 }
 
