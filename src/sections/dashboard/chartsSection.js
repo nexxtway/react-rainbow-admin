@@ -20,7 +20,7 @@ export default class ChartsSection extends PureComponent {
                 <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
                     <div className="rainbow-flex rainbow-justify_spread">
                         <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{successfulyOrdersAmount}</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--success">
+                        <Badge variant="brand" className="react-rainbow-admin-dashboard_badge--success">
                             <FontAwesomeIcon icon={faArrowUp} pull="left" />
                         20.5%
                         </Badge>
@@ -36,7 +36,7 @@ export default class ChartsSection extends PureComponent {
                 <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
                     <div className="rainbow-flex rainbow-justify_spread">
                         <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{totalUsers}</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--error">
+                        <Badge variant="brand" className="react-rainbow-admin-dashboard_badge--error">
                             <FontAwesomeIcon icon={faArrowDown} pull="left" />
                         32.5%
                         </Badge>
@@ -52,7 +52,7 @@ export default class ChartsSection extends PureComponent {
                 <Card className="react-rainbow-admin-dashboard_card rainbow-p-vertical_medium rainbow-p-horizontal_small">
                     <div className="rainbow-flex rainbow-justify_spread">
                         <h1 className="react-rainbow-admin-dashboard_card--content rainbow-color_dark-1 rainbow-p-bottom_medium">{followersActive}</h1>
-                        <Badge className="react-rainbow-admin-dashboard_badge--success">
+                        <Badge variant="brand" className="react-rainbow-admin-dashboard_badge--success">
                             <FontAwesomeIcon icon={faArrowUp} pull="left" />
                         20.5%
                         </Badge>
