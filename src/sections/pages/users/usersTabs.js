@@ -73,7 +73,6 @@ export default class UsersTabs extends Component {
                         <Column header="EMAIL" field="email" />
                         <Column header="PHONE NUMBER" field="phoneNumber" />
                         <Column header="CURRENT STATUS" field="status" component={Status} />
-                        <Column field="edit" />
                     </Table>
                     <TablePagination
                         pages={this.getPages()}
