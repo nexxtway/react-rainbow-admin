@@ -39,6 +39,16 @@
     display: none;
 }
 
+.react-rainbow-admin_header-github-icon {
+    width: 32px;
+    height: 32px;
+    fill: #576574;
+}
+
+.react-rainbow-admin_header-github-icon:hover {
+    fill: #061c3f;
+}
+
 @media (max-width: 600px) {
     .react-rainbow-admin_header {
         height: 124px;
@@ -74,5 +84,9 @@
         position: absolute;
         bottom: 12px;
         right: 4px;
+    }
+
+    .react-rainbow-admin_header-github-icon {
+        margin-right: 16px;
     }
 }
