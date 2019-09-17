@@ -67,7 +67,7 @@ export default class UsersTabs extends Component {
                         name="activeUsers" />
                 </Tabset>
                 <div className="react-rainbow-admin-users_tab-content">
-                    <Table data={this.getTableData()}>
+                    <Table data={this.getTableData()} keyField="id">
                         <Column header="USER" field="user" component={UserCell} />
                         <Column header="USER ID" field="user" component={UserIdCell} defaultWidth={300} />
                         <Column header="EMAIL" field="email" />
