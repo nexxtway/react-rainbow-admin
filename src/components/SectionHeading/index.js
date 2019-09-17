@@ -18,7 +18,12 @@ import {
     faPowerOff,
 } from '@fortawesome/free-solid-svg-icons';
 import { faBell } from '@fortawesome/free-regular-svg-icons';
-import { ShoppingCartIcon, MessageIcon, BarsIcon } from '../icons';
+import {
+    ShoppingCartIcon,
+    MessageIcon,
+    BarsIcon,
+    GithubIcon,
+} from '../icons';
 import Notification from './notification';
 import IconNotification from './iconNotification';
 import './styles.css';
@@ -43,6 +48,12 @@ export default function SectionHeading({ onToogleSidebar }) {
                         <MenuItem label="Admin-3" />
                     </ButtonMenu>
                 </ButtonGroup>
+                <a
+                    href="https://github.com/nexxtway/react-rainbow-admin"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                    <GithubIcon className="react-rainbow-admin_header-github-icon" />
+                </a>
                 <ButtonMenu
                     className="rainbow-m-horizontal_medium react-rainbow-admin_header-button-notification"
                     menuAlignment="right"
@@ -56,8 +67,7 @@ export default function SectionHeading({ onToogleSidebar }) {
                         }
                         label={(
                             <Notification
-                                title="Your order is placed"
-                                content="Dummy text of the printing and typesetting industry" />
+                                title="Your order is placed" />
                         )} />
                     <MenuItem
                         icon={
@@ -65,8 +75,7 @@ export default function SectionHeading({ onToogleSidebar }) {
                         }
                         label={(
                             <Notification
-                                title="New messages"
-                                content="You have 5 unread messages" />
+                                title="New messages" />
                         )} />
                 </ButtonMenu>
                 <AvatarMenu

@@ -31,7 +31,7 @@ export default class OrdersTable extends Component {
         const pages = Math.ceil(orders.length / 8);
         return (
             <div className="react-rainbow-admin-orders_table-container">
-                <Table className="react-rainbow-admin-orders_table" data={this.getTableData()}>
+                <Table className="react-rainbow-admin-orders_table" keyField="id" data={this.getTableData()}>
                     <Column header="USER" field="user" component={UserCell} />
                     <Column header="ORDER ID" field="id" component={OrderIdCell} />
                     <Column header="STATUS" field="status" component={Status} />

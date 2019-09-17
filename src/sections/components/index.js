@@ -59,7 +59,7 @@ export default class Components extends Component {
                         title="Components"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit." />
                     <h1 className="react-rainbow-admin-components_title">
-                            More than 40 components
+                            More than 60 components
                     </h1>
                     <Input
                         className="react-rainbow-admin-components_search"
